@@ -20,7 +20,7 @@ redirect_from:
 --- -->
 
 <div align="justify"> With over 1.5+ years of research experience in Deep Learning and Machine Learning, I specialize in Computer Vision, Speech and Facial Emotion Recognition, Precision Agriculture, and AI applications in healthcare. I earned a Bachelor’s degree in Information and Communication Engineering from Pabna University of Science and Technology, graduating at the top of my class. My background in competitive programming, reflected in high LeetCode rankings, enhances my problem-solving skills alongside my research expertise. <br></div>
-<button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/publications/;">View Publications</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/projects/';">View Projects</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/portfolio/';">View Portfolio</button>
+<button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/publications/';">View Publications</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/projects/';">View Projects</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/portfolio/';">View Portfolio</button>
 <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/files/CV-SK-Ray.pdf';">Download CV</button>
 <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/portfolio/Std_year/';">Alumni of Aspire Leadership program</button>
 
