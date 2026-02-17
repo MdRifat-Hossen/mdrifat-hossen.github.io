@@ -8,7 +8,7 @@ date: 2025-09-27
 location: "Dhaka, Bangladesh"
 ---
 
-<img src='/images/BIM1.jpg'>
+<img src='/images/BIM1.jpg width="700"'>
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/10.pptx';">View Slides</button>
 
@@ -140,5 +140,5 @@ In this talk, we explore the implementation of our research titled **“Evaluati
 Feel free to contribute, raise issues, or suggest improvements!
 
 <h3>After Technical Session </h3>
-<img src='/images/BIM.jpg'>
+<img src='/images/BIM.jpg width="700"'>
 <h6>Dhaka Internation University</h6>

@@ -8,7 +8,7 @@ date: 2025-09-06
 location: "Rajshahi, Bangladesh"
 ---
 
-<img src='/images/IRC.jpg'>
+<img src='/images/IRC.jpg width="700"'>
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/109.pptx';">View Slides</button>
 
@@ -116,5 +116,5 @@ In this talk, we explore the implementation of our research titled **“Intellig
 Feel free to contribute, raise issues, or suggest improvements!
 
 <h3>After Technical Session </h3>
-<img src='/images/IRC1.jpg'>
+<img src='/images/IRC1.jpg width="700"'>
 <h6>Rajshahi University (RU)</h6>
