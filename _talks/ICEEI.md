@@ -8,7 +8,7 @@ date: 2025-11-13
 location: "Malysia"
 ---
 
-<img src='/images/70.png width="700"'>
+<img src='/images/70.png'>
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/70.pptx';">View Slides</button>
 

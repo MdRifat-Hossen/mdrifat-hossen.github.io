@@ -140,5 +140,5 @@ In this talk, we explore the implementation of our research titled **“Evaluati
 Feel free to contribute, raise issues, or suggest improvements!
 
 <h3>After Technical Session </h3>
-<img src='/images/BIM.jpg width="700"'>
+<img src='/images/BIM.jpg'>
 <h6>Dhaka Internation University</h6>

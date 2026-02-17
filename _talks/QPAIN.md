@@ -8,7 +8,7 @@ date: 2025-03-31
 location: "Saidpur, Bangladesh"
 ---
 
-<img src='/images/QPAIN.jpg width="700"'>
+<img src='/images/QPAIN.jpg'>
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/1599.pdf';">View Slides</button> <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_1599.pdf';">IEEE Article</button>
 
@@ -136,5 +136,5 @@ We would like to thank all collaborators and institutions who supported this res
 Feel free to contribute, raise issues, or suggest improvements!
 
 <h3>After Technical Session </h3>
-<img src='/images/QPAIN.jpg width="700"'>
+<img src='/images/QPAIN.jpg'>
 <h6>Bangladesh Army University of Science and Technology (BAUST)</h6>
