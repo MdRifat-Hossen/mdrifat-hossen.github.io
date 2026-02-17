@@ -132,7 +132,7 @@ atom_feed:
   path: # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification: <meta name="google-site-verification" content="SWatwpHKVkUdKxf2ZZh3yhozKJIRmqzM6wqxa9nqxqk" />"
+google_site_verification: SWatwpHKVkUdKxf2ZZh3yhozKJIRmqzM6wqxa9nqxqk
 bing_site_verification:
 alexa_site_verification:
 yandex_site_verification:
