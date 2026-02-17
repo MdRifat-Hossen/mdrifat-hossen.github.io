@@ -16,6 +16,8 @@ location: "Dhaka, Bangladesh"
 
 In this talk, we explore the implementation of our research titled **“Evaluation of Targeted Productivity in Bangladesh’s Garment Sector Using Machine Learning and Deep Learning with Explainable AI”**
 
+---
+
 ## Introduction
 
 - Garment industry contributes over 80% of Bangladesh export earnings

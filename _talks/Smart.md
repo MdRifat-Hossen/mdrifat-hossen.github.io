@@ -13,3 +13,5 @@ location: "Pabna, Bangladesh"
 <!-- <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_4.pdf';">Article</button> -->
 
 In this talk, we explore the implementation of our research titled **“Smart Waste Management System”**
+
+---

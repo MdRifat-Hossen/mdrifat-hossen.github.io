@@ -16,6 +16,8 @@ location: "Malysia"
 
 In this talk, we explore the implementation of our research titled **“Enhancing Robustness and Accuracy of Bone-Conducted Speech Emotion Recognition via Transformer Models”**
 
+---
+
 ## Motivation
 
 - Speech Emotion Recognition suffers from:

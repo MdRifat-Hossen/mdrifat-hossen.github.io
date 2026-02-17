@@ -12,9 +12,11 @@ location: "Saidpur, Bangladesh"
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/1599.pdf';">View Slides</button> <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_1599.pdf';">IEEE Article</button>
 
-## Introduction
-
 In this talk, we explore the implementation of our research titled **“Tversky Loss Mechanisms: A ResUNet Approach to Improving Brain Tumor Segmentation.”**
+
+---
+
+## Introduction
 
 Biomedical imaging plays a critical role in healthcare, particularly in detecting and diagnosing brain tumors. Brain tumors—whether benign or malignant—can significantly disrupt brain function. Early detection is especially important because malignant tumors can grow rapidly.
 

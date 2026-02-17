@@ -14,9 +14,9 @@ location: "Rajshahi, Bangladesh"
 
 <!-- <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_1599.pdf';">IEEE Article</button> -->
 
-## Introduction
-
 In this talk, we explore the implementation of our research titled **“Intelligent Overspeed Control in Autonomous Vehicles with DQN Deep Reinforcement Learning.”**
+
+---
 
 ## Introduction
 
