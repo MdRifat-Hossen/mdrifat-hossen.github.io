@@ -8,15 +8,16 @@ Md. Rifat Hossen is a high-achieving engineering student, researcher, and leader
 research, competitive programming, and community initiatives, with expertise in cutting-edge technologies and a strong
 track record of innovation and leadership.
 <div class="wordwrap">Find publications here: <a href="https://mdrifat-hossen.github.io/publications/">Rifat's
-        Publications</a>.</div>
+                Publications</a>.</div>
 <div class="wordwrap">Find projects here: <a href="https://mdrifat-hossen.github.io/projects/">Rifat's Projects</a>.
 </div>
 <div class="wordwrap">Find talks here: <a href="https://mdrifat-hossen.github.io/talks/">Rifat's Talks</a>.</div>
 <div class="wordwrap">Download CV: <a href="https://mdrifat-hossen.github.io/files/CV-MR-Hossen-17-12-2024.pdf">Rifat's
-        CV</a>.</div>
+                CV</a>.</div>
 {% include base_path %}
 
 
-{% for post in site.portfolio %}
+{% assign sorted_portfolio = site.portfolio | sort: "order" %}
+{% for post in sorted_portfolio %}
 {% include archive-single.html %}
 {% endfor %}
