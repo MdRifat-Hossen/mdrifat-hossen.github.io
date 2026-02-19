@@ -1,5 +1,5 @@
 ---
-title: "Aspire Leaders Program – Harvard Founded Leadership Development"
+title: "2. Aspire Leaders Program – Harvard Founded Leadership Development"
 excerpt: 'Completed all stages of the 2024 Aspire Leaders Program <img src="/images/Aspire.png" style="max-width:450px;width:100%;height:auto;display:block;margin:auto;" />'
 collection: portfolio
 date: 2024-11-01

@@ -1,6 +1,6 @@
 ---
-title: "Outstanding Academic Result"
-excerpt: 'Student of Dept. of Information and Communication Engineering (ICE) at Pabna University of Science and Technology (PUST)<br /><img src="/images/certificate.jpeg" style="max-width:450px;width:100%;height:auto;display:block;margin:auto;/>'
+title: "1. Outstanding Academic Result"
+excerpt: 'Student of Dept. of Information and Communication Engineering (ICE) at Pabna University of Science and Technology (PUST)<br /><img src="/images/certificate.jpeg" style="max-width:450px;width:100%;height:auto;display:block;margin:auto;"/>'
 collection: portfolio
 date: 2025-09-09
 ---
