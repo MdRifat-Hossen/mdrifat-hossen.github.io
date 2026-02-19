@@ -8,7 +8,7 @@ date: 2025-03-31
 location: "Saidpur, Bangladesh"
 ---
 
-<img src='/images/QPAIN.jpg'>
+<!-- <img src='/images/QPAIN.jpg'> -->
 
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/1599.pdf';">View Slides</button> <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_1599.pdf';">IEEE Article</button>
 

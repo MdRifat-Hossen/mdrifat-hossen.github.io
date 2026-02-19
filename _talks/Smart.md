@@ -2,7 +2,7 @@
 title: "Smart Waste Management System"
 collection: talks
 type: "Conference proceedings talk"
-permalink: /talks//NCSP
+permalink: /talks/Smart
 venue: "ICE FEST -2025"
 date: 2025-02-22
 location: "Pabna, Bangladesh"

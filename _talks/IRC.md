@@ -8,9 +8,9 @@ date: 2025-09-06
 location: "Rajshahi, Bangladesh"
 ---
 
-<img src='/images/IRC.jpg'>
+<!-- <img src='/images/IRC.jpg'> -->
 
-<button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/109.pptx';">View Slides</button>
+<button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/109.pdf';">View Slides</button>
 
 <!-- <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_1599.pdf';">IEEE Article</button> -->
 

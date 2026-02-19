@@ -8,9 +8,9 @@ date: 2025-11-13
 location: "Malysia"
 ---
 
-<img src='/images/70.png'>
+<!-- <img src='/images/70.png'> -->
 
-<button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/70.pptx';">View Slides</button>
+<button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/70.pdf';">View Slides</button>
 <button class = "btn" onclick="window.location.href='http://mdrifat-hossen.github.io/files/pid_70.pdf';">IEEE Article</button>
 
 In this talk, we explore the implementation of our research titled **“Enhancing Robustness and Accuracy of Bone-Conducted Speech Emotion Recognition via Transformer Models”**
