@@ -34,7 +34,7 @@ author_profile: true
 <!-- Category-wise Rendering -->
 {% if site.publication_category %}
 
-{% assign sorted_pubs = site.publications | sort: "order" %}
+{% assign sorted_pubs = site.publications | sort: "order" | reverse %}
 
 {% for category in site.publication_category %}
 {% assign title_shown = false %}
