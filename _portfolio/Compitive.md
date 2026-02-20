@@ -14,7 +14,8 @@ I actively engage in competitive programming to strengthen algorithmic thinking,
 
 ## HackerRank Profile
 
-<img src="/images/hacker.png" style="max-width:700px; width:100%; height:auto; margin:20px 0;" />
+<img src="{{ '/images/hacker.png' | relative_url }}" 
+     style="max-width:700px; width:100%; height:auto; margin:20px 0;" />
 
 ### 🏅 Certifications & Badges
 
@@ -46,7 +47,8 @@ View Full HackerRank Profile
 
 LeetCode is used to practice advanced data structures and interview-style algorithmic challenges, focusing on efficiency and optimization strategies.
 
-<img src="/images/letcode.png" style="max-width:700px; width:100%; height:auto; margin:20px 0;" />
+<img src="{{ '/images/letcode.png' | relative_url }}" 
+     style="max-width:700px; width:100%; height:auto; margin:20px 0;" />
 
 ### Performance Overview
 
