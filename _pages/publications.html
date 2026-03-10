@@ -9,31 +9,35 @@ author_profile: true
 
 {% if site.author.googlescholar %}
 
-{% assign total_pubs = site.publications | size %}
 {% assign journal_pubs = site.publications | where: "category", "manuscripts" %}
 {% assign conf_pubs = site.publications | where: "category", "conferences" %}
 {% assign dataset_pubs = site.publications | where: "category", "Datasets" %}
+{% assign book_pubs = site.publications | where: "category", "books" %}
+{% assign review_pubs = site.publications | where: "category", "underreview" %}
 
-<h3>Total Publications: {{ total_pubs }}</h3>
-<h4>Journal Articles: {{ journal_pubs | size }}</h4>
-<h4>Conference Papers: {{ conf_pubs | size }}</h4>
-<h4>Datasets: {{ dataset_pubs | size }}</h4>
-<span>Under Review: 6+ </span>
+{% assign accepted_total = journal_pubs.size | plus: conf_pubs.size | plus: dataset_pubs.size | plus: book_pubs.size %}
+
+<h3>Accepted Publications: {{ accepted_total }}</h3>
+
+<ul>
+<li>Journal Articles: {{ journal_pubs | size }}</li>
+<li>Conference Papers: {{ conf_pubs | size }}</li>
+<li>Book Chapters: {{ book_pubs | size }}</li>
+<li>Datasets: {{ dataset_pubs | size }}</li>
+<li>Under Review: {{ review_pubs | size }}</li>
+</ul>
 
 <div class="wordwrap">
-  You can also find my articles on:
-  <a href="{{site.author.googlescholar}}">Google Scholar</a> |
-  <a href="{{site.author.researchgate}}">ResearchGate</a> |
-  <a href="https://www.webofscience.com/wos/author/record/OUK-3620-2025">Web of Science</a>
-  <a href="https://www.scopus.com/authid/detail.uri?authorId=60027552000">Scopus</a>
+You can also find my articles on:
+<a href="{{site.author.googlescholar}}">Google Scholar</a> |
+<a href="{{site.author.researchgate}}">ResearchGate</a> |
+<a href="https://www.webofscience.com/wos/author/record/OUK-3620-2025">Web of Science</a> |
+<a href="https://www.scopus.com/authid/detail.uri?authorId=60027552000">Scopus</a>
 </div>
 
-<hr />
+<hr>
 
 {% endif %}
-
-<!-- Category-wise Rendering -->
-{% if site.publication_category %}
 
 {% assign sorted_pubs = site.publications | sort: "order" | reverse %}
 
@@ -48,7 +52,7 @@ author_profile: true
 
 {% unless title_shown %}
 <h2>{{ category[1].title }}</h2>
-<hr />
+<hr>
 {% assign title_shown = true %}
 {% endunless %}
 
@@ -56,12 +60,3 @@ author_profile: true
 
 {% endfor %}
 {% endfor %}
-
-{% else %}
-
-{% assign sorted_pubs = site.publications | sort: "order" %}
-{% for post in sorted_pubs %}
-{% include archive-single.html %}
-{% endfor %}
-
-{% endif %}

@@ -39,12 +39,13 @@ author:
   inspire-hep: # URL
   impactstory: # URL
   orcid: "https://orcid.org/0009-0007-4486-9399"
-  semantic: # URL
+  semantic: "https://www.semanticscholar.org/author/Md.-Rifat-Hossen/2410512993"
   ssrn: # URL
   pubmed: #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate: "https://www.researchgate.net/profile/Md-Rifat-Hossen-2"
   scopus: "https://www.scopus.com/authid/detail.uri?authorId=60027552000"
   zotero: # URL
+  sciprofiles: "https://sciprofiles.com/profile/mdrifathossen"
 
   # Repositories and software development
   bitbucket: # Username - Update with your username on the site
@@ -83,14 +84,16 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: "Books"
   manuscripts:
     title: "Journal Articles"
   conferences:
     title: "Conference Papers"
+  books:
+    title: "Book Chapters"
   Datasets:
     title: "Datasets"
+  underreview:
+    title: "Under Review"
 
 # Site Settings
 teaser: # filename of teaser fallback teaser image placed in /images/ for social media previews
@@ -130,7 +133,7 @@ atom_feed:
   path: # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification: SWatwpHKVkUdKxf2ZZh3yhozKJIRmqzM6wqxa9nqxqk
+google_site_verification:
 bing_site_verification:
 alexa_site_verification:
 yandex_site_verification:
