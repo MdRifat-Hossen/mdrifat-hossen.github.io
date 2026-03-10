@@ -17,15 +17,15 @@ author_profile: true
 
 {% assign accepted_total = journal_pubs.size | plus: conf_pubs.size | plus: dataset_pubs.size | plus: book_pubs.size %}
 
-<h3>Accepted Publications: {{ accepted_total }}</h3>
+<h3>Total Publications: {{ accepted_total }}</h3>
 
-<ul>
-<li>Journal Articles: {{ journal_pubs | size }}</li>
-<li>Conference Papers: {{ conf_pubs | size }}</li>
-<li>Book Chapters: {{ book_pubs | size }}</li>
-<li>Datasets: {{ dataset_pubs | size }}</li>
-<li>Under Review: {{ review_pubs | size }}</li>
-</ul>
+<p>
+<b>Journal:</b> {{ journal_pubs | size }} |
+<b>Conference:</b> {{ conf_pubs | size }} |
+<b>Book Chapters:</b> {{ book_pubs | size }} |
+<b>Datasets:</b> {{ dataset_pubs | size }} |
+<b>Under Review:</b> {{ review_pubs | size }}
+</p>
 
 <div class="wordwrap">
 You can also find my articles on:
