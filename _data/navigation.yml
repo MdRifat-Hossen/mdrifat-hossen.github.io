@@ -26,7 +26,7 @@ main:
   #   url: /year-archive/
 
   - title: "CV"
-    url: https://mdrifat-hossen.github.io/files/CV_Rifat.pdf
+    url: /files/CV_Rifat.pdf
 
   # - title: "Guide"
   #   url: /markdown/

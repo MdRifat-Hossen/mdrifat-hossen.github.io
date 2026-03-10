@@ -10,10 +10,11 @@ author_profile: true
 {% if site.author.googlescholar %}
 
 {% assign journal_pubs = site.publications | where: "category", "manuscripts" %}
+{% assign review_pubs = site.publications | where: "category", "underreview" %}
 {% assign conf_pubs = site.publications | where: "category", "conferences" %}
 {% assign dataset_pubs = site.publications | where: "category", "Datasets" %}
 {% assign book_pubs = site.publications | where: "category", "books" %}
-{% assign review_pubs = site.publications | where: "category", "underreview" %}
+
 
 {% assign accepted_total = journal_pubs.size | plus: conf_pubs.size | plus: dataset_pubs.size | plus: book_pubs.size %}
 
