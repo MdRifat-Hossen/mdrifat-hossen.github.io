@@ -19,7 +19,8 @@ redirect_from:
 
 --- -->
 
-<div align="justify"> With over 1.5+ years of research experience in Deep Learning and Machine Learning, I specialize in Computer Vision, Speech and Facial Emotion Recognition, Precision Agriculture, and AI applications in healthcare. I earned a Bachelor’s degree in Information and Communication Engineering from Pabna University of Science and Technology, graduating at the top of my class. My background in competitive programming, reflected in high LeetCode rankings, enhances my problem-solving skills alongside my research expertise. <br></div>
+<div align="justify"> With over 1.5+ years of research experience in Deep Learning and Machine Learning, I specialize in Computer Vision, Speech and Facial Emotion Recognition, Precision Agriculture, and AI applications in healthcare. I am currently a <b> 3rd year undergraduate student (2nd semester) in Information and Communication Engineering at Pabna University of Science and Technology.</b> My academic journey is driven by a strong interest in artificial intelligence, machine learning, and intelligent systems. In addition to my research activities, my background in competitive programming on platforms such as LeetCode and Codeforces has strengthened my analytical thinking and problem-solving abilities.
+ <br></div>
 <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/publications/';">View Publications</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/projects/';">View Projects</button> <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/portfolio/';">View Portfolio</button>
 <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/files/CV_Rifat.pdf';">Download CV</button>
 <button class = "btn" onclick="window.location.href='https://mdrifat-hossen.github.io/portfolio/Aspire/';">Alumni of Aspire Leadership program</button>
@@ -43,12 +44,12 @@ redirect_from:
 
 - _CGPA: 3.67 out of 4.00 (after 5 semesters; remaining 3 semesters)_
 
-2. **Higher Secondary School Certificate**
+1. **Higher Secondary School Certificate**
    · Alamgir Monsur Memorial College (AMMC), Mymensingh · 2021
 
 - _GPA: 4.92 out of 5.00_
 
-3. **Secondary School Certificate**
+1. **Secondary School Certificate**
    · Shontospur High School (SHS), Fulbaria, Mymensingh · 2019
 
 - _GPA: 4.61 out of 5.00_

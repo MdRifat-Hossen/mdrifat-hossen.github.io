@@ -86,14 +86,14 @@ author:
 publication_category:
   manuscripts:
     title: "Journal Articles"
+  underreview:
+    title: "Under Review"
   conferences:
     title: "Conference Papers"
   books:
     title: "Book Chapters"
   Datasets:
     title: "Datasets"
-  underreview:
-    title: "Under Review"
 
 # Site Settings
 teaser: # filename of teaser fallback teaser image placed in /images/ for social media previews
@@ -133,7 +133,7 @@ atom_feed:
   path: # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification:
+google_site_verification: SWatwpHKVkUdKxf2ZZh3yhozKJIRmqzM6wqxa9nqxqk
 bing_site_verification:
 alexa_site_verification:
 yandex_site_verification:
@@ -156,7 +156,14 @@ social:
     - https://scholar.google.com/citations?user=Dru9E3gAAAAJ
     - https://github.com/MdRifat-Hossen
     - https://www.linkedin.com/in/md-rifat-hossen-pust
-
+    - https://mdrifat-hossen.github.io
+    - https://scholar.google.com/citations?user=Dru9E3gAAAAJ&hl=en
+    - https://orcid.org/0009-0007-4486-9399
+    - https://www.semanticscholar.org/author/Md.-Rifat-Hossen/2410512993
+    - https://www.researchgate.net/profile/Md-Rifat-Hossen-2
+    - https://www.scopus.com/authid/detail.uri?authorId=60027552000
+    - https://sciprofiles.com/profile/mdrifathossen
+    - https://web.facebook.com/rifat.pust.ice
 # Analytics
 analytics:
   provider: "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
