@@ -6,6 +6,12 @@
     chatbotId: "3mGvcm1JwEO2VzYAdvzLa",
     minimizeOnMobile: true
   };
+  // Auto open after 3 seconds (but not fullscreen)
+  setTimeout(function () {
+    if (window.chatbase) {
+      window.chatbase("open");
+    }
+  }, 3000);
 
   (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
