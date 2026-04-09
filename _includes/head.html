@@ -1,16 +1,45 @@
 {% include base_path %}
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 {% include seo.html %}
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+<link
+  href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"
+  type="application/atom+xml"
+  rel="alternate"
+  title="{{ site.title }} Feed"
+/>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ✅ Chatbase Mobile Fix -->
+<style>
+  @media (max-width: 768px) {
+    iframe[src*="chatbase"] {
+      height: 60% !important;
+      max-height: 420px !important;
+      width: 90% !important;
+      right: 10px !important;
+      bottom: 80px !important;
+      border-radius: 12px !important;
+    }
+
+    body.chatbase-open {
+      overflow: auto !important;
+    }
+
+    div[id*="chatbase"] {
+      max-height: 420px !important;
+      height: auto !important;
+    }
+  }
+</style>
 
 <script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css" />
