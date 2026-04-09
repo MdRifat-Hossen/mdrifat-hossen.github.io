@@ -2,6 +2,11 @@
 
 {% include analytics.html %}
 <script>
+  window.chatbaseConfig = {
+    chatbotId: "3mGvcm1JwEO2VzYAdvzLa",
+    minimizeOnMobile: true
+  };
+
   (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
       window.chatbase = (...arguments) => {
