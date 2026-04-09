@@ -36,7 +36,7 @@ redirect_from:
 - **Research Trainee**
   - Learnify Research Lab · Part-time
   - Mar 2025 – Mar 2026
-- **Research Assistant**
+- **Research Assistant** <button class = "btn" onclick="window.location.href='https://sites.google.com/view/credit-lab/home';">Lab</button>
   - CREDIT Lab, Department of EEE, Green University
   - Jun 2025 – Dec 2025
 
