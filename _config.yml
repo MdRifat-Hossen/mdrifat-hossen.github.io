@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "Md Rifat Hossen | AI Researcher | Machine Learning | Bangladesh"
+title: "Rifat's Homepage"
 title_separator: "-"
 name: &name "Md. Rifat Hossen"
 description: &description "Md Rifat Hossen is an AI researcher from Bangladesh specializing in Machine Learning, Deep Learning, Computer Vision, and healthcare applications."
@@ -30,7 +30,7 @@ author:
   bio: "Undergraduate AI Researcher"
   location: "Pabna, Bangladesh"
   employer: "Pabna University of Science and Technology"
-  uri: "https://mdrifat-hossen.github.io" # URL
+  uri: # URL
   email: "rifat.pust.ice14@gmail.com" # Email address
 
   # Academic websites
