@@ -78,7 +78,12 @@ His dedication to academics and extracurricular activities demonstrates a strong
   </h4>
 
   <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
-
+ <!-- Flat Map -->
+    <div style="width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
+      <script type="text/javascript" id="clustrmaps"
+        src="//clustrmaps.com/map_v2.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8&cl=ffffff&w=a">
+      </script>
+    </div>
     <!-- Globe -->
     <div style="width:200px; height:200px;">
       <script type="text/javascript" id="clstr_globe"
@@ -86,19 +91,12 @@ His dedication to academics and extracurricular activities demonstrates a strong
       </script>
     </div>
 
-    <!-- Flat Map -->
-    <div style="width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
-      <script type="text/javascript" id="clustrmaps"
-        src="//clustrmaps.com/map_v2.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8&cl=ffffff&w=a">
-      </script>
-    </div>
-
   </div>
 
-  <!-- Visitor Counter -->
+  <!-- Visitor Counter
   <div style="margin-top:20px;">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=mdrifat-hossen.github.io&left_text=Visitors"
          style="max-width:140px; width:100%;" />
-  </div>
+  </div> -->
 
 </div>
