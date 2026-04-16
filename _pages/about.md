@@ -70,3 +70,8 @@ He has also participated in intra-university competitive programming contests, w
 <br>
 His dedication to academics and extracurricular activities demonstrates a strong commitment to research excellence, leadership, and creating impactful AI solutions for real-world issues.
 </div>
+
+<div style="text-align:center; margin-top:40px;">
+  <h3>🌍 Visitors Around the World</h3>
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8&cl=ffffff&w=a"></script>
+</div>
