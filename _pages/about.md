@@ -71,22 +71,23 @@ He has also participated in intra-university competitive programming contests, w
 His dedication to academics and extracurricular activities demonstrates a strong commitment to research excellence, leadership, and creating impactful AI solutions for real-world issues.
 </div>
 
-<div style="width:100%; max-width:700px; margin:40px auto; text-align:center;">
+<div style="width:100%; max-width:800px; margin:40px auto; text-align:center;">
 
-  <h4 style="font-size:16px; margin-bottom:15px; color:#555;">
+  <h4 style="font-size:18px; margin-bottom:20px; color:#555;">
     🌍 Visitors Around the World
   </h4>
 
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+  <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
 
-    <div style="flex:1 1 300px;">
+    <!-- Globe -->
+    <div style="width:200px; height:200px;">
       <script type="text/javascript" id="clstr_globe"
         src="//clustrmaps.com/globe.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8">
       </script>
     </div>
 
-
-    <div style="flex:1 1 300px;">
+    <!-- Flat Map -->
+    <div style="width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
       <script type="text/javascript" id="clustrmaps"
         src="//clustrmaps.com/map_v2.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8&cl=ffffff&w=a">
       </script>
@@ -94,9 +95,10 @@ His dedication to academics and extracurricular activities demonstrates a strong
 
   </div>
 
-  <div style="margin-top:10px;">
+  <!-- Visitor Counter -->
+  <div style="margin-top:20px;">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=mdrifat-hossen.github.io&left_text=Visitors"
-         style="max-width:50px; width:100%;" />
+         style="max-width:140px; width:100%;" />
   </div>
 
 </div>
