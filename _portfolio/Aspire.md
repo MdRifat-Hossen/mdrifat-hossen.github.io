@@ -20,9 +20,20 @@ demonstrating strong commitment to leadership excellence, global engagement, and
 
 ---
 
+## 📜 Acknowledgement Program Certificate
+
+<button onclick="window.open('https://engage.aspireleaders.org/share/certificate/did:rcw:8b4dfa12-3a81-42ec-beb7-46e90910eb8b', '_blank')" 
+        style="padding:10px 20px; background:#007acc; color:white; border:none; border-radius:5px; cursor:pointer;">
+View Completion Certificate
+</button>
+
+---
+
+---
+
 ## 📜 Full Program Certificate
 
-<button onclick="window.open('/files/Aspire.pdf', '_blank')" 
+<button onclick="window.open('https://engage.aspireleaders.org/share/certificate/did:rcw:a0ee4b7c-8d9c-4604-b200-0a2aef624adf', '_blank')" 
         style="padding:10px 20px; background:#007acc; color:white; border:none; border-radius:5px; cursor:pointer;">
 View Completion Certificate
 </button>

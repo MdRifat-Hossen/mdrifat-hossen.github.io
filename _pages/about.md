@@ -71,32 +71,16 @@ He has also participated in intra-university competitive programming contests, w
 His dedication to academics and extracurricular activities demonstrates a strong commitment to research excellence, leadership, and creating impactful AI solutions for real-world issues.
 </div>
 
-<div style="width:100%; max-width:800px; margin:40px auto; text-align:center;">
+<div style="text-align:center; margin:30px auto;">
 
-  <h4 style="font-size:18px; margin-bottom:20px; color:#555;">
-    🌍 Visitors Around the World
+  <h4 style="font-size:18px; color:#555; margin-bottom:15px;">
+    🌍 Global Visitors
   </h4>
 
-  <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
- <!-- Flat Map -->
-    <div style="width:300px; height:300px; display:flex; align-items:center; justify-content:center;">
-      <script type="text/javascript" id="clustrmaps"
-        src="//clustrmaps.com/map_v2.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8&cl=ffffff&w=a">
-      </script>
-    </div>
-    <!-- Globe -->
-    <div style="width:200px; height:200px;">
-      <script type="text/javascript" id="clstr_globe"
-        src="//clustrmaps.com/globe.js?d=2FTssLbuHmWK987YtAq-0y-aDpRObc-olCWu3A6mUo8">
-      </script>
-    </div>
-
-  </div>
-
-  <!-- Visitor Counter
-  <div style="margin-top:20px;">
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=mdrifat-hossen.github.io&left_text=Visitors"
-         style="max-width:140px; width:100%;" />
-  </div> -->
+  <a href="https://info.flagcounter.com/g2gH">
+    <img src="https://s05.flagcounter.com/count2/g2gH/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+         alt="Flag Counter"
+         style="max-width:300px; width:100%; height:auto;">
+  </a>
 
 </div>
