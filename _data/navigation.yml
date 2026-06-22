@@ -18,7 +18,7 @@ main:
     url: /talks/
 
   - title: "Gallery"
-    url: _pages\gallery.html
+    url: /gallery/
   # - title: "Teaching"
   #   url: /teaching/
 

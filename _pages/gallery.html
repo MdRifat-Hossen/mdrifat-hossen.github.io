@@ -1,3 +1,13 @@
+---
+title: "Gallery"
+layout: splash
+permalink: /gallery/
+author_profile: false
+classes: wide
+---
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -641,17 +651,17 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
 
-      <!-- Logo -->
+      <!-- Logo 
       <a href="https://mdrifat-hossen.github.io/" class="logo" aria-label="Photo Gallery Home">
         <div class="logo-icon">
-          <!-- Aperture / lens icon -->
+          <! Aperture / lens icon 
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:#0f0f0f">
             <circle cx="12" cy="12" r="10"/>
             <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/>
           </svg>
         </div>
         <span class="logo-text">Ho<span>me</span></span>
-      </a>
+      </a> -->
 
       <!-- Live Search -->
       <div class="search-wrapper" role="search">
@@ -690,34 +700,6 @@
     <div id="gallery" role="list" aria-label="Photo gallery"></div>
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
- <footer role="contentinfo" style="background:#111827;color:#ffffff;padding:25px 15px;text-align:center;margin-top:50px;font-family:Arial,sans-serif;border-top:3px solid #2563eb;">
-
-    <div style="margin-bottom:12px;">
-
-        <a href="https://mdrifat-hossen.github.io/" style="color:#60a5fa;text-decoration:none;font-weight:600;margin:0 12px;">
-            🏠 Home
-        </a>
-
-        |
-
-        <a href="https://mdrifat-hossen.github.io/publications/" style="color:#60a5fa;text-decoration:none;font-weight:600;margin:0 12px;">
-            📚 Publications
-        </a>
-
-    </div>
-
-    <p style="margin:8px 0;font-size:15px;">
-        © 2026 <strong>Md. Rifat Hossen</strong>. All Rights Reserved.
-    </p>
-
-   <!-- <p style="margin:0;font-size:13px;color:#9ca3af;">
-        Designed & Developed by <strong>Md. Rifat Hossen</strong>
-    </p> ->
-
-</footer>
 
   <!-- ============================================================
        LIGHTBOX
@@ -1157,7 +1139,7 @@
       counterEl.textContent = 'Loading…';
 
       try {
-        const response = await fetch('gallery.json');
+        const response = await fetch('/assets/js/gallery.json');
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: Could not load gallery.json`);
