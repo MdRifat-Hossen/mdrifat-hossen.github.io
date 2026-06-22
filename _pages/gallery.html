@@ -1,872 +1,1092 @@
----
-title: "Gallery"
-layout: splash
-permalink: /gallery/
-author_profile: false
-classes: wide
----
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Rifat Hossen-Certificate</title>
 
-  <!-- Google Fonts: Playfair Display (display) + Inter (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Playfair Display (display) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* ============================================================
+    <style>
+      /* ============================================================
        DESIGN TOKENS
        Palette: deep charcoal bg, warm off-white text, amber accent
        ============================================================ */
-    :root {
-      --bg:          #0f0f0f;
-      --surface:     #181818;
-      --surface-2:   #232323;
-      --border:      #2e2e2e;
-      --text:        #f0ece4;
-      --text-muted:  #8a8580;
-      --accent:      #e8a44a;
-      --accent-dim:  #b87e30;
-      --white:       #ffffff;
+      :root {
+        --bg: #0f0f0f;
+        --surface: #181818;
+        --surface-2: #232323;
+        --border: #2e2e2e;
+        --text: #f0ece4;
+        --text-muted: #8a8580;
+        --accent: #e8a44a;
+        --accent-dim: #b87e30;
+        --white: #ffffff;
 
-      --radius-card: 14px;
-      --radius-sm:   8px;
-      --shadow-card: 0 4px 24px rgba(0,0,0,0.55);
-      --shadow-hover: 0 12px 40px rgba(0,0,0,0.75);
-      --transition:  0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --radius-card: 14px;
+        --radius-sm: 8px;
+        --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.55);
+        --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.75);
+        --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
-    }
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Inter", system-ui, sans-serif;
+      }
 
-    /* ============================================================
+      /* ============================================================
        RESET & BASE
        ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.6;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 15px;
+        line-height: 1.6;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ============================================================
+      /* ============================================================
        HEADER / HERO
        ============================================================ */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(15,15,15,0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 clamp(16px, 4vw, 48px);
-    }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(15, 15, 15, 0.88);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 clamp(16px, 4vw, 48px);
+      }
 
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      height: 64px;
-    }
+      .header-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        height: 64px;
+      }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
 
-    .logo-icon {
-      width: 34px;
-      height: 34px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-    }
+      .logo-icon {
+        width: 34px;
+        height: 34px;
+        background: var(--accent);
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+      }
 
-    /* Simple camera aperture SVG inside logo */
-    .logo-icon svg { width: 18px; height: 18px; }
+      /* Simple camera aperture SVG inside logo */
+      .logo-icon svg {
+        width: 18px;
+        height: 18px;
+      }
 
-    .logo-text {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.01em;
-    }
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
 
-    .logo-text span { color: var(--accent); }
+      .logo-text span {
+        color: var(--accent);
+      }
 
-    /* Search bar */
-    .search-wrapper {
-      flex: 1;
-      max-width: 460px;
-      position: relative;
-    }
+      /* Search bar */
+      .search-wrapper {
+        flex: 1;
+        max-width: 460px;
+        position: relative;
+      }
 
-    .search-wrapper svg {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      color: var(--text-muted);
-      pointer-events: none;
-    }
+      .search-wrapper svg {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        color: var(--text-muted);
+        pointer-events: none;
+      }
 
-    #searchInput {
-      width: 100%;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 14px;
-      padding: 10px 16px 10px 40px;
-      outline: none;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
+      #searchInput {
+        width: 100%;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 14px;
+        padding: 10px 16px 10px 40px;
+        outline: none;
+        transition:
+          border-color var(--transition),
+          box-shadow var(--transition);
+      }
 
-    #searchInput::placeholder { color: var(--text-muted); }
+      #searchInput::placeholder {
+        color: var(--text-muted);
+      }
 
-    #searchInput:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(232,164,74,0.15);
-    }
+      #searchInput:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(232, 164, 74, 0.15);
+      }
 
-    /* Counter badge */
-    #counter {
-      font-size: 13px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+      /* Counter badge */
+      #counter {
+        font-size: 13px;
+        color: var(--text-muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
 
-    #counter strong { color: var(--accent); font-weight: 600; }
+      #counter strong {
+        color: var(--accent);
+        font-weight: 600;
+      }
 
-    /* ============================================================
+      /* ============================================================
        HERO BANNER
        ============================================================ */
-    .hero {
-      padding: clamp(40px, 8vw, 96px) clamp(16px, 4vw, 48px) clamp(32px, 6vw, 64px);
-      text-align: center;
-      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232,164,74,0.12), transparent 70%);
-    }
+      .hero {
+        padding: clamp(40px, 8vw, 96px) clamp(16px, 4vw, 48px)
+          clamp(32px, 6vw, 64px);
+        text-align: center;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% -10%,
+          rgba(232, 164, 74, 0.12),
+          transparent 70%
+        );
+      }
 
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
+      .hero-eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
 
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin-bottom: 16px;
+      }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
+      .hero-title em {
+        font-style: italic;
+        color: var(--accent);
+      }
 
-    .hero-sub {
-      font-size: clamp(14px, 2vw, 16px);
-      color: var(--text-muted);
-      max-width: 480px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
+      .hero-sub {
+        font-size: clamp(14px, 2vw, 16px);
+        color: var(--text-muted);
+        max-width: 480px;
+        margin: 0 auto;
+        font-weight: 300;
+      }
 
-    /* ============================================================
+      /* ============================================================
        MAIN CONTENT AREA
        ============================================================ */
-    .main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 clamp(16px, 4vw, 48px) 80px;
-    }
+      .main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(16px, 4vw, 48px) 80px;
+      }
 
-    /* ============================================================
+      /* ============================================================
        GALLERY GRID
        Desktop: 4 col | Tablet: 2 col | Mobile: 1 col
        ============================================================ */
-    #gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+      #gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
 
-    @media (max-width: 1100px) {
-      #gallery { grid-template-columns: repeat(3, 1fr); }
-    }
+      @media (max-width: 1100px) {
+        #gallery {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
 
-    @media (max-width: 768px) {
-      #gallery { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    }
+      @media (max-width: 768px) {
+        #gallery {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
 
-    @media (max-width: 480px) {
-      #gallery { grid-template-columns: 1fr; gap: 16px; }
-    }
+      @media (max-width: 480px) {
+        #gallery {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
 
-    /* ============================================================
+      /* ============================================================
        GALLERY CARD
        ============================================================ */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      /* Fade-in on load */
-      opacity: 0;
-      animation: fadeInUp 0.5s ease forwards;
-    }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        cursor: pointer;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition),
+          border-color var(--transition);
+        /* Fade-in on load */
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+      }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    /* Staggered animation delay — set via JS inline style */
-    .card:hover {
-      transform: translateY(-6px) scale(1.012);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent-dim);
-    }
+      /* Staggered animation delay — set via JS inline style */
+      .card:hover {
+        transform: translateY(-6px) scale(1.012);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--accent-dim);
+      }
 
-    /* ---- Image wrapper ---- */
-    .card-img-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1 / 1;   /* Always square */
-      overflow: hidden;
-      background: var(--surface-2);
-    }
+      /* ---- Image wrapper ---- */
+      .card-img-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Always square */
+        overflow: hidden;
+        background: var(--surface-2);
+      }
 
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform var(--transition);
-    }
+      .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform var(--transition);
+      }
 
-    .card:hover .card-img-wrap img {
-      transform: scale(1.06);
-    }
+      .card:hover .card-img-wrap img {
+        transform: scale(1.06);
+      }
 
-    /* Overlay that appears on hover */
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
-      opacity: 0;
-      transition: opacity var(--transition);
-      display: flex;
-      align-items: flex-end;
-      padding: 16px;
-    }
+      /* Overlay that appears on hover */
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.72) 0%,
+          transparent 55%
+        );
+        opacity: 0;
+        transition: opacity var(--transition);
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+      }
 
-    .card:hover .card-overlay { opacity: 1; }
+      .card:hover .card-overlay {
+        opacity: 1;
+      }
 
-    .card-overlay-hint {
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.85);
-      letter-spacing: 0.06em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+      .card-overlay-hint {
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.85);
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-    .card-overlay-hint svg { width: 14px; height: 14px; }
+      .card-overlay-hint svg {
+        width: 14px;
+        height: 14px;
+      }
 
-    /* Date badge in top-right corner */
-    .card-date-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(15,15,15,0.75);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px;
-      padding: 4px 9px;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text);
-      white-space: nowrap;
-    }
+      /* Date badge in top-right corner */
+      .card-date-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(15, 15, 15, 0.75);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        padding: 4px 9px;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--text);
+        white-space: nowrap;
+      }
 
-    /* ---- Card Body ---- */
-    .card-body {
-      padding: 16px 18px 18px;
-    }
+      /* ---- Card Body ---- */
+      .card-body {
+        padding: 16px 18px 18px;
+      }
 
-    .card-event {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
+      .card-event {
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
 
-    .card-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.3;
-      margin-bottom: 12px;
-      /* Clamp to 2 lines */
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
+      .card-title {
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--white);
+        line-height: 1.3;
+        margin-bottom: 12px;
+        /* Clamp to 2 lines */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
-    .card-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
+      .card-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
 
-    .card-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12.5px;
-      color: var(--text-muted);
-    }
+      .card-meta-row {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12.5px;
+        color: var(--text-muted);
+      }
 
-    .card-meta-row svg {
-      flex-shrink: 0;
-      width: 13px;
-      height: 13px;
-      color: var(--text-muted);
-    }
+      .card-meta-row svg {
+        flex-shrink: 0;
+        width: 13px;
+        height: 13px;
+        color: var(--text-muted);
+      }
 
-    .card-meta-row span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+      .card-meta-row span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
 
-    /* ============================================================
+      /* ============================================================
        EMPTY / ERROR STATES
        ============================================================ */
-    .state-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 20px;
-      color: var(--text-muted);
-    }
+      .state-empty {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 80px 20px;
+        color: var(--text-muted);
+      }
 
-    .state-empty svg {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 16px;
-      display: block;
-      opacity: 0.35;
-    }
+      .state-empty svg {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        display: block;
+        opacity: 0.35;
+      }
 
-    .state-empty h3 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
+      .state-empty h3 {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
 
-    .state-empty p { font-size: 14px; }
+      .state-empty p {
+        font-size: 14px;
+      }
 
-    /* Loading skeleton */
-    .skeleton {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-    }
+      /* Loading skeleton */
+      .skeleton {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-card);
+        overflow: hidden;
+      }
 
-    .skeleton-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: linear-gradient(90deg, var(--surface-2) 25%, #2a2a2a 50%, var(--surface-2) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
+      .skeleton-img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(
+          90deg,
+          var(--surface-2) 25%,
+          #2a2a2a 50%,
+          var(--surface-2) 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+      }
 
-    .skeleton-body { padding: 16px 18px 18px; }
+      .skeleton-body {
+        padding: 16px 18px 18px;
+      }
 
-    .skeleton-line {
-      height: 12px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, var(--surface-2) 25%, #2a2a2a 50%, var(--surface-2) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
+      .skeleton-line {
+        height: 12px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        background: linear-gradient(
+          90deg,
+          var(--surface-2) 25%,
+          #2a2a2a 50%,
+          var(--surface-2) 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+      }
 
-    .skeleton-line:nth-child(1) { width: 50%; height: 10px; }
-    .skeleton-line:nth-child(2) { width: 80%; height: 16px; margin-bottom: 14px; }
-    .skeleton-line:nth-child(3) { width: 65%; }
-    .skeleton-line:nth-child(4) { width: 55%; }
+      .skeleton-line:nth-child(1) {
+        width: 50%;
+        height: 10px;
+      }
+      .skeleton-line:nth-child(2) {
+        width: 80%;
+        height: 16px;
+        margin-bottom: 14px;
+      }
+      .skeleton-line:nth-child(3) {
+        width: 65%;
+      }
+      .skeleton-line:nth-child(4) {
+        width: 55%;
+      }
 
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
 
-    /* ============================================================
+      /* ============================================================
        LIGHTBOX
        ============================================================ */
-    #lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,0.94);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.28s ease, visibility 0.28s ease;
-    }
+      #lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.94);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.28s ease,
+          visibility 0.28s ease;
+      }
 
-    #lightbox.open {
-      opacity: 1;
-      visibility: visible;
-    }
+      #lightbox.open {
+        opacity: 1;
+        visibility: visible;
+      }
 
-    .lb-inner {
-      position: relative;
-      max-width: min(90vw, 860px);
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
+      .lb-inner {
+        position: relative;
+        max-width: min(90vw, 860px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
 
-    /* Top bar: close button */
-    .lb-topbar {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding-bottom: 12px;
-    }
+      /* Top bar: close button */
+      .lb-topbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding-bottom: 12px;
+      }
 
-    .lb-btn {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      color: var(--text);
-      transition: background var(--transition), transform var(--transition);
-    }
+      .lb-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: var(--text);
+        transition:
+          background var(--transition),
+          transform var(--transition);
+      }
 
-    .lb-btn:hover {
-      background: rgba(255,255,255,0.16);
-      transform: scale(1.08);
-    }
+      .lb-btn:hover {
+        background: rgba(255, 255, 255, 0.16);
+        transform: scale(1.08);
+      }
 
-    .lb-btn svg { width: 18px; height: 18px; }
+      .lb-btn svg {
+        width: 18px;
+        height: 18px;
+      }
 
-    /* Image container */
-    .lb-img-container {
-      position: relative;
-      width: 100%;
-      background: var(--surface);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
+      /* Image container */
+      .lb-img-container {
+        position: relative;
+        width: 100%;
+        background: var(--surface);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
 
-    #lbImage {
-      width: 100%;
-      max-height: 78vh;
-      object-fit: contain;
-      display: block;
-      transition: opacity 0.22s ease;
-    }
+      #lbImage {
+        width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        display: block;
+        transition: opacity 0.22s ease;
+      }
 
-    #lbImage.loading { opacity: 0.3; }
+      #lbImage.loading {
+        opacity: 0.3;
+      }
 
-    /* Prev / Next arrows */
-    .lb-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(15,15,15,0.7);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 50%;
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      color: var(--white);
-      transition: background var(--transition), transform var(--transition);
-      z-index: 10;
-    }
+      /* Prev / Next arrows */
+      .lb-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(15, 15, 15, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: var(--white);
+        transition:
+          background var(--transition),
+          transform var(--transition);
+        z-index: 10;
+      }
 
-    .lb-arrow:hover { background: rgba(232,164,74,0.85); transform: translateY(-50%) scale(1.06); }
-    .lb-arrow svg { width: 20px; height: 20px; }
-    .lb-prev { left: -24px; }
-    .lb-next { right: -24px; }
+      .lb-arrow:hover {
+        background: rgba(232, 164, 74, 0.85);
+        transform: translateY(-50%) scale(1.06);
+      }
+      .lb-arrow svg {
+        width: 20px;
+        height: 20px;
+      }
+      .lb-prev {
+        left: -24px;
+      }
+      .lb-next {
+        right: -24px;
+      }
 
-    @media (max-width: 600px) {
-      .lb-prev { left: 8px; }
-      .lb-next { right: 8px; }
-    }
+      @media (max-width: 600px) {
+        .lb-prev {
+          left: 8px;
+        }
+        .lb-next {
+          right: 8px;
+        }
+      }
 
-    /* Caption */
-    .lb-caption {
-      width: 100%;
-      padding: 16px 4px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-    }
+      /* Caption */
+      .lb-caption {
+        width: 100%;
+        padding: 16px 4px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
 
-    .lb-caption-left {}
+      .lb-caption-left {
+      }
 
-    .lb-caption-event {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
+      .lb-caption-event {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
 
-    .lb-caption-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--white);
-      font-weight: 600;
-    }
+      .lb-caption-title {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--white);
+        font-weight: 600;
+      }
 
-    .lb-caption-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 14px;
-      margin-top: 8px;
-    }
+      .lb-caption-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        margin-top: 8px;
+      }
 
-    .lb-meta-chip {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+      .lb-meta-chip {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        color: var(--text-muted);
+      }
 
-    .lb-meta-chip svg { width: 12px; height: 12px; }
+      .lb-meta-chip svg {
+        width: 12px;
+        height: 12px;
+      }
 
-    .lb-counter {
-      font-size: 13px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      padding-top: 2px;
-    }
+      .lb-counter {
+        font-size: 13px;
+        color: var(--text-muted);
+        white-space: nowrap;
+        padding-top: 2px;
+      }
 
-    .lb-counter strong { color: var(--accent); }
+      .lb-counter strong {
+        color: var(--accent);
+      }
 
-    /* ============================================================
+      /* ============================================================
        FOOTER
        ============================================================ */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 28px clamp(16px, 4vw, 48px);
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+      .site-footer {
+        border-top: 1px solid var(--border);
+        padding: 28px clamp(16px, 4vw, 48px);
+        text-align: center;
+        font-size: 13px;
+        color: var(--text-muted);
+      }
 
-    /* ============================================================
+      /* ============================================================
        REDUCED MOTION
        ============================================================ */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
       }
-    }
 
-    /* ============================================================
+      /* ============================================================
        SCROLLBAR STYLING
        ============================================================ */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-  </style>
-</head>
-<body>
-
-  <!-- ============================================================
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================
        STICKY HEADER
        ============================================================ -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a
+          href="https://mdrifat-hossen.github.io/"
+          class="logo"
+          aria-label="Photo Gallery Home"
+        >
+          <div class="logo-icon">
+            <!-- Aperture / lens icon -->
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: #0f0f0f"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">Ho<span>me</span></span>
+        </a>
 
-      <!-- Logo 
-      <a href="https://mdrifat-hossen.github.io/" class="logo" aria-label="Photo Gallery Home">
-        <div class="logo-icon">
-          <! Aperture / lens icon 
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:#0f0f0f">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/>
+        <!-- Live Search -->
+        <div class="search-wrapper" role="search">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
           </svg>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by title, event, organization…"
+            aria-label="Search photos"
+            autocomplete="off"
+          />
         </div>
-        <span class="logo-text">Ho<span>me</span></span>
-      </a> -->
 
-      <!-- Live Search -->
-      <div class="search-wrapper" role="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input
-          type="search"
-          id="searchInput"
-          placeholder="Search by title, event, organization…"
-          aria-label="Search photos"
-          autocomplete="off"
-        />
+        <!-- Count -->
+        <p id="counter" aria-live="polite"></p>
       </div>
+    </header>
 
-      <!-- Count -->
-      <p id="counter" aria-live="polite"></p>
-
-    </div>
-  </header>
-
-  <!-- ============================================================
+    <!-- ============================================================
        HERO SECTION
        ============================================================ -->
-  <section class="hero" aria-label="Gallery introduction">
-    <span class="hero-eyebrow">Visual Archive</span>
-    <h1 class="hero-title">Moments Worth <em>Remembering</em></h1>
-    <p class="hero-sub">A curated collection of events, programs, and memories — captured in time.</p>
-  </section>
+    <section class="hero" aria-label="Gallery introduction">
+      <span class="hero-eyebrow">Visual Archive</span>
+      <h1 class="hero-title">Moments Worth <em>Remembering</em></h1>
+      <p class="hero-sub">
+        A curated collection of events, programs, and memories — captured in
+        time.
+      </p>
+    </section>
 
-  <!-- ============================================================
+    <!-- ============================================================
        GALLERY GRID
        All cards are generated dynamically from gallery.json
        ============================================================ -->
-  <main class="main" role="main">
-    <div id="gallery" role="list" aria-label="Photo gallery"></div>
-  </main>
+    <main class="main" role="main">
+      <div id="gallery" role="list" aria-label="Photo gallery"></div>
+    </main>
 
+    <footer
+      role="contentinfo"
+      style="
+        background: #111827;
+        color: #ffffff;
+        padding: 25px 15px;
+        text-align: center;
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+        border-top: 3px solid #2563eb;
+      "
+    >
+      <div style="margin-bottom: 12px">
+        <a
+          href="index.html"
+          style="
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+          "
+        >
+          🏠 Home
+        </a>
 
-  <!-- ============================================================
+        |
+
+        <a
+          href="publications.html"
+          style="
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 12px;
+          "
+        >
+          📚 Publications
+        </a>
+      </div>
+
+      <p style="margin: 8px 0; font-size: 15px">
+        © 2026 <strong>Md. Rifat Hossen</strong>. All Rights Reserved.
+      </p>
+
+      
+    </footer>
+    <!-- ============================================================
        LIGHTBOX
        ============================================================ -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox" tabindex="-1">
-    <div class="lb-inner">
-
-      <!-- Top actions -->
-      <div class="lb-topbar">
-        <a
-          class="lb-btn"
-          id="lbDownload"
-          aria-label="Download photo"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v12"/>
-            <path d="m7 10 5 5 5-5"/>
-            <path d="M5 18h14"/>
-          </svg>
-        </a>
-        <button class="lb-btn" id="lbClose" aria-label="Close lightbox">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 6 6 18M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Image + arrows -->
-      <div class="lb-img-container">
-        <img id="lbImage" src="" alt="" />
-
-        <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m15 18-6-6 6-6"/>
-          </svg>
-        </button>
-
-        <button class="lb-arrow lb-next" id="lbNext" aria-label="Next photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Caption -->
-      <div class="lb-caption">
-        <div class="lb-caption-left">
-          <p class="lb-caption-event" id="lbEvent"></p>
-          <h2 class="lb-caption-title" id="lbTitle"></h2>
-          <div class="lb-caption-meta" id="lbMeta"></div>
+    <div
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Photo lightbox"
+      tabindex="-1"
+    >
+      <div class="lb-inner">
+        <!-- Top actions -->
+        <div class="lb-topbar">
+          <a
+            class="lb-btn"
+            id="lbDownload"
+            aria-label="Download photo"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 18h14" />
+            </svg>
+          </a>
+          <button class="lb-btn" id="lbClose" aria-label="Close lightbox">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-        <p class="lb-counter" id="lbCounter"></p>
+
+        <!-- Image + arrows -->
+        <div class="lb-img-container">
+          <img id="lbImage" src="" alt="" />
+
+          <button
+            class="lb-arrow lb-prev"
+            id="lbPrev"
+            aria-label="Previous photo"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+
+          <button class="lb-arrow lb-next" id="lbNext" aria-label="Next photo">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Caption -->
+        <div class="lb-caption">
+          <div class="lb-caption-left">
+            <p class="lb-caption-event" id="lbEvent"></p>
+            <h2 class="lb-caption-title" id="lbTitle"></h2>
+            <div class="lb-caption-meta" id="lbMeta"></div>
+          </div>
+          <p class="lb-counter" id="lbCounter"></p>
+        </div>
       </div>
-
     </div>
-  </div>
 
-
-  <!-- ============================================================
+    <!-- ============================================================
        JAVASCRIPT
        ============================================================ -->
-  <script>
-    /*
-     * ============================================================
-     * GALLERY — Main Controller
-     * Loads data from gallery.json and renders all cards
-     * dynamically. No HTML cards are hardcoded.
-     * ============================================================
-     */
+    <script>
+      /*
+       * ============================================================
+       * GALLERY — Main Controller
+       * Loads data from gallery.json and renders all cards
+       * dynamically. No HTML cards are hardcoded.
+       * ============================================================
+       */
 
-    // ---- State ----
-    let allPhotos  = [];   // Full dataset from gallery.json
-    let filtered   = [];   // Currently visible subset (after search)
-    let lbIndex    = 0;    // Active lightbox index within `filtered`
+      // ---- State ----
+      let allPhotos = []; // Full dataset from gallery.json
+      let filtered = []; // Currently visible subset (after search)
+      let lbIndex = 0; // Active lightbox index within `filtered`
 
-    // ---- DOM Refs ----
-    const galleryEl    = document.getElementById('gallery');
-    const searchInput  = document.getElementById('searchInput');
-    const counterEl    = document.getElementById('counter');
-    const lightbox     = document.getElementById('lightbox');
-    const lbImage      = document.getElementById('lbImage');
-    const lbDownload   = document.getElementById('lbDownload');
-    const lbClose      = document.getElementById('lbClose');
-    const lbPrev       = document.getElementById('lbPrev');
-    const lbNext       = document.getElementById('lbNext');
-    const lbTitle      = document.getElementById('lbTitle');
-    const lbEvent      = document.getElementById('lbEvent');
-    const lbMeta       = document.getElementById('lbMeta');
-    const lbCounter    = document.getElementById('lbCounter');
+      // ---- DOM Refs ----
+      const galleryEl = document.getElementById("gallery");
+      const searchInput = document.getElementById("searchInput");
+      const counterEl = document.getElementById("counter");
+      const lightbox = document.getElementById("lightbox");
+      const lbImage = document.getElementById("lbImage");
+      const lbDownload = document.getElementById("lbDownload");
+      const lbClose = document.getElementById("lbClose");
+      const lbPrev = document.getElementById("lbPrev");
+      const lbNext = document.getElementById("lbNext");
+      const lbTitle = document.getElementById("lbTitle");
+      const lbEvent = document.getElementById("lbEvent");
+      const lbMeta = document.getElementById("lbMeta");
+      const lbCounter = document.getElementById("lbCounter");
 
-    /* ----------------------------------------------------------
-     * extractDriveId()
-     * Parses a Google Drive sharing URL and returns the File ID.
-     * Input:  "https://drive.google.com/file/d/FILE_ID/view?..."
-     * Output: "FILE_ID"
-     * ---------------------------------------------------------- */
-    function extractDriveId(url) {
-      // Matches /file/d/{ID}/ or /open?id={ID} or direct id param
-      const patterns = [
-        /\/file\/d\/([a-zA-Z0-9_-]+)/,   // Standard sharing link
-        /[?&]id=([a-zA-Z0-9_-]+)/         // Open link format
-      ];
-      for (const pattern of patterns) {
-        const match = url.match(pattern);
-        if (match) return match[1];
+      /* ----------------------------------------------------------
+       * extractDriveId()
+       * Parses a Google Drive sharing URL and returns the File ID.
+       * Input:  "https://drive.google.com/file/d/FILE_ID/view?..."
+       * Output: "FILE_ID"
+       * ---------------------------------------------------------- */
+      function extractDriveId(url) {
+        // Matches /file/d/{ID}/ or /open?id={ID} or direct id param
+        const patterns = [
+          /\/file\/d\/([a-zA-Z0-9_-]+)/, // Standard sharing link
+          /[?&]id=([a-zA-Z0-9_-]+)/, // Open link format
+        ];
+        for (const pattern of patterns) {
+          const match = url.match(pattern);
+          if (match) return match[1];
+        }
+        return null;
       }
-      return null;
-    }
 
-    /* ----------------------------------------------------------
-     * buildThumbnailUrl()
-     * Converts a Drive sharing URL to a displayable thumbnail.
-     * ---------------------------------------------------------- */
-    function buildThumbnailUrl(driveUrl) {
-      const id = extractDriveId(driveUrl);
-      if (!id) return ''; // Fallback: empty (shows broken img)
-      return `https://drive.google.com/thumbnail?id=${id}&sz=w600-h600`;
-    }
+      /* ----------------------------------------------------------
+       * buildThumbnailUrl()
+       * Converts a Drive sharing URL to a displayable thumbnail.
+       * ---------------------------------------------------------- */
+      function buildThumbnailUrl(driveUrl) {
+        const id = extractDriveId(driveUrl);
+        if (!id) return ""; // Fallback: empty (shows broken img)
+        return `https://drive.google.com/thumbnail?id=${id}&sz=w600-h600`;
+      }
 
-    /* ----------------------------------------------------------
-     * buildFullUrl()
-     * Returns the full/original image URL for the lightbox.
-     * Using uc?export=view for a direct (larger) version.
-     * ---------------------------------------------------------- */
-    function buildFullUrl(driveUrl) {
-      const id = extractDriveId(driveUrl);
-      if (!id) return '';
-      return `https://drive.google.com/uc?export=view&id=${id}`;
-    }
+      /* ----------------------------------------------------------
+       * buildFullUrl()
+       * Returns the full/original image URL for the lightbox.
+       * Using uc?export=view for a direct (larger) version.
+       * ---------------------------------------------------------- */
+      function buildFullUrl(driveUrl) {
+        const id = extractDriveId(driveUrl);
+        if (!id) return "";
+        return `https://drive.google.com/uc?export=view&id=${id}`;
+      }
 
-    /* ----------------------------------------------------------
-     * buildDownloadUrl()
-     * Returns a direct Google Drive download URL.
-     * ---------------------------------------------------------- */
-    function buildDownloadUrl(driveUrl) {
-      const id = extractDriveId(driveUrl);
-      if (!id) return '';
-      return `https://drive.google.com/uc?export=download&id=${id}`;
-    }
+      /* ----------------------------------------------------------
+       * buildDownloadUrl()
+       * Returns a direct Google Drive download URL.
+       * ---------------------------------------------------------- */
+      function buildDownloadUrl(driveUrl) {
+        const id = extractDriveId(driveUrl);
+        if (!id) return "";
+        return `https://drive.google.com/uc?export=download&id=${id}`;
+      }
 
-    /* ----------------------------------------------------------
-     * getPhotoSource()
-     * Uses the main drive link, but also accepts alternate keys.
-     * ---------------------------------------------------------- */
-    function getPhotoSource(photo) {
-      return photo?.drive || photo?.download || photo?.Dawnload || '';
-    }
+      /* ----------------------------------------------------------
+       * getPhotoSource()
+       * Uses the main drive link, but also accepts alternate keys.
+       * ---------------------------------------------------------- */
+      function getPhotoSource(photo) {
+        return photo?.drive || photo?.download || photo?.Dawnload || "";
+      }
 
-    /* ----------------------------------------------------------
-     * escapeHtml()
-     * Prevents XSS when injecting user data into innerHTML.
-     * ---------------------------------------------------------- */
-    function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.appendChild(document.createTextNode(str || ''));
-      return div.innerHTML;
-    }
+      /* ----------------------------------------------------------
+       * escapeHtml()
+       * Prevents XSS when injecting user data into innerHTML.
+       * ---------------------------------------------------------- */
+      function escapeHtml(str) {
+        const div = document.createElement("div");
+        div.appendChild(document.createTextNode(str || ""));
+        return div.innerHTML;
+      }
 
-    /* ----------------------------------------------------------
-     * renderSkeletons()
-     * Shows loading placeholders while JSON is being fetched.
-     * ---------------------------------------------------------- */
-    function renderSkeletons(count = 8) {
-      galleryEl.innerHTML = Array.from({ length: count }, () => `
+      /* ----------------------------------------------------------
+       * renderSkeletons()
+       * Shows loading placeholders while JSON is being fetched.
+       * ---------------------------------------------------------- */
+      function renderSkeletons(count = 8) {
+        galleryEl.innerHTML = Array.from(
+          { length: count },
+          () => `
         <div class="skeleton" role="presentation" aria-hidden="true">
           <div class="skeleton-img"></div>
           <div class="skeleton-body">
@@ -876,20 +1096,21 @@ classes: wide
             <div class="skeleton-line"></div>
           </div>
         </div>
-      `).join('');
-    }
+      `,
+        ).join("");
+      }
 
-    /* ----------------------------------------------------------
-     * renderCards()
-     * Builds and injects gallery cards from the `filtered` array.
-     * Each card is fully generated — nothing is hardcoded in HTML.
-     * ---------------------------------------------------------- */
-    function renderCards() {
-      // Update accessible counter
-      counterEl.innerHTML = `<strong>${filtered.length}</strong> photo${filtered.length !== 1 ? 's' : ''}`;
+      /* ----------------------------------------------------------
+       * renderCards()
+       * Builds and injects gallery cards from the `filtered` array.
+       * Each card is fully generated — nothing is hardcoded in HTML.
+       * ---------------------------------------------------------- */
+      function renderCards() {
+        // Update accessible counter
+        counterEl.innerHTML = `<strong>${filtered.length}</strong> photo${filtered.length !== 1 ? "s" : ""}`;
 
-      if (filtered.length === 0) {
-        galleryEl.innerHTML = `
+        if (filtered.length === 0) {
+          galleryEl.innerHTML = `
           <div class="state-empty" role="status">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/>
@@ -899,23 +1120,24 @@ classes: wide
             <p>Try different keywords or clear your search.</p>
           </div>
         `;
-        return;
-      }
+          return;
+        }
 
-      // Build each card as an HTML string for performance
-      const html = filtered.map((photo, index) => {
-        const photoSource = getPhotoSource(photo);
-        const thumb = buildThumbnailUrl(photoSource);
-        const safeTitle = escapeHtml(photo.title);
-        const safeEvent = escapeHtml(photo.event);
-        const safeOrg   = escapeHtml(photo.organization);
-        const safeLoc   = escapeHtml(photo.location);
-        const safeDate  = escapeHtml(photo.date);
+        // Build each card as an HTML string for performance
+        const html = filtered
+          .map((photo, index) => {
+            const photoSource = getPhotoSource(photo);
+            const thumb = buildThumbnailUrl(photoSource);
+            const safeTitle = escapeHtml(photo.title);
+            const safeEvent = escapeHtml(photo.event);
+            const safeOrg = escapeHtml(photo.organization);
+            const safeLoc = escapeHtml(photo.location);
+            const safeDate = escapeHtml(photo.date);
 
-        // Stagger animation: 60ms delay per card, max ~600ms
-        const delay = Math.min(index * 60, 600);
+            // Stagger animation: 60ms delay per card, max ~600ms
+            const delay = Math.min(index * 60, 600);
 
-        return `
+            return `
           <article
             class="card"
             role="listitem"
@@ -968,196 +1190,209 @@ classes: wide
             </div>
           </article>
         `;
-      }).join('');
+          })
+          .join("");
 
-      galleryEl.innerHTML = html;
+        galleryEl.innerHTML = html;
 
-      // Attach click + keyboard events to each card
-      galleryEl.querySelectorAll('.card').forEach(card => {
-        const idx = parseInt(card.dataset.index, 10);
+        // Attach click + keyboard events to each card
+        galleryEl.querySelectorAll(".card").forEach((card) => {
+          const idx = parseInt(card.dataset.index, 10);
 
-        card.addEventListener('click', () => openLightbox(idx));
+          card.addEventListener("click", () => openLightbox(idx));
 
-        // Keyboard: Enter or Space opens lightbox
-        card.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(idx);
-          }
+          // Keyboard: Enter or Space opens lightbox
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openLightbox(idx);
+            }
+          });
         });
-      });
-    }
-
-    /* ----------------------------------------------------------
-     * filterPhotos()
-     * Filters allPhotos by the current search query and re-renders.
-     * Searches: title, event, organization, location
-     * ---------------------------------------------------------- */
-    function filterPhotos(query) {
-      const q = query.trim().toLowerCase();
-      if (!q) {
-        filtered = [...allPhotos];
-      } else {
-        filtered = allPhotos.filter(p =>
-          [p.title, p.event, p.organization, p.location]
-            .some(field => (field || '').toLowerCase().includes(q))
-        );
-      }
-      renderCards();
-    }
-
-    /* ----------------------------------------------------------
-     * LIGHTBOX — open / close / navigate
-     * ---------------------------------------------------------- */
-
-    function openLightbox(index) {
-      lbIndex = index;
-      updateLightbox();
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
-      lightbox.focus();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-      lbImage.src = '';
-    }
-
-    function navigateLightbox(direction) {
-      lbIndex = (lbIndex + direction + filtered.length) % filtered.length;
-      updateLightbox();
-    }
-
-    function updateLightbox() {
-      const photo = filtered[lbIndex];
-      if (!photo) return;
-
-      // Show loading state
-      lbImage.classList.add('loading');
-
-      const photoSource = getPhotoSource(photo);
-      const fullUrl = buildFullUrl(photoSource);
-      const downloadUrl = buildDownloadUrl(photoSource);
-
-      // Load high-quality version for lightbox
-      const img = new Image();
-      img.onload = () => {
-        lbImage.src = fullUrl;
-        lbImage.alt = photo.title || '';
-        lbImage.classList.remove('loading');
-      };
-      img.onerror = () => {
-        // Fallback to thumbnail on error
-        lbImage.src = buildThumbnailUrl(photoSource);
-        lbImage.alt = photo.title || '';
-        lbImage.classList.remove('loading');
-      };
-      img.src = fullUrl;
-
-      // Download button behavior
-      if (downloadUrl) {
-        lbDownload.href = downloadUrl;
-        lbDownload.style.display = '';
-      } else {
-        lbDownload.removeAttribute('href');
-        lbDownload.style.display = 'none';
       }
 
-      // Update caption
-      lbEvent.textContent   = photo.event        || '';
-      lbTitle.textContent   = photo.title        || '';
-      lbCounter.innerHTML   = `<strong>${lbIndex + 1}</strong> / ${filtered.length}`;
+      /* ----------------------------------------------------------
+       * filterPhotos()
+       * Filters allPhotos by the current search query and re-renders.
+       * Searches: title, event, organization, location
+       * ---------------------------------------------------------- */
+      function filterPhotos(query) {
+        const q = query.trim().toLowerCase();
+        if (!q) {
+          filtered = [...allPhotos];
+        } else {
+          filtered = allPhotos.filter((p) =>
+            [p.title, p.event, p.organization, p.location].some((field) =>
+              (field || "").toLowerCase().includes(q),
+            ),
+          );
+        }
+        renderCards();
+      }
 
-      // Build meta chips
-      const metaItems = [
-        { icon: buildingIcon(), text: photo.organization },
-        { icon: locationIcon(),  text: photo.location    },
-        { icon: calendarIcon(),  text: photo.date        }
-      ].filter(m => m.text);
+      /* ----------------------------------------------------------
+       * LIGHTBOX — open / close / navigate
+       * ---------------------------------------------------------- */
 
-      lbMeta.innerHTML = metaItems.map(m => `
+      function openLightbox(index) {
+        lbIndex = index;
+        updateLightbox();
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+        lightbox.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+        lbImage.src = "";
+      }
+
+      function navigateLightbox(direction) {
+        lbIndex = (lbIndex + direction + filtered.length) % filtered.length;
+        updateLightbox();
+      }
+
+      function updateLightbox() {
+        const photo = filtered[lbIndex];
+        if (!photo) return;
+
+        // Show loading state
+        lbImage.classList.add("loading");
+
+        const photoSource = getPhotoSource(photo);
+        const fullUrl = buildFullUrl(photoSource);
+        const downloadUrl = buildDownloadUrl(photoSource);
+
+        // Load high-quality version for lightbox
+        const img = new Image();
+        img.onload = () => {
+          lbImage.src = fullUrl;
+          lbImage.alt = photo.title || "";
+          lbImage.classList.remove("loading");
+        };
+        img.onerror = () => {
+          // Fallback to thumbnail on error
+          lbImage.src = buildThumbnailUrl(photoSource);
+          lbImage.alt = photo.title || "";
+          lbImage.classList.remove("loading");
+        };
+        img.src = fullUrl;
+
+        // Download button behavior
+        if (downloadUrl) {
+          lbDownload.href = downloadUrl;
+          lbDownload.style.display = "";
+        } else {
+          lbDownload.removeAttribute("href");
+          lbDownload.style.display = "none";
+        }
+
+        // Update caption
+        lbEvent.textContent = photo.event || "";
+        lbTitle.textContent = photo.title || "";
+        lbCounter.innerHTML = `<strong>${lbIndex + 1}</strong> / ${filtered.length}`;
+
+        // Build meta chips
+        const metaItems = [
+          { icon: buildingIcon(), text: photo.organization },
+          { icon: locationIcon(), text: photo.location },
+          { icon: calendarIcon(), text: photo.date },
+        ].filter((m) => m.text);
+
+        lbMeta.innerHTML = metaItems
+          .map(
+            (m) => `
         <span class="lb-meta-chip">
           ${m.icon}
           <span>${escapeHtml(m.text)}</span>
         </span>
-      `).join('');
+      `,
+          )
+          .join("");
 
-      // Hide arrows when only 1 item
-      const showArrows = filtered.length > 1;
-      lbPrev.style.display = showArrows ? '' : 'none';
-      lbNext.style.display = showArrows ? '' : 'none';
-    }
-
-    // Tiny SVG icon helpers for lightbox meta
-    function buildingIcon() {
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M9 10h6M9 14h6"/></svg>`;
-    }
-    function locationIcon() {
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
-    }
-    function calendarIcon() {
-      return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`;
-    }
-
-    /* ----------------------------------------------------------
-     * EVENT LISTENERS — Lightbox controls & keyboard
-     * ---------------------------------------------------------- */
-
-    lbClose.addEventListener('click', closeLightbox);
-    lbPrev.addEventListener('click',  () => navigateLightbox(-1));
-    lbNext.addEventListener('click',  () => navigateLightbox(+1));
-
-    // Click outside the content panel to close
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      switch (e.key) {
-        case 'ArrowLeft':  navigateLightbox(-1); break;
-        case 'ArrowRight': navigateLightbox(+1); break;
-        case 'Escape':     closeLightbox();       break;
+        // Hide arrows when only 1 item
+        const showArrows = filtered.length > 1;
+        lbPrev.style.display = showArrows ? "" : "none";
+        lbNext.style.display = showArrows ? "" : "none";
       }
-    });
 
-    /* ----------------------------------------------------------
-     * SEARCH — live filtering as user types
-     * ---------------------------------------------------------- */
-    searchInput.addEventListener('input', () => {
-      filterPhotos(searchInput.value);
-    });
+      // Tiny SVG icon helpers for lightbox meta
+      function buildingIcon() {
+        return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M9 10h6M9 14h6"/></svg>`;
+      }
+      function locationIcon() {
+        return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
+      }
+      function calendarIcon() {
+        return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`;
+      }
 
-    /* ----------------------------------------------------------
-     * INIT — fetch gallery.json and kick everything off
-     * ---------------------------------------------------------- */
-    async function init() {
-      // Show loading skeletons immediately
-      renderSkeletons(8);
-      counterEl.textContent = 'Loading…';
+      /* ----------------------------------------------------------
+       * EVENT LISTENERS — Lightbox controls & keyboard
+       * ---------------------------------------------------------- */
 
-      try {
-        const response = await fetch('{{ site.baseurl }}/assets/js/gallery.json');
+      lbClose.addEventListener("click", closeLightbox);
+      lbPrev.addEventListener("click", () => navigateLightbox(-1));
+      lbNext.addEventListener("click", () => navigateLightbox(+1));
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: Could not load gallery.json`);
+      // Click outside the content panel to close
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        switch (e.key) {
+          case "ArrowLeft":
+            navigateLightbox(-1);
+            break;
+          case "ArrowRight":
+            navigateLightbox(+1);
+            break;
+          case "Escape":
+            closeLightbox();
+            break;
         }
+      });
 
-        allPhotos = await response.json();
+      /* ----------------------------------------------------------
+       * SEARCH — live filtering as user types
+       * ---------------------------------------------------------- */
+      searchInput.addEventListener("input", () => {
+        filterPhotos(searchInput.value);
+      });
 
-        // Validate: must be an array
-        if (!Array.isArray(allPhotos)) {
-          throw new Error('gallery.json must be a JSON array.');
-        }
+      /* ----------------------------------------------------------
+       * INIT — fetch gallery.json and kick everything off
+       * ---------------------------------------------------------- */
+      async function init() {
+        // Show loading skeletons immediately
+        renderSkeletons(8);
+        counterEl.textContent = "Loading…";
 
-        filtered = [...allPhotos];
-        renderCards();
+        try {
+          const response = await fetch("/assets/js/gallery.json");
 
-      } catch (err) {
-        console.error('[Gallery] Failed to load data:', err);
-        galleryEl.innerHTML = `
+          if (!response.ok) {
+            throw new Error(
+              `HTTP ${response.status}: Could not load gallery.json`,
+            );
+          }
+
+          allPhotos = await response.json();
+
+          // Validate: must be an array
+          if (!Array.isArray(allPhotos)) {
+            throw new Error("gallery.json must be a JSON array.");
+          }
+
+          filtered = [...allPhotos];
+          renderCards();
+        } catch (err) {
+          console.error("[Gallery] Failed to load data:", err);
+          galleryEl.innerHTML = `
           <div class="state-empty" role="alert">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"/>
@@ -1168,13 +1403,12 @@ classes: wide
             <p style="margin-top:8px; font-size:12px;">Make sure <code>gallery.json</code> is in the same folder as <code>index.html</code> and served over HTTP/HTTPS.</p>
           </div>
         `;
-        counterEl.textContent = '0 photos';
+          counterEl.textContent = "0 photos";
+        }
       }
-    }
 
-    // Run on page load
-    init();
-  </script>
-
-</body>
+      // Run on page load
+      init();
+    </script>
+  </body>
 </html>
