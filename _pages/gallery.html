@@ -1139,7 +1139,7 @@ classes: wide
       counterEl.textContent = 'Loading…';
 
       try {
-        const response = await fetch('/assets/js/gallery.json');
+        const response = await fetch('{{ site.baseurl }}/assets/js/gallery.json');
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: Could not load gallery.json`);
