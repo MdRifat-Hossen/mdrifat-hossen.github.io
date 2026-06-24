@@ -822,12 +822,11 @@
        HERO SECTION
        ============================================================ -->
     <section class="hero" aria-label="Gallery introduction">
-      <span class="hero-eyebrow">Professional Credentials</span>
-      <h1 class="hero-title">Certifications That <em>Shape My Journey</em></h1>
+      <span class="hero-eyebrow">Personal Collection</span>
+      <h1 class="hero-title">Moments That <em>Define Me</em></h1>
       <p class="hero-sub">
-        A curated collection of professional certificates, academic achievements,
-    online courses, workshops, training programs, and industry-recognized
-    credentials earned throughout my learning journey.
+         A collection of personal memories, travels, friendships, celebrations,
+    and unforgettable moments captured throughout my life.
       </p>
     </section>
 
@@ -1374,11 +1373,11 @@
         counterEl.textContent = "Loading…";
 
         try {
-          const response = await fetch("/assets/js/gallery.json");
+          const response = await fetch("/assets/js/photo.json");
 
           if (!response.ok) {
             throw new Error(
-              `HTTP ${response.status}: Could not load gallery.json`,
+              `HTTP ${response.status}: Could not load photo.json`,
             );
           }
 
@@ -1386,7 +1385,7 @@
 
           // Validate: must be an array
           if (!Array.isArray(allPhotos)) {
-            throw new Error("gallery.json must be a JSON array.");
+            throw new Error("photo.json must be a JSON array.");
           }
 
           filtered = [...allPhotos];
