@@ -24,7 +24,7 @@ repository: "MdRifat-Hossen/MdRifat-Hossen.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile1.png"
+  avatar: "Pic.png"
   name: "Md. Rifat Hossen"
   pronouns: # example: "she/her"
   bio: "Undergraduate AI Researcher"
@@ -47,6 +47,7 @@ author:
   scopus: "https://www.scopus.com/authid/detail.uri?authorId=60027552000"
   zotero: # URL
   sciprofiles: "https://sciprofiles.com/profile/mdrifathossen"
+  ResearcherID: "https://researchid.co/rifat_14"
 
   # Repositories and software development
   bitbucket: # Username - Update with your username on the site

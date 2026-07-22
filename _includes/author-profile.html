@@ -77,6 +77,9 @@
       {% if author.sciprofiles %}
        <li><a href="{{ author.sciprofiles }}"><i class="fas fa-user-circle ai-fw icon-pad-right"></i>SciProfiles</a></li>
       {% endif %}
+      {% if author.ResearcherID %}
+       <li><a href="{{ author.ResearcherID }}"><i class="fas fa-id-badge ai-fw icon-pad-right"></i>ResearcherID</a></li>
+      {% endif %}
       <!-- Font Awesome icons / Repositories and software development -->
       {% if author.bitbucket %}
         <li><a href="https://bitbucket.org/{{ author.bitbucket }}"><i class="fab fa-fw fa-bitbucket icon-pad-right" aria-hidden="true"></i>Bitbucket</a></li>

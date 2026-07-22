@@ -18,16 +18,15 @@ main:
     url: /talks/
 
   - title: "Gallery"
-    url: /_pages/gallery.html
+    url: /pages/gallery.html
 
   # - title: "Teaching"
   #   url: /teaching/
 
   # - title: "Blog Posts"
   #   url: /year-archive/
+  - title: "Guide"
+    url: /pages/guid.html
 
   - title: "CV"
     url: /files/CV_Rifat.pdf
-
-  # - title: "Guide"
-  #   url: /markdown/

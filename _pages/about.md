@@ -27,8 +27,8 @@ redirect_from:
 
 ## Experience
 
-- **AI Research Assistant** <button class = "btn" onclick="window.location.href='https://web.facebook.com/schoolofresearchers';">Lab</button>
-  - School of Researchers· Part-time
+- **Research Assistant** <button class = "btn" onclick="window.location.href='';">Lab</button>
+  - NURO Research LAB· Part-time
   - Mar 2026 – Present\*
 - **Research Assistant**
   - Dept. of ICE, Pabna University of Science and Technology · Part-time

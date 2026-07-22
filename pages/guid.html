@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI/ML Research শেখার সম্পূর্ণ পথ — Zero থেকে Independent Researcher</title>
+<meta name="description" content="একদম Zero থেকে Python, Machine Learning, Deep Learning, Research এবং Scientific Publication পর্যন্ত একটি structured learning roadmap।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#FAFAF8;
+  --bg-alt:#F2F4F3;
+  --card:#FFFFFF;
+  --ink:#10231C;
+  --ink-soft:#4B5D56;
+  --ink-faint:#8B978F;
+  --border:#E1E6E3;
+  --border-strong:#CBD3CE;
+  --primary:#0B5FFF;
+  --primary-dark:#083FAD;
+  --primary-tint:#EAF0FF;
+  --teal:#0E7C6B;
+  --teal-tint:#E5F4F1;
+  --amber:#B4560A;
+  --amber-tint:#FBF0E6;
+  --red:#B3261E;
+  --red-tint:#FCEBEA;
+  --radius-s:8px;
+  --radius-m:12px;
+  --radius-l:20px;
+  --shadow-sm:0 1px 2px rgba(16,35,28,0.06), 0 1px 1px rgba(16,35,28,0.04);
+  --shadow-md:0 8px 24px rgba(16,35,28,0.08);
+  --maxw:1240px;
+  --font-display:"Newsreader", "Noto Sans Bengali", serif;
+  --font-body:"Inter", "Noto Sans Bengali", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%;}
+html,body{max-width:100%; overflow-x:hidden;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;}
+table, .table-wrap{max-width:100%;}
+h1,h2,h3,h4,p,span,li,a{overflow-wrap:break-word; word-break:break-word;}
+@media (max-width:420px){
+  html{scroll-padding-top:76px;}
+  body{font-size:15px;}
+}
+a{color:var(--primary); text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+  outline:2px solid var(--primary); outline-offset:2px; border-radius:4px;
+}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; line-height:1.25; margin:0 0 .5em; color:var(--ink);}
+p{margin:0 0 1em;}
+.container{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+@media (max-width:640px){.container{padding:0 18px;}}
+@media (max-width:420px){.container{padding:0 14px;}}
+.eyebrow{
+  font-family:var(--font-body); font-size:12.5px; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--teal);
+}
+.lead{color:var(--ink-soft); font-size:17.5px;}
+.small{font-size:13.5px; color:var(--ink-soft);}
+ul.plain{list-style:none; margin:0; padding:0;}
+.badge{
+  display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600;
+  padding:3px 10px; border-radius:100px; background:var(--primary-tint); color:var(--primary-dark);
+  white-space:nowrap;
+}
+.badge.teal{background:var(--teal-tint); color:var(--teal);}
+.badge.amber{background:var(--amber-tint); color:var(--amber);}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--font-body); font-weight:600; font-size:15px;
+  padding:12px 22px; border-radius:100px; border:1px solid transparent; cursor:pointer; text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{text-decoration:none;}
+.btn-primary{background:var(--primary); color:#fff;}
+.btn-primary:hover{background:var(--primary-dark); box-shadow:var(--shadow-md);}
+.btn-outline{background:#fff; color:var(--ink); border-color:var(--border-strong);}
+.btn-outline:hover{border-color:var(--primary); color:var(--primary);}
+
+/* ============ TOPBAR ============ */
+.topbar{
+  position:sticky; top:0; z-index:60; background:rgba(250,250,248,0.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-inner{max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; gap:20px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--ink); font-size:15.5px; flex:0 1 auto; min-width:0; overflow:hidden;}
+.brand span:not(.brand-mark){overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.brand-mark{
+  width:30px; height:30px; border-radius:8px; background:linear-gradient(155deg, var(--primary), var(--teal));
+  display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--font-display); font-weight:700; font-size:15px;
+  flex:0 0 auto;
+}
+.topnav{display:flex; gap:2px; flex:1; overflow-x:auto; scrollbar-width:none;}
+.topnav::-webkit-scrollbar{display:none;}
+.topnav a{
+  white-space:nowrap; font-size:13.5px; font-weight:600; color:var(--ink-soft); padding:8px 12px; border-radius:100px;
+}
+.topnav a:hover, .topnav a.active{background:var(--primary-tint); color:var(--primary-dark); text-decoration:none;}
+.search-wrap{position:relative; flex:0 1 auto; display:flex; align-items:center; min-width:0;}
+#siteSearch{
+  width:170px; max-width:100%; font-family:var(--font-body); font-size:13.5px; padding:8px 12px 8px 30px; border-radius:100px;
+  border:1px solid var(--border-strong); background:#fff; color:var(--ink); transition:width .18s ease;
+}
+#siteSearch:focus{width:230px; max-width:60vw; outline:none; border-color:var(--primary);}
+.search-icon{position:absolute; left:10px; color:var(--ink-faint); pointer-events:none; font-size:13px;}
+#searchResults{
+  position:absolute; top:calc(100% + 8px); right:0; width:320px; max-width:calc(100vw - 32px); max-height:360px; overflow:auto;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius-m); box-shadow:var(--shadow-md);
+  display:none; z-index:70;
+}
+#searchResults.show{display:block;}
+#searchResults a{display:block; padding:10px 14px; font-size:13.5px; color:var(--ink); border-bottom:1px solid var(--border);}
+#searchResults a:last-child{border-bottom:none;}
+#searchResults a:hover{background:var(--primary-tint); text-decoration:none;}
+#searchResults .res-cat{font-size:11px; color:var(--teal); font-weight:700; text-transform:uppercase; letter-spacing:.05em;}
+.mobile-toc-btn{display:none; background:none; border:1px solid var(--border-strong); border-radius:8px; padding:7px 10px; font-size:13px; font-weight:600; color:var(--ink); cursor:pointer; flex:0 0 auto;}
+
+@media (max-width:980px){
+  .topnav{display:none;}
+  .mobile-toc-btn{display:inline-flex; align-items:center; gap:6px;}
+  #siteSearch{width:120px;}
+  #siteSearch:focus{width:160px; max-width:55vw;}
+}
+@media (max-width:640px){
+  .topbar-inner{padding:12px 16px; gap:10px;}
+  .brand{font-size:13.5px; gap:7px;}
+  .brand-mark{width:26px; height:26px; font-size:13px; border-radius:7px;}
+  .mobile-toc-btn{padding:6px 8px; font-size:12px;}
+  #siteSearch{width:100px; padding:7px 10px 7px 26px; font-size:12.5px;}
+  #siteSearch:focus{width:140px;}
+}
+@media (max-width:380px){
+  .brand span:not(.brand-mark){display:none;}
+  #siteSearch{width:88px;}
+}
+
+/* ============ HERO ============ */
+.hero{padding:64px 0 40px; border-bottom:1px solid var(--border); background:
+  radial-gradient(1100px 420px at 85% -10%, var(--primary-tint) 0%, transparent 60%),
+  radial-gradient(900px 380px at 5% 0%, var(--teal-tint) 0%, transparent 55%);
+}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center;}
+.hero h1{font-size:clamp(30px,4vw,46px); letter-spacing:-.01em;}
+.hero .lead{max-width:52ch; margin-bottom:26px;}
+.hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;}
+.stage-pills{display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:13.5px; color:var(--ink-soft); font-weight:600;}
+.stage-pills span.pill{background:#fff; border:1px solid var(--border); padding:5px 12px; border-radius:100px;}
+.stage-pills .arrow{color:var(--ink-faint);}
+.hero-card{
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius-l); padding:26px; box-shadow:var(--shadow-md);
+}
+.hero-card h3{font-size:15px; font-family:var(--font-body); text-transform:uppercase; letter-spacing:.06em; color:var(--teal); margin-bottom:16px;}
+.mini-path{display:flex; flex-direction:column; gap:0;}
+.mini-path .node{display:flex; align-items:flex-start; gap:12px; padding:8px 0; position:relative;}
+.mini-path .node .dot{width:10px; height:10px; border-radius:50%; background:var(--primary); margin-top:6px; flex:0 0 auto; z-index:1;}
+.mini-path .node:not(:last-child)::before{
+  content:""; position:absolute; left:4px; top:20px; bottom:-8px; width:2px; background:var(--border-strong);
+}
+.mini-path .node b{display:block; font-size:14px;}
+.mini-path .node span.desc{font-size:12.5px; color:var(--ink-soft);}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+  .hero{padding:36px 0 28px;}
+  .hero-card{padding:20px;}
+  .btn{padding:11px 18px; font-size:14px;}
+  .stage-pills{font-size:12.5px;}
+}
+@media (max-width:380px){
+  .hero-ctas{flex-direction:column; align-items:stretch;}
+  .hero-ctas .btn{justify-content:center;}
+}
+
+/* ============ LAYOUT ============ */
+.layout{display:grid; grid-template-columns:260px 1fr; gap:40px; padding:40px 0 80px; max-width:var(--maxw); margin:0 auto; align-items:start;}
+.toc-sidebar{
+  position:sticky; top:88px; align-self:start; max-height:calc(100vh - 110px); overflow:auto;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius-m); padding:18px 16px;
+}
+.toc-sidebar h4{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin-bottom:10px;}
+.toc-sidebar ol{list-style:none; margin:0; padding:0; counter-reset:toc;}
+.toc-sidebar li{margin:0;}
+.toc-sidebar a{
+  display:block; font-size:13.3px; color:var(--ink-soft); padding:6px 8px; border-radius:6px; border-left:2px solid transparent;
+  line-height:1.4;
+}
+.toc-sidebar a:hover{background:var(--bg-alt); text-decoration:none;}
+.toc-sidebar a.active{color:var(--primary-dark); border-left-color:var(--primary); background:var(--primary-tint); font-weight:600;}
+.toc-num{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); margin-right:6px;}
+
+.main-col section{margin-bottom:64px; scroll-margin-top:88px;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(24px,2.6vw,32px);}
+.section-head p.lead{max-width:70ch;}
+
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr; padding:28px 0 60px;}
+  .toc-sidebar{display:none;}
+}
+@media (max-width:640px){
+  .layout{padding:20px 0 44px; gap:0;}
+  .main-col section{margin-bottom:44px;}
+}
+
+/* mobile drawer */
+.toc-drawer-overlay{position:fixed; inset:0; background:rgba(16,35,28,.35); z-index:90; display:none;}
+.toc-drawer-overlay.show{display:block;}
+.toc-drawer{
+  position:fixed; top:0; left:0; bottom:0; width:82%; max-width:340px; background:#fff; z-index:95;
+  transform:translateX(-100%); transition:transform .22s ease; padding:20px; overflow:auto;
+}
+.toc-drawer.show{transform:translateX(0);}
+.toc-drawer .drawer-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;}
+.toc-drawer .close-btn{background:none; border:none; font-size:22px; cursor:pointer; color:var(--ink-soft);}
+
+/* ============ CARDS / GRIDS ============ */
+.grid{display:grid; gap:18px;}
+.grid-2{grid-template-columns:1fr 1fr;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media (min-width:701px) and (max-width:1150px){.grid-4{grid-template-columns:repeat(2,1fr);}}
+@media (min-width:641px) and (max-width:1150px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:700px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+@media (max-width:640px){.grid{gap:14px;}}
+
+.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-m); padding:22px; box-shadow:var(--shadow-sm);}
+.card h3{font-size:18px;}
+@media (max-width:640px){.card{padding:16px;}}
+
+/* Stage card */
+.stage-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-l); padding:26px 28px; margin-bottom:20px; box-shadow:var(--shadow-sm);}
+.stage-top{display:flex; align-items:center; gap:12px; margin-bottom:6px; flex-wrap:wrap;}
+.stage-num{
+  font-family:var(--font-mono); font-size:12.5px; font-weight:700; color:var(--primary-dark); background:var(--primary-tint);
+  padding:3px 10px; border-radius:6px; letter-spacing:.03em;
+}
+.stage-card h3{font-size:21px; margin-bottom:2px;}
+.stage-why{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px;}
+.stage-body{display:grid; grid-template-columns:1fr 1fr; gap:20px 28px;}
+@media (max-width:760px){.stage-body{grid-template-columns:1fr; gap:16px;}}
+@media (max-width:640px){
+  .stage-card{padding:18px 18px; border-radius:var(--radius-m);}
+  .stage-card h3{font-size:18px;}
+  .stage-num{font-size:11.5px;}
+  .milestone-box{flex-direction:column; gap:4px;}
+}
+.stage-block h4{
+  font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--teal); margin-bottom:8px; font-family:var(--font-body); font-weight:700;
+}
+.stage-block ul{margin:0 0 6px; padding-left:18px;}
+.stage-block li{margin-bottom:5px; font-size:14.5px;}
+.res-item{margin-bottom:8px; font-size:14.5px;}
+.res-item .rname{font-weight:600;}
+.res-item .rmeta{color:var(--ink-faint); font-size:12.5px;}
+.milestone-box{
+  margin-top:16px; background:var(--teal-tint); border-radius:var(--radius-s); padding:12px 16px; font-size:14px; color:#0A4A40;
+  display:flex; gap:10px;
+}
+.milestone-box b{white-space:nowrap;}
+.stage-next{margin-top:12px; font-size:13.5px; color:var(--ink-faint);}
+.stage-next b{color:var(--ink-soft);}
+
+/* ============ TIMELINE (signature element) ============ */
+.roadmap-timeline{position:relative; padding-left:34px;}
+.roadmap-timeline::before{
+  content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
+  background:linear-gradient(to bottom, var(--primary), var(--teal));
+}
+.rt-node{position:relative; padding-bottom:22px;}
+.rt-node:last-child{padding-bottom:0;}
+.rt-node::before{
+  content:""; position:absolute; left:-34px; top:3px; width:20px; height:20px; border-radius:50%;
+  background:#fff; border:2px solid var(--primary);
+}
+.rt-node.milestone-node::before{background:var(--primary); border-color:var(--primary);}
+.rt-node .rt-label{font-size:15.5px; font-weight:700;}
+.rt-node .rt-sub{font-size:13px; color:var(--ink-soft);}
+.rt-node .rt-tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--teal);}
+@media (max-width:420px){
+  .roadmap-timeline{padding-left:26px;}
+  .rt-node::before{left:-26px; width:16px; height:16px;}
+  .roadmap-timeline::before{left:7px;}
+  .rt-node .rt-label{font-size:14.5px;}
+}
+
+/* ============ TABLES ============ */
+.table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--border); border-radius:var(--radius-m); background:#fff;}
+table{width:100%; border-collapse:collapse; font-size:14.3px; min-width:560px;}
+thead th{
+  text-align:left; background:var(--bg-alt); color:var(--ink-soft); font-weight:700; font-size:12px; text-transform:uppercase;
+  letter-spacing:.04em; padding:12px 16px; border-bottom:1px solid var(--border); white-space:nowrap;
+}
+tbody td{padding:13px 16px; border-bottom:1px solid var(--border); vertical-align:top;}
+@media (max-width:640px){
+  .table-wrap{border-radius:var(--radius-s);}
+  table{font-size:13px; min-width:520px;}
+  thead th, tbody td{padding:10px 12px;}
+}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--bg-alt);}
+table a{font-weight:600;}
+
+/* ============ CHECKLIST ============ */
+.checklist-card{background:#fff; border:1px solid var(--border); border-radius:var(--radius-l); padding:24px 26px; margin-bottom:20px;}
+.checklist-card .cl-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:12px; flex-wrap:wrap;}
+.progress-track{flex:1; height:8px; background:var(--bg-alt); border-radius:100px; overflow:hidden; min-width:120px;}
+.progress-fill{height:100%; background:linear-gradient(90deg, var(--primary), var(--teal)); border-radius:100px; transition:width .25s ease;}
+.cl-item{display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px dashed var(--border); font-size:14.5px;}
+.cl-item:last-child{border-bottom:none;}
+.cl-item input{margin-top:4px; width:16px; height:16px; accent-color:var(--primary); flex:0 0 auto;}
+@media (max-width:640px){
+  .checklist-card{padding:16px 16px;}
+  .checklist-card .cl-head h3{font-size:16.5px;}
+}
+
+/* ============ WARNING BOX ============ */
+.warn-box{background:var(--red-tint); border:1px solid #EFC6C2; border-radius:var(--radius-m); padding:18px 20px; margin:18px 0;}
+.warn-box h4{color:var(--red); font-size:14.5px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;}
+.warn-box ul{margin:0; padding-left:20px; font-size:14.5px;}
+.warn-box li{margin-bottom:6px;}
+.info-box{background:var(--primary-tint); border-radius:var(--radius-m); padding:16px 20px; font-size:14.5px; margin:16px 0;}
+
+/* ============ RESOURCE CARDS ============ */
+.res-card{background:#fff; border:1px solid var(--border); border-radius:var(--radius-m); padding:18px 20px;}
+.res-card .rc-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+.res-card h4{font-size:15.5px; margin-bottom:4px;}
+.res-card .provider{font-size:12.5px; color:var(--ink-faint); margin-bottom:8px;}
+.res-card .why{font-size:13.7px; color:var(--ink-soft); margin-bottom:10px;}
+.res-tags{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;}
+.filter-bar{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;}
+.filter-chip{
+  font-size:13px; font-weight:600; padding:6px 14px; border-radius:100px; border:1px solid var(--border-strong);
+  background:#fff; color:var(--ink-soft); cursor:pointer;
+}
+.filter-chip.active{background:var(--primary); border-color:var(--primary); color:#fff;}
+@media (max-width:420px){.filter-chip{font-size:12px; padding:5px 11px;}}
+
+/* faq */
+details.faq{background:#fff; border:1px solid var(--border); border-radius:var(--radius-m); padding:4px 20px; margin-bottom:10px;}
+details.faq summary{padding:14px 0; cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{content:"+"; font-size:20px; color:var(--primary); font-weight:400;}
+details.faq[open] summary::after{content:"–";}
+details.faq p{padding-bottom:16px; color:var(--ink-soft); font-size:14.7px;}
+
+/* footer */
+footer{background:var(--ink); color:#D7E4DE; padding:44px 0 28px; margin-top:40px;}
+footer .container{display:flex; flex-direction:column; gap:16px;}
+footer .foot-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+footer h4{color:#fff; font-family:var(--font-body); font-size:16px; margin:0;}
+footer .disclaimer{font-size:13px; color:#9FB3AB; max-width:70ch; border-top:1px solid #2A3B34; padding-top:16px;}
+footer a{color:#CFE8DF;}
+.back-top{
+  position:fixed; bottom:24px; right:24px; background:var(--primary); color:#fff; width:44px; height:44px;
+  border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:var(--shadow-md);
+  opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:50; border:none; cursor:pointer;
+}
+.back-top.show{opacity:1; pointer-events:auto;}
+@media (max-width:640px){
+  .back-top{width:38px; height:38px; bottom:16px; right:16px; font-size:16px;}
+}
+footer .foot-top{flex-direction:row;}
+@media (max-width:480px){
+  footer{padding:32px 0 22px;}
+  footer .foot-top{flex-direction:column; align-items:flex-start; gap:6px;}
+}
+
+/* highlight for search match */
+.hl-match{outline:2px solid var(--primary); outline-offset:3px; border-radius:var(--radius-m);}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; scroll-behavior:auto !important;}
+}
+
+
+/* =========================================================
+   RESPONSIVE POLISH PATCH
+   Keeps all existing content/data unchanged.
+   ========================================================= */
+
+/* 1) Consistent safe gutters for the main two-column layout */
+.layout{
+  width:min(var(--maxw), calc(100% - 48px));
+  max-width:var(--maxw);
+  margin-inline:auto;
+}
+
+/* Critical for CSS Grid children containing wide tables/content */
+.main-col,
+.main-col section,
+.stage-card,
+.card,
+.stage-body,
+.stage-block{
+  min-width:0;
+}
+
+/* 2) Make all media and controls safely shrink */
+img, svg, video, iframe, canvas{
+  max-width:100%;
+  height:auto;
+}
+input, button, select, textarea{
+  max-width:100%;
+}
+
+/* 3) Tables: scroll only inside their wrapper, never the page */
+.table-wrap{
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-inline:contain;
+  margin:18px 0 24px;
+  scrollbar-width:thin;
+  position:relative;
+}
+.table-wrap table{
+  width:100%;
+  max-width:none;
+}
+
+/* Comfortable desktop/tablet cells */
+.table-wrap th,
+.table-wrap td{
+  line-height:1.5;
+}
+
+/* 4) Tablet */
+@media (max-width:980px){
+  .layout{
+    width:calc(100% - 40px);
+  }
+  .main-col{
+    width:100%;
+    max-width:100%;
+  }
+}
+
+/* 5) Mobile */
+@media (max-width:640px){
+  .container{
+    width:100%;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .layout{
+    width:calc(100% - 32px);
+    padding-top:20px;
+    padding-bottom:44px;
+  }
+
+  .main-col section{
+    width:100%;
+    max-width:100%;
+  }
+
+  .section-head{
+    margin-bottom:18px;
+  }
+
+  .section-head h2{
+    font-size:clamp(23px, 7vw, 29px);
+  }
+
+  .lead{
+    font-size:16px;
+  }
+
+  .card{
+    padding:17px;
+  }
+
+  .stage-card{
+    padding:18px 16px;
+  }
+
+  .stage-body{
+    gap:18px;
+  }
+
+  .info-box,
+  .warn-box{
+    padding:15px 16px;
+  }
+
+  .checklist-card{
+    padding:17px 16px;
+  }
+
+  /* Wide data tables remain readable by horizontal swipe */
+  .table-wrap{
+    margin:14px 0 22px;
+    border-radius:var(--radius-s);
+  }
+
+  .table-wrap table{
+    min-width:560px;
+    font-size:13px;
+  }
+
+  .table-wrap thead th,
+  .table-wrap tbody td{
+    padding:11px 12px;
+  }
+
+  /* A visible affordance that the table is horizontally scrollable */
+  .table-wrap::after{
+    content:"↔ Swipe horizontally to view full table";
+    display:block;
+    position:sticky;
+    left:0;
+    width:max-content;
+    max-width:calc(100vw - 64px);
+    padding:6px 10px;
+    margin:6px 8px 8px;
+    border-radius:999px;
+    background:var(--bg-alt);
+    color:var(--ink-faint);
+    font-size:11px;
+    line-height:1.35;
+    pointer-events:none;
+  }
+
+  .res-card{
+    padding:16px;
+  }
+
+  details.faq{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .filter-bar{
+    gap:7px;
+  }
+
+  footer .container{
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
+
+/* 6) Small phones */
+@media (max-width:420px){
+  .container{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .layout{
+    width:calc(100% - 24px);
+  }
+
+  .hero{
+    padding-top:30px;
+  }
+
+  .hero-card{
+    padding:17px;
+  }
+
+  .stage-card{
+    padding:16px 14px;
+  }
+
+  .stage-block ul{
+    padding-left:20px;
+  }
+
+  .table-wrap table{
+    min-width:540px;
+  }
+
+  .table-wrap::after{
+    max-width:calc(100vw - 48px);
+  }
+
+  .checklist-card,
+  .res-card{
+    padding:15px 14px;
+  }
+}
+
+/* 7) Very small devices */
+@media (max-width:360px){
+  .layout{
+    width:calc(100% - 20px);
+  }
+
+  .topbar-inner{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .mobile-toc-btn{
+    padding-left:7px;
+    padding-right:7px;
+  }
+
+  #siteSearch{
+    width:82px;
+  }
+
+  #siteSearch:focus{
+    width:118px;
+  }
+
+  .stage-card,
+  .card,
+  .checklist-card,
+  .res-card{
+    padding-left:13px;
+    padding-right:13px;
+  }
+}
+
+/* 8) Avoid long URLs/text forcing page overflow */
+.main-col a,
+.main-col td,
+.main-col li,
+.main-col p{
+  overflow-wrap:anywhere;
+}
+
+/* But keep ordinary headings/labels readable rather than splitting every word */
+h1,h2,h3,h4,
+.badge,
+.stage-num,
+.btn{
+  word-break:normal;
+}
+
+
+/* Main-site navigation */
+.main-site-nav{background:#444;color:#fff;position:sticky;top:0;z-index:1000}
+.main-site-nav .nav-inner{width:min(1180px,calc(100% - 40px));margin:auto;min-height:64px;display:flex;align-items:center;gap:34px}
+.main-site-nav a{color:#fff;text-decoration:none;font-size:15px;white-space:nowrap}
+.main-site-nav .home-link{font-weight:800;margin-right:auto}
+.main-site-nav .nav-link{padding:21px 0 17px;border-bottom:3px solid transparent}
+.main-site-nav .nav-link:hover{border-bottom-color:#fff}
+.main-site-nav .new-badge{display:inline-block;margin-left:6px;padding:2px 7px;border-radius:999px;background:#ff4961;color:#fff;font-size:9px;font-weight:800}
+.main-site-nav .nav-toggle{display:none;background:transparent;color:#fff;border:0;font-size:24px;cursor:pointer;padding:8px}
+@media(max-width:720px){
+ .main-site-nav .nav-inner{width:calc(100% - 28px);min-height:58px;gap:12px;flex-wrap:wrap}
+ .main-site-nav .nav-toggle{display:block}
+ .main-site-nav .nav-link{display:none;width:100%;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+ .main-site-nav.open .nav-link{display:block}
+ .main-site-nav.open .nav-inner{padding-bottom:10px}
+}
+
+
+/* Keep main navigation permanently visible while scrolling */
+.main-site-nav{
+  position:fixed !important;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  z-index:99999 !important;
+}
+
+/* Prevent fixed navbar from covering page content */
+body{
+  padding-top:64px !important;
+}
+
+@media(max-width:720px){
+  body{
+    padding-top:58px !important;
+  }
+}
+
+
+/* TWO FIXED NAVBARS
+   1) Main-site navigation at top
+   2) Existing Guide/topbar directly below it
+*/
+:root{
+  --main-nav-h:64px;
+  --guide-nav-h:64px;
+}
+
+.main-site-nav{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:100000 !important;
+}
+
+/* Existing website's second navigation */
+.topbar{
+  position:fixed !important;
+  top:var(--main-nav-h) !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  z-index:99990 !important;
+}
+
+/* Reserve room for both fixed bars */
+body{
+  padding-top:calc(var(--main-nav-h) + var(--guide-nav-h)) !important;
+}
+
+/* Anchor links should not hide underneath both navbars */
+section[id],
+[id].section,
+.stage-card[id]{
+  scroll-margin-top:calc(var(--main-nav-h) + var(--guide-nav-h) + 18px) !important;
+}
+
+@media(max-width:720px){
+  :root{
+    --main-nav-h:58px;
+    --guide-nav-h:58px;
+  }
+}
+
+/* On very narrow screens keep both bars usable */
+@media(max-width:420px){
+  .topbar-inner{
+    min-height:var(--guide-nav-h);
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <button class="mobile-toc-btn" id="openDrawer" aria-label="Open table of contents">☰ TOC</button>
+    <div class="brand"><span class="brand-mark">AI</span><span>ML Research পথ</span></div>
+    <nav class="topnav" id="topnav">
+      <a href="#home">Home</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#foundations">Foundations</a>
+      <a href="#ml">ML</a>
+      <a href="#dl">DL</a>
+      <a href="#specializations">Specialization</a>
+      <a href="#research">Research</a>
+      <a href="#datasets-tools">Datasets/Tools</a>
+      <a href="#paper-reading">Paper Reading</a>
+      <a href="#paper-writing">Paper Writing</a>
+      <a href="#publication">Publication</a>
+      <a href="#resources">Resources</a>
+      <a href="#checklists">Checklists</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="siteSearch" type="text" placeholder="খুঁজুন: Python, ResNet, Abstract...">
+      <div id="searchResults"></div>
+    </div>
+  </div>
+</div>
+
+<!-- mobile drawer -->
+<div class="toc-drawer-overlay" id="drawerOverlay"></div>
+<div class="toc-drawer" id="tocDrawer">
+  <div class="drawer-head"><strong>Table of Contents</strong><button class="close-btn" id="closeDrawer">×</button></div>
+  <nav id="drawerNav"></nav>
+</div>
+
+<!-- ============ HERO ============ -->
+
+<nav class="main-site-nav" id="mainSiteNav" aria-label="Main website navigation">
+ <div class="nav-inner">
+  <a class="home-link" href="https://mdrifat-hossen.github.io/">Rifat's Homepage</a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMainNav()">☰</button>
+  <a class="nav-link" href="https://mdrifat-hossen.github.io/publications/">Publications <span class="new-badge">New*</span></a>
+  <a class="nav-link" href="https://mdrifat-hossen.github.io/portfolio/">Portfolio</a>
+ </div>
+</nav>
+
+
+<div class="layout">
+
+  <!-- ============ STICKY TOC ============ -->
+  <aside class="toc-sidebar" id="tocSidebar">
+    <h4>Table of Contents</h4>
+    <nav id="tocNav"></nav>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main-col">
+
+  <!-- ================= ROADMAP ================= -->
+  <section id="roadmap" data-toc="00 — সম্পূর্ণ Roadmap">
+    <div class="section-head">
+      <p class="eyebrow">Getting Started</p>
+      <h2>সম্পূর্ণ পথ — এক নজরে</h2>
+      <p class="lead">নিচের প্রতিটা ধাপ আগের ধাপের উপর নির্ভরশীল। মাইলস্টোন পার না করে পরের ধাপে যেও না।</p>
+    </div>
+    <div class="roadmap-timeline">
+      <div class="rt-node"><div class="rt-tag">শুরু</div><div class="rt-label">Programming Fundamentals</div><div class="rt-sub">Logic, loops, functions — CS50</div></div>
+      <div class="rt-node"><div class="rt-label">Python</div><div class="rt-sub">Syntax, data types, OOP basics</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Mathematics &amp; Statistics</div><div class="rt-sub">Linear Algebra, Calculus, Probability</div></div>
+      <div class="rt-node"><div class="rt-label">Data Analysis</div><div class="rt-sub">NumPy, Pandas, Matplotlib, EDA</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Machine Learning</div><div class="rt-sub">ML Specialization (Andrew Ng)</div></div>
+      <div class="rt-node"><div class="rt-label">First ML Project</div><div class="rt-sub">Kaggle Competition + GitHub README</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Deep Learning</div><div class="rt-sub">DL Specialization (Andrew Ng)</div></div>
+      <div class="rt-node"><div class="rt-label">PyTorch</div><div class="rt-sub">Tensors, autograd, training loop</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Choose a Specialization</div><div class="rt-sub">CV / NLP / Time-Series / GNN — একটাই</div></div>
+      <div class="rt-node"><div class="rt-label">Specialization Project</div><div class="rt-sub">একটা track-এ শেষ পর্যন্ত হাতে-কলমে কাজ</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Research Fundamentals</div><div class="rt-sub">Research thinking, methodology</div></div>
+      <div class="rt-node"><div class="rt-label">Paper Reading</div><div class="rt-sub">Three-Pass Method, arXiv, Semantic Scholar</div></div>
+      <div class="rt-node"><div class="rt-label">Literature Review</div><div class="rt-sub">15–30 paper matrix + Zotero</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Reproduce a Paper</div><div class="rt-sub">নতুন কিছু বানানোর আগে সবচেয়ে জরুরি ধাপ</div></div>
+      <div class="rt-node"><div class="rt-label">Research Gap</div><div class="rt-sub">সুপারফিশিয়াল gap বনাম আসল gap</div></div>
+      <div class="rt-node"><div class="rt-label">Research Proposal</div><div class="rt-sub">Question, hypothesis, dataset পরিকল্পনা</div></div>
+      <div class="rt-node"><div class="rt-label">Experiments</div><div class="rt-sub">Baseline → Method → Ablation → Validation</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Scientific Writing</div><div class="rt-sub">Abstract থেকে Conclusion</div></div>
+      <div class="rt-node"><div class="rt-label">Publication</div><div class="rt-sub">Venue → Submission → Peer Review → Revision</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Independent Researcher</div><div class="rt-sub">পুরো pipeline নিজে defend করতে পারা</div></div>
+    </div>
+  </section>
+
+  <!-- ================= FOUNDATIONS ================= -->
+  <section id="foundations" data-toc="01 — Foundations (Programming, Python, Math, Data Analysis)">
+    <div class="section-head">
+      <p class="eyebrow">Stage 01–04</p>
+      <h2>Foundations</h2>
+      <p class="lead">প্রোগ্রামিং লজিক থেকে শুরু করে ডেটা নিয়ে কাজ করা পর্যন্ত — এটাই বাকি সব কিছুর ভিত্তি।</p>
+    </div>
+
+    <article class="stage-card searchable" data-cat="foundations python programming">
+      <div class="stage-top"><span class="stage-num">STAGE 01</span></div>
+      <h3>Programming Fundamentals</h3>
+      <p class="stage-why">কেন জরুরি: কম্পিউটার কীভাবে সমস্যা সমাধান করে তা বোঝাই বাকি সবকিছুর প্রথম ধাপ।</p>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>যা শিখবে</h4>
+          <ul><li>Variables ও Data Types</li><li>Conditions ও Loops</li><li>Functions</li><li>Debugging mindset</li></ul>
+        </div>
+        <div class="stage-block">
+          <h4>কোথায় শিখবে</h4>
+          <div class="res-item"><span class="rname">CS50 (Harvard) — Intro to CS</span> <span class="badge">Free</span><br><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">cs50.harvard.edu/x</a><div class="rmeta">বিশ্বসেরা বিগিনার কোর্স, সার্টিফিকেট চাইলে সামান্য ফি</div></div>
+          <div class="res-item"><span class="rname">YouTube: freeCodeCamp.org</span><br><a href="https://www.youtube.com/@freecodecamp" target="_blank" rel="noopener">youtube.com/@freecodecamp</a></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> নতুন প্রবলেম দেখলে টিউটোরিয়াল ছাড়াই লজিক দিয়ে সমাধান করতে পারছো।</div>
+      <div class="stage-next"><b>এরপর:</b> Python</div>
+    </article>
+
+    <article class="stage-card searchable" data-cat="foundations python">
+      <div class="stage-top"><span class="stage-num">STAGE 02</span></div>
+      <h3>Python</h3>
+      <p class="stage-why">কেন জরুরি: প্রায় সব ML/DL টুল Python-ভিত্তিক।</p>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>যা শিখবে</h4>
+          <ul><li>Variables, Operators, Conditions, Loops</li><li>Lists, Tuples, Dictionaries, Sets, Strings</li><li>Functions, Modules, File Handling, Exceptions</li><li>Basic OOP (class, object)</li></ul>
+        </div>
+        <div class="stage-block">
+          <h4>কোথায় শিখবে</h4>
+          <div class="res-item"><span class="rname">Official Python Tutorial</span> <span class="badge">Free</span><br><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">docs.python.org/3/tutorial</a></div>
+          <div class="res-item"><span class="rname">W3Schools — Python</span> <span class="badge">Free</span><br><a href="https://www.w3schools.com/python/python_intro.asp" target="_blank" rel="noopener">w3schools.com/python</a><div class="rmeta">দ্রুত সিনট্যাক্স রেফারেন্স ও চেষ্টা-করে-দেখার এডিটর সহ</div></div>
+          <div class="res-item"><span class="rname">Kaggle Learn — Python</span> <span class="badge">Free</span><br><a href="https://www.kaggle.com/learn/python" target="_blank" rel="noopener">kaggle.com/learn/python</a></div>
+          <div class="res-item"><span class="rname">YouTube: Corey Schafer</span><br><a href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">youtube.com/@coreyms</a><div class="rmeta">Clear, practical Python explanation-এর জন্য পরিচিত</div></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> ৩টা ছোট প্রজেক্ট (to-do app, unit converter, file organizer) নিজে বানিয়েছো।</div>
+      <div class="stage-next"><b>এরপর:</b> Mathematics &amp; Statistics</div>
+    </article>
+
+    <article class="stage-card searchable" data-cat="foundations math statistics linear algebra calculus probability">
+      <div class="stage-top"><span class="stage-num">STAGE 03</span></div>
+      <h3>Mathematics &amp; Statistics for ML</h3>
+      <p class="stage-why">কেন জরুরি: এই ম্যাথ না বুঝলে ML/DL মডেল "ব্ল্যাক বক্স" মনে হবে সারাজীবন।</p>
+      <div class="grid grid-2" style="margin-bottom:14px;">
+        <div class="card"><h3 style="font-size:16px;">Linear Algebra</h3><p class="small">Vector, Matrix, Matrix Multiplication, Dot Product, Eigenvalue</p>
+          <div class="res-item"><span class="rname">MIT OCW — 18.06 Linear Algebra</span> <span class="badge">Free</span><br><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener">ocw.mit.edu</a><div class="rmeta">Gilbert Strang — বিশ্বের সবচেয়ে বিশ্বাসযোগ্য reference</div></div>
+        </div>
+        <div class="card"><h3 style="font-size:16px;">Calculus</h3><p class="small">Function, Derivative, Partial Derivative, Gradient, Optimization</p>
+          <div class="res-item"><span class="rname">Stanford CS229 — Linear Algebra Review (PDF)</span> <span class="badge">Free</span><br><a href="https://cs229.stanford.edu/" target="_blank" rel="noopener">cs229.stanford.edu</a><div class="rmeta">ML-এর জন্য বিশেষভাবে বানানো ম্যাথ রিভিউ</div></div>
+        </div>
+        <div class="card"><h3 style="font-size:16px;">Probability</h3><p class="small">Probability, Conditional Probability, Distributions, Bayes' Theorem</p>
+          <div class="res-item"><span class="rname">Coursera — ML: Probability &amp; Statistics</span><br><a href="https://www.coursera.org/learn/machine-learning-probability-and-statistics" target="_blank" rel="noopener">coursera.org</a></div>
+        </div>
+        <div class="card"><h3 style="font-size:16px;">Statistics</h3><p class="small">Mean, Median, Variance, Standard Deviation</p>
+          <div class="res-item"><span class="rname">বই: Practical Statistics for Data Scientists</span> <span class="badge amber">Paid</span><br><span class="rmeta">লেখক: Andrew &amp; Peter Bruce — Data science-এ প্রয়োগ করা statistics-এর জন্য জনপ্রিয় বই</span></div>
+        </div>
+      </div>
+      <div class="stage-block">
+        <h4>YouTube চ্যানেল</h4>
+        <div class="res-item"><span class="rname">3Blue1Brown — "Essence of Linear Algebra" &amp; "Essence of Calculus"</span><br><a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">youtube.com/@3blue1brown</a><div class="rmeta">ভিজ্যুয়ালি ম্যাথ বোঝানোর জন্য বিশ্বস্বীকৃত চ্যানেল</div></div>
+        <div class="res-item"><span class="rname">StatQuest with Josh Starmer</span><br><a href="https://www.youtube.com/@statquest" target="_blank" rel="noopener">youtube.com/@statquest</a><div class="rmeta">Statistics ও probability সহজভাবে বোঝানোর জন্য অসাধারণ</div></div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> কোনো ML ইকুয়েশন দেখলে প্রতিটা টার্ম কী বোঝায় তা ব্যাখ্যা করতে পারছো।</div>
+      <div class="stage-next"><b>এরপর:</b> NumPy, Pandas, Matplotlib ও Data Analysis</div>
+    </article>
+
+    <article class="stage-card searchable" data-cat="foundations numpy pandas matplotlib data analysis eda">
+      <div class="stage-top"><span class="stage-num">STAGE 04</span></div>
+      <h3>NumPy, Pandas, Matplotlib &amp; Data Analysis</h3>
+      <p class="stage-why">কেন জরুরি: মডেল বানানোর আগে ডেটার সাথে কাজ করা শিখতেই হবে।</p>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>যা শিখবে</h4>
+          <ul><li>Array operations (NumPy)</li><li>DataFrame, cleaning (Pandas)</li><li>Plotting (Matplotlib)</li><li>Exploratory Data Analysis (EDA)</li></ul>
+        </div>
+        <div class="stage-block">
+          <h4>কোথায় শিখবে</h4>
+          <div class="res-item"><span class="rname">Kaggle Learn — Pandas, Data Visualization</span> <span class="badge">Free</span><br><a href="https://www.kaggle.com/learn" target="_blank" rel="noopener">kaggle.com/learn</a></div>
+          <div class="res-item"><span class="rname">NumPy Official Quickstart</span> <span class="badge">Free</span><br><a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank" rel="noopener">numpy.org/doc/stable</a></div>
+          <div class="res-item"><span class="rname">YouTube: Corey Schafer — Pandas Tutorials</span><br><a href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">youtube.com/@coreyms</a></div>
+          <div class="res-item"><span class="rname">YouTube: Krish Naik</span><br><a href="https://www.youtube.com/@krishnaik06" target="_blank" rel="noopener">youtube.com/@krishnaik06</a><div class="rmeta">Data science ও ML প্র্যাকটিক্যালি শেখানোর জন্য জনপ্রিয়</div></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> একটা raw CSV থেকে সম্পূর্ণ EDA নোটবুক (ক্লিনিং + ৫টা ভিজ্যুয়ালাইজেশন) নিজে বানিয়েছো।</div>
+      <div class="stage-next"><b>এরপর:</b> Machine Learning Fundamentals</div>
+    </article>
+  </section>
+
+  <!-- ================= MACHINE LEARNING ================= -->
+  <section id="ml" data-toc="02 — Machine Learning">
+    <div class="section-head">
+      <p class="eyebrow">Stage 05–06</p>
+      <h2>Machine Learning</h2>
+      <p class="lead">এখান থেকে "মডেল ট্রেইন করা" আসলে শুরু হয়। Regression থেকে Ensemble পর্যন্ত, এবং নিজের প্রথম প্রজেক্ট।</p>
+    </div>
+
+    <article class="stage-card searchable" data-cat="machine learning ml specialization andrew ng regression classification">
+      <div class="stage-top"><span class="stage-num">STAGE 05</span></div>
+      <h3>Machine Learning Fundamentals</h3>
+      <p class="stage-why">কেন জরুরি: Regression, Classification, Overfitting — ML-এর প্রতিটা ভবিষ্যৎ টপিকের ভিত্তি এখানেই।</p>
+      <div class="stage-block" style="margin-bottom:16px;">
+        <h4>⭐ Machine Learning Specialization (Andrew Ng / DeepLearning.AI × Stanford)</h4>
+        <p class="small" style="margin-bottom:10px;">Coursera-তে <b>audit মোডে ফ্রি</b> (সার্টিফিকেট চাইলে পেইড)। বিশ্বব্যাপী সবচেয়ে বিশ্বাসযোগ্য ML বিগিনার কোর্স, ৩টা কোর্স নিয়ে গঠিত — <b>সিরিয়ালি</b> শেষ করতে হবে।</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Order</th><th>Course</th><th>Focus</th><th>Approx. Duration</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Supervised Machine Learning: Regression and Classification</td><td>Linear/Logistic Regression, Gradient Descent</td><td>~33 hours (3 সপ্তাহ)</td><td><span class="badge">Free audit</span></td></tr>
+              <tr><td>2</td><td>Advanced Learning Algorithms</td><td>Neural Networks, Decision Trees, ML best-practices</td><td>~34 hours (4 সপ্তাহ)</td><td><span class="badge">Free audit</span></td></tr>
+              <tr><td>3</td><td>Unsupervised Learning, Recommenders, Reinforcement Learning</td><td>Clustering, Recommender Systems, RL Intro</td><td>~3 সপ্তাহ</td><td><span class="badge">Free audit</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:8px;"><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">coursera.org/specializations/machine-learning-introduction</a></p>
+      </div>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>Reference</h4>
+          <div class="res-item"><span class="rname">scikit-learn Official User Guide</span> <span class="badge">Free</span><br><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">scikit-learn.org</a></div>
+        </div>
+        <div class="stage-block">
+          <h4>YouTube চ্যানেল</h4>
+          <div class="res-item"><span class="rname">StatQuest with Josh Starmer</span><br><a href="https://www.youtube.com/@statquest" target="_blank" rel="noopener">youtube.com/@statquest</a></div>
+          <div class="res-item"><span class="rname">Krish Naik</span><br><a href="https://www.youtube.com/@krishnaik06" target="_blank" rel="noopener">youtube.com/@krishnaik06</a></div>
+          <div class="res-item"><span class="rname">CampusX (Hindi/English)</span><br><a href="https://www.youtube.com/@campusx-official" target="_blank" rel="noopener">youtube.com/@campusx-official</a><div class="rmeta">"100 Days of ML" ও "100 Days of DL" সিরিজ আছে</div></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> একই ডেটাসেটে ৩টা মডেল (Logistic Regression, Decision Tree, Random Forest) কম্পেয়ার করেছো এবং overfitting ব্যাখ্যা করতে পারছো।</div>
+      <div class="stage-next"><b>এরপর:</b> First ML Project</div>
+    </article>
+
+    <article class="stage-card searchable" data-cat="first ml project kaggle">
+      <div class="stage-top"><span class="stage-num">STAGE 06</span></div>
+      <h3>First ML Project</h3>
+      <p class="stage-why">কেন জরুরি: কোর্সে শেখা আর নিজে হাতে-কলমে করা এক জিনিস না।</p>
+      <div class="roadmap-timeline" style="margin:14px 0 18px;">
+        <div class="rt-node"><div class="rt-label">Dataset বাছাই</div></div>
+        <div class="rt-node"><div class="rt-label">EDA</div></div>
+        <div class="rt-node"><div class="rt-label">Preprocessing</div></div>
+        <div class="rt-node"><div class="rt-label">Model Training</div></div>
+        <div class="rt-node"><div class="rt-label">Evaluation ও Comparison</div></div>
+        <div class="rt-node"><div class="rt-label">Error Analysis</div></div>
+        <div class="rt-node milestone-node"><div class="rt-label">GitHub README</div></div>
+      </div>
+      <div class="stage-block">
+        <h4>কোথায় করবে</h4>
+        <div class="res-item"><span class="rname">Kaggle Competitions</span> (বিগিনার-ফ্রেন্ডলি, যেমন Titanic) <span class="badge">Free</span><br><a href="https://www.kaggle.com/competitions" target="_blank" rel="noopener">kaggle.com/competitions</a></div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> GitHub-এ একটা সম্পূর্ণ ডকুমেন্টেড ML প্রজেক্ট আছে (README সহ)।</div>
+      <div class="stage-next"><b>এরপর:</b> Deep Learning Fundamentals</div>
+    </article>
+  </section>
+
+  <!-- ================= DEEP LEARNING ================= -->
+  <section id="dl" data-toc="03 — Deep Learning">
+    <div class="section-head">
+      <p class="eyebrow">Stage 07–08</p>
+      <h2>Deep Learning</h2>
+      <p class="lead">Backpropagation বোঝা থেকে শুরু করে PyTorch দিয়ে নিজের প্রথম নিউরাল নেটওয়ার্ক ট্রেইন করা পর্যন্ত।</p>
+    </div>
+
+    <article class="stage-card searchable" data-cat="deep learning dl specialization neural network backpropagation">
+      <div class="stage-top"><span class="stage-num">STAGE 07</span></div>
+      <h3>Deep Learning Fundamentals</h3>
+      <p class="stage-why">কেন জরুরি: CNN, RNN, Transformer — সব কিছুর ভিত্তি backpropagation ও optimization বোঝা।</p>
+      <div class="stage-block" style="margin-bottom:16px;">
+        <h4>⭐ Deep Learning Specialization (Andrew Ng / DeepLearning.AI)</h4>
+        <p class="small" style="margin-bottom:10px;">Coursera-তে <b>audit মোডে ফ্রি</b>। ৫টা কোর্স নিয়ে গঠিত, ইন্ডাস্ট্রি-স্ট্যান্ডার্ড — <b>এই সিকোয়েন্সেই</b> সম্পূর্ণ করতে হবে।</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Order</th><th>Course</th><th>Approx. Duration</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Neural Networks and Deep Learning</td><td>~25 hours</td></tr>
+              <tr><td>2</td><td>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</td><td>~24 hours</td></tr>
+              <tr><td>3</td><td>Structuring Machine Learning Projects</td><td>~7 hours</td></tr>
+              <tr><td>4</td><td>Convolutional Neural Networks</td><td>~36 hours</td></tr>
+              <tr><td>5</td><td>Sequence Models</td><td>~37 hours</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:8px;"><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">coursera.org/specializations/deep-learning</a></p>
+      </div>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>Reference</h4>
+          <div class="res-item"><span class="rname">Stanford CS231n Course Notes</span> <span class="badge">Free, লগইন লাগে না</span><br><a href="https://cs231n.github.io/" target="_blank" rel="noopener">cs231n.github.io</a></div>
+        </div>
+        <div class="stage-block">
+          <h4>YouTube চ্যানেল</h4>
+          <div class="res-item"><span class="rname">3Blue1Brown — "Neural Networks" সিরিজ</span><br><a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">youtube.com/@3blue1brown</a></div>
+          <div class="res-item"><span class="rname">Andrej Karpathy</span><br><a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">youtube.com/@AndrejKarpathy</a><div class="rmeta">"from scratch" কোড করে দেখানোর জন্য বিশ্বখ্যাত (প্রাক্তন OpenAI/Tesla AI প্রধান)</div></div>
+          <div class="res-item"><span class="rname">Deep Learning (Bangla playlist)</span><br><a href="https://www.youtube.com/playlist?list=PLKdU0fuY4OFfWY36nDJDlI26jXwInSm8f" target="_blank" rel="noopener">YouTube Playlist (Bangla)</a></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> শুধু NumPy দিয়ে (framework ছাড়া) forward + backward pass লিখেছো এবং হোয়াইটবোর্ডে backprop ব্যাখ্যা করতে পারছো।</div>
+      <div class="stage-next"><b>এরপর:</b> PyTorch</div>
+    </article>
+
+    <article class="stage-card searchable" data-cat="pytorch tensor autograd gpu training loop">
+      <div class="stage-top"><span class="stage-num">STAGE 08</span></div>
+      <h3>PyTorch</h3>
+      <p class="stage-why">কেন জরুরি: রিসার্চ কমিউনিটিতে PyTorch-ই সবচেয়ে বেশি ব্যবহৃত framework।</p>
+      <div class="stage-body">
+        <div class="stage-block">
+          <h4>যা শিখবে</h4>
+          <ul><li>Tensor</li><li>Dataset / DataLoader</li><li>nn.Module</li><li>Loss ও Optimizer</li><li>Training Loop</li><li>GPU ব্যবহার</li><li>Save/Load Model</li></ul>
+        </div>
+        <div class="stage-block">
+          <h4>কোথায় শিখবে</h4>
+          <div class="res-item"><span class="rname">PyTorch Official Tutorials</span> <span class="badge">Free</span><br><a href="https://docs.pytorch.org/tutorials/" target="_blank" rel="noopener">docs.pytorch.org/tutorials</a></div>
+          <div class="res-item"><span class="rname">PyTorch Official Documentation</span> <span class="badge">Free</span><br><a href="https://docs.pytorch.org/docs/stable/index.html" target="_blank" rel="noopener">docs.pytorch.org/docs</a></div>
+          <div class="res-item"><span class="rname">YouTube: Aladdin Persson</span><br><a href="https://www.youtube.com/@AladdinPersson" target="_blank" rel="noopener">youtube.com/@AladdinPersson</a></div>
+        </div>
+      </div>
+      <div class="milestone-box"><b>মাইলস্টোন:</b> CIFAR-10 বা MNIST-এ CNN ট্রেইন করে সঠিক training loop নিজে লিখতে পারছো।</div>
+      <div class="stage-next"><b>এরপর:</b> একটা Specialization বেছে নাও</div>
+    </article>
+  </section>
+
+  <!-- ================= SPECIALIZATIONS ================= -->
+  <section id="specializations" data-toc="04 — Specialization বেছে নাও">
+    <div class="section-head">
+      <p class="eyebrow">Stage 09</p>
+      <h2>Specialization বেছে নাও</h2>
+      <p class="lead"><b>প্রথমে যেকোনো একটা track</b> বেছে নাও — চারটা একসাথে শুরু করার দরকার নেই।</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card searchable" data-cat="computer vision cnn resnet transformer">
+        <span class="badge">A</span>
+        <h3>Computer Vision</h3>
+        <p class="small">CNN → Transfer Learning → VGG/ResNet/DenseNet/EfficientNet → Attention → Grad-CAM → Object Detection (YOLO) → Segmentation (U-Net) → Vision Transformer → Vision-Language Models</p>
+        <div class="res-item"><span class="rname">Stanford CS231n</span><br><a href="https://cs231n.github.io/" target="_blank" rel="noopener">cs231n.github.io</a></div>
+        <p class="small"><b>YouTube:</b> Andrej Karpathy, 3Blue1Brown</p>
+      </div>
+      <div class="card searchable" data-cat="nlp text processing embeddings transformer bert llm">
+        <span class="badge">B</span>
+        <h3>Natural Language Processing</h3>
+        <p class="small">Text Processing → Tokenization → TF-IDF → Embeddings → RNN → LSTM/GRU → Attention → Transformer → BERT → LLM Fundamentals → RAG</p>
+        <div class="res-item"><span class="rname">Stanford CS224N</span><br><a href="https://web.stanford.edu/class/cs224n/" target="_blank" rel="noopener">web.stanford.edu/class/cs224n</a></div>
+        <p class="small"><b>Paper:</b> <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">"Attention Is All You Need"</a></p>
+      </div>
+      <div class="card searchable" data-cat="time series signal processing forecasting lstm">
+        <span class="badge">C</span>
+        <h3>Time-Series / Signal Processing</h3>
+        <p class="small">Signal Fundamentals → Preprocessing → Classical Forecasting → ML → RNN/LSTM/GRU → 1D CNN → Attention → Transformer</p>
+        <div class="res-item"><span class="rname">scikit-learn — Model Evaluation</span><br><a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener">scikit-learn.org</a></div>
+      </div>
+      <div class="card searchable" data-cat="graph neural network gnn gcn graphsage">
+        <span class="badge">D</span>
+        <h3>Graph Neural Networks</h3>
+        <p class="small">Graph Fundamentals → Graph Representation → Message Passing → GCN → GraphSAGE → GAT → GNN Applications</p>
+        <div class="res-item"><span class="rname">Stanford CS224W</span><br><a href="http://web.stanford.edu/class/cs224w/" target="_blank" rel="noopener">web.stanford.edu/class/cs224w</a></div>
+        <div class="res-item"><span class="rname">PyTorch Geometric</span><br><a href="https://pytorch-geometric.readthedocs.io/" target="_blank" rel="noopener">pytorch-geometric.readthedocs.io</a></div>
+      </div>
+    </div>
+    <div class="milestone-box" style="margin-top:18px;"><b>মাইলস্টোন:</b> একটা pretrained মডেল fine-tune করে প্রতিটা লেয়ার ব্যাখ্যা করতে পারছো।</div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section id="research" data-toc="05 — Research Fundamentals">
+    <div class="section-head">
+      <p class="eyebrow">Stage 10</p>
+      <h2>Research Fundamentals</h2>
+      <p class="lead">এখান থেকেই "শেখা" থেকে "রিসার্চ করা"-তে transition শুরু হয়।</p>
+    </div>
+
+    <div class="roadmap-timeline" style="margin-bottom:24px;">
+      <div class="rt-node"><div class="rt-label">Learning AI</div></div>
+      <div class="rt-node"><div class="rt-label">Building Projects</div></div>
+      <div class="rt-node"><div class="rt-label">Reading Research</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Conducting Research</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3 style="font-size:18px;">Project বনাম Research — পার্থক্য বোঝা জরুরি</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>দুর্বল চিন্তা</th><th>শক্তিশালী (রিসার্চ) চিন্তা</th></tr></thead>
+          <tbody>
+            <tr><td>একটা প্রজেক্ট বানানো</td><td>একটা validated, generalizable insight খুঁজে বের করা</td></tr>
+            <tr><td>Higher Accuracy</td><td>Novelty (নতুন mechanism বা ব্যাখ্যা)</td></tr>
+            <tr><td>নতুন Model Combination</td><td>প্রকৃত Research Gap (একটা unanswered question)</td></tr>
+            <tr><td>শুধু Benchmark-এ নম্বর বাড়ানো</td><td>বাস্তব জগতের সমস্যা সমাধান (Contribution)</td></tr>
+            <tr><td>Correlation</td><td>Causation</td></tr>
+            <tr><td>Internal Validation (একই ডেটাসেট)</td><td>External Validation (ভিন্ন ডেটাসেট/সেটিং)</td></tr>
+            <tr><td>Statistical Significance (p&lt;0.05)</td><td>Practical Significance (বাস্তবে গুরুত্বপূর্ণ পার্থক্য)</td></tr>
+            <tr><td>In-distribution Performance</td><td>Out-of-distribution (OOD) Performance</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box" style="margin-top:16px;">
+        <b>দুর্বল আইডিয়ার উদাহরণ:</b> "CNN + Attention + Transformer মিলিয়ে বেশি accuracy" — শুধু মডেল স্ট্যাকিং, কোনো প্রশ্ন নেই।<br><br>
+        <b>ভালো রিসার্চ প্রশ্নের উদাহরণ:</b> "ল্যাব ইমেজ আর real-field ইমেজের মধ্যে domain shift-এর কারণে existing মডেল ফেল করে — unseen field condition-এ কীভাবে domain-generalized representation পারফরম্যান্স বাড়াতে পারে?"
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card searchable" data-cat="research problem hypothesis novelty contribution methodology">
+        <h4 style="font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--teal); margin-bottom:8px;">মূল কনসেপ্ট যা শিখতে হবে</h4>
+        <ul style="padding-left:18px; font-size:14.5px;">
+          <li>Research Problem ও Research Question</li>
+          <li>Hypothesis</li>
+          <li>Research Gap ও Novelty</li>
+          <li>Methodology ও Baseline</li>
+          <li>Reproducibility ও Limitations</li>
+        </ul>
+      </div>
+      <div class="card searchable" data-cat="research readiness checklist stage 1-9">
+        <h4 style="font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--teal); margin-bottom:8px;">Paper পড়ার জন্য রেডি কিনা</h4>
+        <p class="small">Stage 1–9 (Foundation → ML → DL → Specialization) শেষ হলে তুমি রেডি paper পড়া শুরু করার জন্য। এর আগে paper শুধু জারগন মনে হবে।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DATASETS & TOOLS ================= -->
+  <section id="datasets-tools" data-toc="06 — Datasets, Code Platform ও Tools">
+    <div class="section-head">
+      <p class="eyebrow">Practical</p>
+      <h2>Dataset কোথায় পাবে, কোড কোথায় রান করবে</h2>
+      <p class="lead">প্রতিটা প্রজেক্ট/রিসার্চের জন্য দরকারি ডেটা ও কম্পিউট সোর্স — একটাই কেন্দ্রীয় তালিকায়।</p>
+    </div>
+
+    <h3 style="font-size:17px;">📊 Dataset সোর্স</h3>
+    <div class="table-wrap" style="margin-bottom:22px;">
+      <table>
+        <thead><tr><th>Platform</th><th>Best For</th><th>Free?</th><th>Typical Data</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>Kaggle Datasets</td><td>General-purpose, সব ফিল্ড</td><td>✅ Free</td><td>Tabular, image, text</td><td><a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener">kaggle.com/datasets</a></td></tr>
+          <tr><td>UCI Machine Learning Repository</td><td>ক্লাসিক বেঞ্চমার্ক ডেটাসেট</td><td>✅ Free</td><td>Tabular</td><td><a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener">archive.ics.uci.edu</a></td></tr>
+          <tr><td>Hugging Face Datasets</td><td>NLP / মাল্টিমোডাল</td><td>✅ Free</td><td>Text, audio, multimodal</td><td><a href="https://huggingface.co/datasets" target="_blank" rel="noopener">huggingface.co/datasets</a></td></tr>
+          <tr><td>Google Dataset Search</td><td>যেকোনো টপিক খোঁজার সার্চ ইঞ্জিন</td><td>✅ Free</td><td>সব ধরনের</td><td><a href="https://datasetsearch.research.google.com/" target="_blank" rel="noopener">datasetsearch.research.google.com</a></td></tr>
+          <tr><td>Papers with Code — Datasets</td><td>কোন paper কোন ডেটাসেট ব্যবহার করেছে</td><td>✅ Free</td><td>Benchmark-linked</td><td><a href="https://paperswithcode.com/datasets" target="_blank" rel="noopener">paperswithcode.com/datasets</a></td></tr>
+          <tr><td>Mendeley Data</td><td>একাডেমিক গবেষণা ডেটাসেট</td><td>✅ Free</td><td>Cross-discipline</td><td><a href="https://data.mendeley.com/" target="_blank" rel="noopener">data.mendeley.com</a></td></tr>
+          <tr><td>Figshare</td><td>জার্নাল-লিংকড রিসার্চ ডেটা</td><td>✅ Free</td><td>Cross-discipline</td><td><a href="https://figshare.com/" target="_blank" rel="noopener">figshare.com</a></td></tr>
+          <tr><td>IEEE DataPort</td><td>ইঞ্জিনিয়ারিং/CS ডেটাসেট</td><td>কিছু ফ্রি, কিছু সাবস্ক্রিপশন</td><td>Engineering, CS</td><td><a href="https://ieee-dataport.org/" target="_blank" rel="noopener">ieee-dataport.org</a></td></tr>
+          <tr><td>Nature Scientific Data</td><td>পিয়ার-রিভিউড ডেটা পেপার</td><td>Open Access</td><td>Peer-reviewed datasets</td><td><a href="https://www.nature.com/sdata/" target="_blank" rel="noopener">nature.com/sdata</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-box">
+      <b>Dataset ব্যবহারের আগে চেকলিস্ট:</b>
+      <div class="grid grid-2" style="margin-top:10px;">
+        <ul style="padding-left:18px; margin:0;">
+          <li>License</li><li>Citation requirement</li><li>Dataset size</li><li>Class distribution</li><li>Missing data</li><li>Duplicates</li>
+        </ul>
+        <ul style="padding-left:18px; margin:0;">
+          <li>Near-duplicates</li><li>Class imbalance</li><li>Train/test contamination</li><li>Data leakage</li><li>Bias</li><li>Real-world relevance</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:17px; margin-top:28px;">💻 কোড কোথায় রান করবে</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Platform</th><th>Best Use</th><th>GPU</th><th>Setup দরকার?</th><th>Best For</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>Google Colab</td><td>দ্রুত পরীক্ষা, নোটবুক শেয়ার</td><td>✅ ফ্রি (quota-সীমিত)</td><td>না</td><td>বিগিনার, প্রথম মডেল ট্রেইনিং</td><td><a href="https://colab.research.google.com/" target="_blank" rel="noopener">colab.research.google.com</a></td></tr>
+          <tr><td>Kaggle Notebooks</td><td>Competition + built-in dataset</td><td>✅ ফ্রি GPU/TPU quota</td><td>না</td><td>Kaggle প্রজেক্ট, ডেটাসেট-ভারী কাজ</td><td><a href="https://www.kaggle.com/code" target="_blank" rel="noopener">kaggle.com/code</a></td></tr>
+          <tr><td>VS Code (লোকাল)</td><td>সিরিয়াস, দীর্ঘমেয়াদী প্রজেক্ট</td><td>নিজের হার্ডওয়্যার-নির্ভর</td><td>হ্যাঁ</td><td>কোড organization, রিসার্চ কোডবেস</td><td><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></td></tr>
+          <tr><td>GitHub</td><td>ভার্সন কন্ট্রোল, শেয়ারিং</td><td>—</td><td>হ্যাঁ (git)</td><td>যেকোনো প্রজেক্ট, প্রথম দিন থেকেই</td><td><a href="https://github.com/" target="_blank" rel="noopener">github.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top:12px;"><b>বিগিনার হিসেবে প্রথমে কী ব্যবহার করবে:</b> Google Colab দিয়ে শুরু করো — কোনো সেটআপ ছাড়াই ফ্রি GPU পাবে। প্রজেক্ট বড় হলে GitHub-এ কোড রাখো, আর Kaggle-এর নিজস্ব ডেটাসেট নিয়ে কাজ করলে Kaggle Notebooks ব্যবহার করো।</p>
+  </section>
+
+  <!-- ================= PAPER READING ================= -->
+  <section id="paper-reading" data-toc="07 — Paper Search, Reading ও Literature Review">
+    <div class="section-head">
+      <p class="eyebrow">Stage 10–13</p>
+      <h2>Research Paper কোথায় পাব ও কীভাবে পড়ব?</h2>
+    </div>
+
+    <h3 style="font-size:17px;">Research Paper কোথায় পাব</h3>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead><tr><th>সোর্স</th><th>বিশেষত্ব</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>arXiv</td><td>ফ্রি, সবচেয়ে বড় preprint সংগ্রহ</td><td><a href="https://arxiv.org/" target="_blank" rel="noopener">arxiv.org</a></td></tr>
+          <tr><td>Google Scholar</td><td>সবচেয়ে ব্যাপক একাডেমিক সার্চ</td><td><a href="https://scholar.google.com/" target="_blank" rel="noopener">scholar.google.com</a></td></tr>
+          <tr><td>Semantic Scholar</td><td>AI-powered সামারি ও citation graph</td><td><a href="https://www.semanticscholar.org/" target="_blank" rel="noopener">semanticscholar.org</a></td></tr>
+          <tr><td>IEEE Xplore</td><td>Engineering/CS conference ও journal</td><td><a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">ieeexplore.ieee.org</a></td></tr>
+          <tr><td>ACM Digital Library</td><td>Computer Science conference ও journal</td><td><a href="https://dl.acm.org/" target="_blank" rel="noopener">dl.acm.org</a></td></tr>
+          <tr><td>ScienceDirect</td><td>Elsevier জার্নাল</td><td><a href="https://www.sciencedirect.com/" target="_blank" rel="noopener">sciencedirect.com</a></td></tr>
+          <tr><td>SpringerLink</td><td>Springer জার্নাল ও কনফারেন্স</td><td><a href="https://link.springer.com/" target="_blank" rel="noopener">link.springer.com</a></td></tr>
+          <tr><td>Papers with Code</td><td>Paper + অফিসিয়াল কোড একসাথে</td><td><a href="https://paperswithcode.com/" target="_blank" rel="noopener">paperswithcode.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:17px;">Paper কীভাবে পড়ব — Three-Pass Method</h3>
+    <div class="grid grid-3" style="margin-bottom:20px;">
+      <div class="card"><span class="badge teal">PASS 1 (৫-১০ মিনিট)</span><p class="small" style="margin-top:10px;">Title, Abstract, Figures, Conclusion — শুধু বোঝার চেষ্টা করো এটা কী নিয়ে।</p></div>
+      <div class="card"><span class="badge teal">PASS 2 (৩০-৬০ মিনিট)</span><p class="small" style="margin-top:10px;">Introduction, Related Work, Method overview, Experiments — deep math এড়িয়ে।</p></div>
+      <div class="card"><span class="badge teal">PASS 3 (গভীর)</span><p class="small" style="margin-top:10px;">Equations, Architecture, Implementation, Experiments, Reproduction — যদি paper-টা তোমার কাজের জন্য দরকারি হয়।</p></div>
+    </div>
+
+    <h3 style="font-size:17px;">Literature Review Matrix</h3>
+    <p class="small" style="max-width:70ch;">প্রতিটা paper-এর জন্য একটা স্প্রেডশিটে এই কলামগুলো রাখো, এবং ৫টা → ১০টা → ২০-৩০টা পেপার পর্যন্ত বাড়াও। এতেই বুঝবে ফিল্ড এখন কী বিশ্বাস করে আর কোথায় সত্যিকারের গ্যাপ আছে।</p>
+    <div class="table-wrap" style="margin-bottom:20px;">
+      <table>
+        <thead><tr><th>Paper</th><th>Year</th><th>Problem</th><th>Dataset</th><th>Method</th><th>Baseline</th><th>Result</th><th>Strength</th><th>Limitation</th><th>Research Opportunity</th></tr></thead>
+        <tbody><tr><td colspan="10" style="color:var(--ink-faint); font-style:italic;">উদাহরণ সারি — তোমার প্রতিটা পড়া পেপারের জন্য এই ফরম্যাটে একটা row যোগ করো।</td></tr></tbody>
+      </table>
+    </div>
+    <div class="info-box" style="margin-bottom:20px;"><b>Reference Management:</b> <a href="https://www.zotero.org/support/" target="_blank" rel="noopener">Zotero</a> (ফ্রি, ওপেন-সোর্স) দিয়ে সব paper organize, tag ও cite করো।</div>
+
+    <h3 style="font-size:17px;">Paper Reproduction (Stage 13)</h3>
+    <div class="roadmap-timeline" style="margin-bottom:14px;">
+      <div class="rt-node"><div class="rt-label">Published Paper</div></div>
+      <div class="rt-node"><div class="rt-label">বুঝে নেওয়া (Understand)</div></div>
+      <div class="rt-node"><div class="rt-label">Dataset জোগাড়</div></div>
+      <div class="rt-node"><div class="rt-label">Official Code দেখা (থাকলে)</div></div>
+      <div class="rt-node"><div class="rt-label">নিজে Reimplement</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Result Reproduce</div></div>
+      <div class="rt-node"><div class="rt-label">পার্থক্য Analyze</div></div>
+    </div>
+    <div class="warn-box" style="background:var(--amber-tint); border-color:#F0D5B4;">
+      <h4 style="color:var(--amber);">মনে রাখো</h4>
+      <ul><li>জটিল আর্কিটেকচার প্রস্তাব করার আগে একটা সহজ published paper reproduce করো — এটাই বেসলাইন, evaluation standard আর reporting মান শেখায়।</li></ul>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH PIPELINE + PAPER WRITING ================= -->
+  <section id="paper-writing" data-toc="08 — Research Pipeline ও Paper Writing">
+    <div class="section-head">
+      <p class="eyebrow">Stage 14–17</p>
+      <h2>নিজের Research Pipeline ও Paper Writing</h2>
+    </div>
+
+    <h3 style="font-size:17px;">Research Pipeline</h3>
+    <div class="roadmap-timeline" style="margin-bottom:26px;">
+      <div class="rt-node"><div class="rt-label">Problem</div></div>
+      <div class="rt-node"><div class="rt-label">Literature</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Gap</div></div>
+      <div class="rt-node"><div class="rt-label">Research Question</div></div>
+      <div class="rt-node"><div class="rt-label">Hypothesis</div></div>
+      <div class="rt-node"><div class="rt-label">Dataset</div></div>
+      <div class="rt-node"><div class="rt-label">Baseline</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Proposed Method</div></div>
+      <div class="rt-node"><div class="rt-label">Experiments</div></div>
+      <div class="rt-node"><div class="rt-label">Evaluation</div></div>
+      <div class="rt-node"><div class="rt-label">Ablation</div></div>
+      <div class="rt-node"><div class="rt-label">Statistical Validation</div></div>
+      <div class="rt-node"><div class="rt-label">Error Analysis</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">External Validation</div></div>
+      <div class="rt-node"><div class="rt-label">Conclusion</div></div>
+    </div>
+    <p class="small" style="margin-bottom:26px;">প্রতিটা ধাপে নিজেকে জিজ্ঞেস করো: <i>"আমি কি এই সিদ্ধান্তটা একজন কড়া সমালোচকের সামনে defend করতে পারব?"</i></p>
+
+    <h3 style="font-size:17px;">Research Paper কীভাবে লিখব?</h3>
+    <div class="table-wrap" style="margin-bottom:20px;">
+      <table>
+        <thead><tr><th>Section</th><th>মূল প্রশ্ন</th><th>কী লিখবে</th><th>সাধারণ ভুল</th></tr></thead>
+        <tbody>
+          <tr><td><b>Title</b></td><td>এক লাইনে কী নিয়ে?</td><td>স্পষ্ট, নির্দিষ্ট, বিভ্রান্তিহীন শিরোনাম</td><td>খুব সাধারণ/অস্পষ্ট টাইটেল</td></tr>
+          <tr><td><b>Abstract</b></td><td>পুরো পেপার ৪-৬ লাইনে কী?</td><td>Background → Problem → Method → Dataset → Main Result → Significance</td><td>খুব আগে লেখা — পুরো manuscript শেষ করার পর লেখাই সহজ</td></tr>
+          <tr><td><b>Keywords</b></td><td>কোন টার্মে অন্যরা খুঁজে পাবে?</td><td>৪-৬টা নির্দিষ্ট টেকনিক্যাল টার্ম</td><td>খুব সাধারণ শব্দ ব্যবহার</td></tr>
+          <tr><td><b>Introduction</b></td><td>কেন এটা গুরুত্বপূর্ণ?</td><td>Context → Importance → Existing Research → Limitation → Gap → Proposed Solution → Contributions</td><td>Literature review-এর সাথে গুলিয়ে ফেলা</td></tr>
+          <tr><td><b>Related Work</b></td><td>অন্যরা কী করেছে?</td><td>Theme অনুযায়ী synthesize — শুধু paper-by-paper তালিকা না</td><td>"Paper A did X. Paper B did Y." — এভাবে লেখা</td></tr>
+          <tr><td><b>Methodology</b></td><td>তুমি কী করেছো?</td><td>Dataset → Preprocessing → Architecture → Formulation → Training → Hyperparameters — reproducible ভাবে</td><td>এত অস্পষ্ট যে অন্য কেউ reproduce করতে পারবে না</td></tr>
+          <tr><td><b>Results</b></td><td>কী হয়েছে?</td><td>Table/figure, শুধু best-run না, statistical test সহ</td><td>শুধু সবচেয়ে ভালো রান রিপোর্ট করা</td></tr>
+          <tr><td><b>Discussion</b></td><td>কেন হয়েছে, গুরুত্ব কী?</td><td>Result ব্যাখ্যা, কোথায় fail করে, কেন গুরুত্বপূর্ণ</td><td>Results আর Discussion গুলিয়ে ফেলা</td></tr>
+          <tr><td><b>Ablation Study</b></td><td>কোন অংশ আসলে কাজ করছে?</td><td>একে একে component খুলে দেখানো</td><td>এমন ablation যা claim isolate করে না</td></tr>
+          <tr><td><b>Limitations</b></td><td>কোথায় সীমাবদ্ধতা?</td><td>সততার সাথে স্বীকার করা</td><td>Limitation section বাদ দেওয়া</td></tr>
+          <tr><td><b>Conclusion</b></td><td>মূল টেকঅ্যাওয়ে কী?</td><td>Problem → Solution → Findings → Significance → Limitations → Future Direction</td><td>Abstract-ই কপি-পেস্ট করা</td></tr>
+          <tr><td><b>References</b></td><td>সোর্স যাচাইযোগ্য কি?</td><td>Zotero দিয়ে সঠিক ফরম্যাটে</td><td>AI-generated ভুয়া রেফারেন্স</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom:10px;">
+      <div class="card"><h4 style="font-size:15px;">Results বনাম Discussion</h4>
+        <p class="small"><b>Results:</b> কী হয়েছে? (সংখ্যা, টেবিল, ফিগার — Confusion Matrix, ROC/PR)<br><b>Discussion:</b> কেন হয়েছে? গুরুত্ব কী? মডেল কোথায় ফেল করে?</p>
+      </div>
+      <div class="card"><h4 style="font-size:15px;">লেখার টুল</h4>
+        <p class="small"><b>Overleaf (LaTeX)</b> — <a href="https://www.overleaf.com/" target="_blank" rel="noopener">overleaf.com</a> — বিশ্বব্যাপী স্ট্যান্ডার্ড ফরম্যাট, ফ্রি টিয়ার আছে।</p>
+      </div>
+    </div>
+
+    <div class="info-box"><b>YouTube: Research Paper Writing (Bangla context)</b> — <a href="https://www.youtube.com/mdsabirhossain" target="_blank" rel="noopener">youtube.com/mdsabirhossain</a> — Md. Sabir Hossain (CUET সহকারী অধ্যাপক, PhD candidate) — Research, Paper Writing ও Higher Study নিয়ে ৩০+ পর্বের সিরিয়াল ভিডিও।</div>
+
+    <div class="milestone-box" style="margin-top:6px;"><b>মাইলস্টোন:</b> তোমার draft পড়ে প্রজেক্টে জড়িত নয় এমন কেউ সঠিকভাবে তোমার research question ও মূল ফলাফল বলতে পারছে।</div>
+  </section>
+
+  <!-- ================= RESEARCH ETHICS + PUBLICATION ================= -->
+  <section id="publication" data-toc="09 — Research Ethics ও Publication">
+    <div class="section-head">
+      <p class="eyebrow">Stage 18–20</p>
+      <h2>Research Ethics ও Publication</h2>
+    </div>
+
+    <div class="warn-box">
+      <h4>Research Ethics — সতর্কতা</h4>
+      <ul>
+        <li><b>Plagiarism ও Self-plagiarism</b> — নিজের আগের লেখাও উদ্ধৃতি ছাড়া পুনর্ব্যবহার করা যাবে না।</li>
+        <li><b>Fabricated results / Data manipulation</b> — ফলাফল বানানো বা বিকৃত করা।</li>
+        <li><b>Fake citations</b> — AI দিয়ে বানানো, যাচাই না করা রেফারেন্স।</li>
+        <li><b>Improper authorship</b> — Gift authorship (অবদান ছাড়া নাম যোগ) ও Ghost authorship (অবদান থাকার পরও বাদ)।</li>
+        <li><b>Paper mills ও Predatory journals</b> — টাকা নিয়ে রিভিউ ছাড়া পাবলিশ করে দেওয়া সংস্থা/জার্নাল।</li>
+        <li><b>Dataset privacy ও Image manipulation</b> — ব্যক্তিগত ডেটার অপব্যবহার, ফলাফলের ছবি এডিট করা।</li>
+      </ul>
+      <p class="small" style="margin-top:10px;"><b>মনে রাখো:</b> AI সহায়তা করতে পারে, কিন্তু গবেষক নিজেই বুঝে, যাচাই করে এবং দায়ী থাকতে হবে।</p>
+    </div>
+
+    <h3 style="font-size:17px; margin-top:24px;">Publication Pipeline (সঠিক অর্ডার)</h3>
+    <div class="roadmap-timeline" style="margin-bottom:22px;">
+      <div class="rt-node"><div class="rt-label">Research Complete</div></div>
+      <div class="rt-node"><div class="rt-label">Manuscript</div></div>
+      <div class="rt-node"><div class="rt-label">Journal/Conference খোঁজা</div></div>
+      <div class="rt-node"><div class="rt-label">Scope Check</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Indexing Verification</div></div>
+      <div class="rt-node"><div class="rt-label">Author Guidelines ও Formatting</div></div>
+      <div class="rt-node"><div class="rt-label">Cover Letter</div></div>
+      <div class="rt-node"><div class="rt-label">Submission</div></div>
+      <div class="rt-node"><div class="rt-label">Editorial Screening</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Peer Review</div></div>
+      <div class="rt-node"><div class="rt-label">Revision</div></div>
+      <div class="rt-node"><div class="rt-label">Response to Reviewers</div></div>
+      <div class="rt-node milestone-node"><div class="rt-label">Acceptance / Rejection</div></div>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom:20px;">
+      <div class="card"><h4 style="font-size:15px;">Journal বনাম Conference</h4>
+        <p class="small">Journal: সাধারণত দীর্ঘ review process, deeper/extended কাজের জন্য উপযুক্ত। Conference: দ্রুত review cycle, CS/AI ফিল্ডে অনেক সময় জার্নালের সমান বা বেশি গুরুত্বপূর্ণ (যেমন top-tier ML conferences)।</p>
+      </div>
+      <div class="card"><h4 style="font-size:15px;">গুরুত্বপূর্ণ টার্ম</h4>
+        <p class="small">Scopus, Web of Science, Q1/Q2/Q3/Q4 quartile, Impact Factor, CiteScore, APC (Article Processing Charge), Open Access বনাম Subscription Journal।</p>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <h4>⚠️ Predatory Journal ও Fake Indexing</h4>
+      <ul>
+        <li><b>"Applied for Scopus/WoS indexing" মানে "Indexed" নয়</b> — নিজে Scopus/Web of Science-এ সরাসরি সার্চ করে যাচাই করো, জার্নালের নিজের দাবি বিশ্বাস কোরো না।</li>
+        <li>Fake impact factর সহ ভুয়া মেট্রিক দেখাতে পারে এমন predatory journal থেকে সাবধান।</li>
+        <li>Venue বাছাইয়ের জায়গা: <a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener">IEEE Xplore</a>, <a href="https://dl.acm.org/" target="_blank" rel="noopener">ACM Digital Library</a>।</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= RESOURCES ================= -->
+  <section id="resources" data-toc="10 — Resource Library">
+    <div class="section-head">
+      <p class="eyebrow">Centralized</p>
+      <h2>Resource Library</h2>
+      <p class="lead">উপরে ব্যবহৃত সব রিসোর্স ক্যাটাগরি অনুযায়ী একসাথে — ফিল্টার করে খুঁজে নাও।</p>
+    </div>
+
+    <div class="filter-bar" id="resFilterBar">
+      <button class="filter-chip active" data-filter="all">সব</button>
+      <button class="filter-chip" data-filter="course">কোর্স</button>
+      <button class="filter-chip" data-filter="youtube">YouTube</button>
+      <button class="filter-chip" data-filter="docs">Docs/Reference</button>
+      <button class="filter-chip" data-filter="dataset">Dataset</button>
+      <button class="filter-chip" data-filter="research">Research/Ethics</button>
+    </div>
+
+    <div class="grid grid-3" id="resourceGrid">
+      <div class="res-card searchable" data-filter-cat="course" data-cat="cs50 harvard programming"><div class="rc-top"><h4>CS50 (Harvard)</h4><span class="badge">Free</span></div><div class="provider">Harvard University</div><div class="why">প্রোগ্রামিং লজিক শেখার বিশ্বসেরা বিগিনার কোর্স।</div><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">cs50.harvard.edu/x →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="python w3schools"><div class="rc-top"><h4>Official Python Tutorial</h4><span class="badge">Free</span></div><div class="provider">python.org</div><div class="why">অথোরিটেটিভ, সবসময় আপ-টু-ডেট Python রেফারেন্স।</div><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">docs.python.org/3/tutorial →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="python w3schools"><div class="rc-top"><h4>W3Schools — Python</h4><span class="badge">Free</span></div><div class="provider">W3Schools</div><div class="why">দ্রুত সিনট্যাক্স রেফারেন্স, ট্রাই-ইট-ইয়োরসেল্ফ এডিটর।</div><a href="https://www.w3schools.com/python/python_intro.asp" target="_blank" rel="noopener">w3schools.com/python →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="course" data-cat="python kaggle"><div class="rc-top"><h4>Kaggle Learn</h4><span class="badge">Free</span></div><div class="provider">Kaggle</div><div class="why">Python, Pandas, Data Visualization-এর ছোট, প্র্যাকটিক্যাল মডিউল।</div><a href="https://www.kaggle.com/learn" target="_blank" rel="noopener">kaggle.com/learn →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="math linear algebra"><div class="rc-top"><h4>MIT 18.06 Linear Algebra</h4><span class="badge">Free</span></div><div class="provider">MIT OCW</div><div class="why">Gilbert Strang — বিশ্বের সবচেয়ে বিশ্বাসযোগ্য Linear Algebra কোর্স।</div><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener">ocw.mit.edu →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="course" data-cat="statistics probability"><div class="rc-top"><h4>ML: Probability &amp; Statistics</h4><span class="badge amber">Paid/Free audit</span></div><div class="provider">Coursera</div><div class="why">ML-এর জন্য দরকারি probability ও statistics কভার করে।</div><a href="https://www.coursera.org/learn/machine-learning-probability-and-statistics" target="_blank" rel="noopener">coursera.org →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="math 3blue1brown"><div class="rc-top"><h4>3Blue1Brown</h4><span class="badge">Free</span></div><div class="provider">YouTube</div><div class="why">ম্যাথ ও নিউরাল নেটওয়ার্ক ভিজ্যুয়ালি বোঝানোর সেরা চ্যানেল।</div><a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">youtube.com/@3blue1brown →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="statistics statquest"><div class="rc-top"><h4>StatQuest</h4><span class="badge">Free</span></div><div class="provider">YouTube — Josh Starmer</div><div class="why">Statistics, probability ও ML algorithm সহজভাবে ব্যাখ্যা।</div><a href="https://www.youtube.com/@statquest" target="_blank" rel="noopener">youtube.com/@statquest →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="krish naik ml"><div class="rc-top"><h4>Krish Naik</h4><span class="badge">Free</span></div><div class="provider">YouTube</div><div class="why">Data science ও ML প্র্যাকটিক্যালি শেখানোর জনপ্রিয় চ্যানেল।</div><a href="https://www.youtube.com/@krishnaik06" target="_blank" rel="noopener">youtube.com/@krishnaik06 →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="campusx ml dl"><div class="rc-top"><h4>CampusX</h4><span class="badge">Free</span></div><div class="provider">YouTube (Hindi/English)</div><div class="why">"100 Days of ML/DL" সহ প্র্যাকটিক্যাল সিরিজ।</div><a href="https://www.youtube.com/@campusx-official" target="_blank" rel="noopener">youtube.com/@campusx-official →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="corey schafer python pandas"><div class="rc-top"><h4>Corey Schafer</h4><span class="badge">Free</span></div><div class="provider">YouTube</div><div class="why">Python ও Pandas-এর ক্লিয়ার, প্র্যাকটিক্যাল টিউটোরিয়াল।</div><a href="https://www.youtube.com/@coreyms" target="_blank" rel="noopener">youtube.com/@coreyms →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="ml specialization deeplearning.ai"><div class="rc-top"><h4>ML Specialization</h4><span class="badge">Free audit</span></div><div class="provider">DeepLearning.AI × Stanford</div><div class="why">বিশ্বব্যাপী সবচেয়ে বিশ্বাসযোগ্য ML বিগিনার কোর্স, ৩টা কোর্স।</div><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">coursera.org →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="scikit-learn"><div class="rc-top"><h4>scikit-learn User Guide</h4><span class="badge">Free</span></div><div class="provider">scikit-learn.org</div><div class="why">অফিসিয়াল ডকুমেন্টেশন, কোডের সাথেই ম্যাচ করে।</div><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">scikit-learn.org →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="course" data-cat="kaggle competition"><div class="rc-top"><h4>Kaggle Competitions</h4><span class="badge">Free</span></div><div class="provider">Kaggle</div><div class="why">বিগিনার-ফ্রেন্ডলি প্রথম ML প্রজেক্টের জন্য সেরা জায়গা।</div><a href="https://www.kaggle.com/competitions" target="_blank" rel="noopener">kaggle.com/competitions →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="dl specialization deeplearning.ai"><div class="rc-top"><h4>DL Specialization</h4><span class="badge">Free audit</span></div><div class="provider">DeepLearning.AI</div><div class="why">ইন্ডাস্ট্রি-স্ট্যান্ডার্ড ৫-কোর্স Deep Learning সিরিজ।</div><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" rel="noopener">coursera.org →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="cs231n stanford cnn"><div class="rc-top"><h4>Stanford CS231n</h4><span class="badge">Free</span></div><div class="provider">Stanford</div><div class="why">CNN ও Computer Vision-এর গভীর ও ফ্রি কোর্স নোট।</div><a href="https://cs231n.github.io/" target="_blank" rel="noopener">cs231n.github.io →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="andrej karpathy neural network"><div class="rc-top"><h4>Andrej Karpathy</h4><span class="badge">Free</span></div><div class="provider">YouTube</div><div class="why">Neural networks "from scratch" কোড করে দেখানোর জন্য বিশ্বখ্যাত।</div><a href="https://www.youtube.com/@AndrejKarpathy" target="_blank" rel="noopener">youtube.com/@AndrejKarpathy →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="pytorch tutorial"><div class="rc-top"><h4>PyTorch Tutorials</h4><span class="badge">Free</span></div><div class="provider">PyTorch.org</div><div class="why">অফিসিয়াল, framework-এর সাথে সবসময় সিঙ্ক করা।</div><a href="https://docs.pytorch.org/tutorials/" target="_blank" rel="noopener">docs.pytorch.org/tutorials →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube" data-cat="aladdin persson pytorch"><div class="rc-top"><h4>Aladdin Persson</h4><span class="badge">Free</span></div><div class="provider">YouTube</div><div class="why">PyTorch দিয়ে বিভিন্ন আর্কিটেকচার ইমপ্লিমেন্ট করে দেখানো।</div><a href="https://www.youtube.com/@AladdinPersson" target="_blank" rel="noopener">youtube.com/@AladdinPersson →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="cs224n nlp stanford"><div class="rc-top"><h4>Stanford CS224N</h4><span class="badge">Free</span></div><div class="provider">Stanford</div><div class="why">NLP-এর জন্য standard একাডেমিক রেফারেন্স।</div><a href="https://web.stanford.edu/class/cs224n/" target="_blank" rel="noopener">web.stanford.edu/class/cs224n →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="docs" data-cat="cs224w gnn stanford"><div class="rc-top"><h4>Stanford CS224W</h4><span class="badge">Free</span></div><div class="provider">Stanford</div><div class="why">Graph Neural Network-এর জন্য standard কোর্স।</div><a href="http://web.stanford.edu/class/cs224w/" target="_blank" rel="noopener">web.stanford.edu/class/cs224w →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="dataset" data-cat="kaggle uci huggingface"><div class="rc-top"><h4>Kaggle / UCI / Hugging Face</h4><span class="badge">Free</span></div><div class="provider">বিভিন্ন প্রোভাইডার</div><div class="why">Dataset খোঁজার প্রধান তিন জায়গা — বিস্তারিত Datasets সেকশনে।</div><a href="#datasets-tools">Datasets সেকশন দেখুন →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="research" data-cat="arxiv semantic scholar google scholar"><div class="rc-top"><h4>arXiv / Google Scholar / Semantic Scholar</h4><span class="badge">Free</span></div><div class="provider">Research Search</div><div class="why">Paper খোঁজা ও পড়ার প্রধান তিনটি জায়গা।</div><a href="#paper-reading">Paper Reading সেকশন দেখুন →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="research" data-cat="zotero reference"><div class="rc-top"><h4>Zotero</h4><span class="badge">Free</span></div><div class="provider">zotero.org</div><div class="why">রেফারেন্স ম্যানেজমেন্টের ওপেন-সোর্স স্ট্যান্ডার্ড টুল।</div><a href="https://www.zotero.org/support/" target="_blank" rel="noopener">zotero.org/support →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="research" data-cat="overleaf latex writing"><div class="rc-top"><h4>Overleaf (LaTeX)</h4><span class="badge">Free tier</span></div><div class="provider">overleaf.com</div><div class="why">Paper লেখার বিশ্বব্যাপী স্ট্যান্ডার্ড ফরম্যাট টুল।</div><a href="https://www.overleaf.com/" target="_blank" rel="noopener">overleaf.com →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="research" data-cat="ieee acm venue"><div class="rc-top"><h4>IEEE Xplore / ACM Digital Library</h4><span class="badge">Mixed</span></div><div class="provider">IEEE / ACM</div><div class="why">Venue বাছাই ও indexing যাচাইয়ের জায়গা।</div><a href="#publication">Publication সেকশন দেখুন →</a></div>
+
+      <div class="res-card searchable" data-filter-cat="youtube research" data-cat="paper writing bangla mdsabirhossain"><div class="rc-top"><h4>Md. Sabir Hossain</h4><span class="badge">Free</span></div><div class="provider">YouTube (Bangla context)</div><div class="why">Research, Paper Writing ও Higher Study নিয়ে ৩০+ পর্বের সিরিয়াল।</div><a href="https://www.youtube.com/mdsabirhossain" target="_blank" rel="noopener">youtube.com/mdsabirhossain →</a></div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section id="timeline" data-toc="11 — ৮–১২ মাসের টাইমলাইন">
+    <div class="section-head">
+      <p class="eyebrow">Approximate</p>
+      <h2>বাস্তবসম্মত ৮–১২ মাসের টাইমলাইন</h2>
+      <p class="lead">সপ্তাহে ~১০-১৫ ঘণ্টা সময় দিলে। এটা আনুমানিক — নিজের গতি অনুযায়ী সমন্বয় করো।</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>মাস</th><th>ফোকাস</th></tr></thead>
+        <tbody>
+          <tr><td>১–২</td><td>Programming + Python + Math শুরু</td></tr>
+          <tr><td>২–৩</td><td>Math শেষ + Data Analysis (NumPy/Pandas/Matplotlib)</td></tr>
+          <tr><td>৩–৪</td><td>Machine Learning Specialization + First Project</td></tr>
+          <tr><td>৪–৫</td><td>Deep Learning Specialization + PyTorch</td></tr>
+          <tr><td>৫–৭</td><td>একটা Specialization Track</td></tr>
+          <tr><td>৭–৮</td><td>Research Methodology + Paper Reading + Literature Review</td></tr>
+          <tr><td>৮–৯</td><td>Paper Reproduction</td></tr>
+          <tr><td>৯–১১</td><td>নিজের Full Research Pipeline (Gap → Experiment → Validation)</td></tr>
+          <tr><td>১১–১২</td><td>Paper Writing + Venue বাছাই + Submission</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= CHECKLISTS ================= -->
+  <section id="checklists" data-toc="12 — Checklists">
+    <div class="section-head">
+      <p class="eyebrow">Interactive</p>
+      <h2>Checkpoints — নিজেকে যাচাই করো</h2>
+      <p class="lead">প্রতিটা বক্স তোমার ব্রাউজারে সেভ থাকবে (localStorage), তাই পরে ফিরে এসেও progress দেখতে পাবে।</p>
+    </div>
+
+    <div class="checklist-card" data-cl="cl1">
+      <div class="cl-head"><h3 style="margin:0;">Checkpoint 1 — আমি কি Machine Learning-এর জন্য রেডি?</h3></div>
+      <div class="cl-head"><div class="progress-track"><div class="progress-fill"></div></div><span class="small cl-count">0/5</span></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl1-1"><label for="">Python-এ কমফোর্টেবল — লিস্ট, ডিকশনারি, ফাংশন, ক্লাস লিখতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl1-2"><label>Linear algebra ও calculus-এর বেসিক (vector, matrix, derivative, gradient) বুঝি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl1-3"><label>NumPy ও Pandas দিয়ে ডেটা ক্লিন করতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl1-4"><label>Matplotlib দিয়ে ৫+ ধরনের প্লট বানাতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl1-5"><label>Probability ও basic statistics (mean, variance, distribution) বুঝি</label></div>
+    </div>
+
+    <div class="checklist-card" data-cl="cl2">
+      <div class="cl-head"><h3 style="margin:0;">Checkpoint 2 — আমি কি Deep Learning-এর জন্য রেডি?</h3></div>
+      <div class="cl-head"><div class="progress-track"><div class="progress-fill"></div></div><span class="small cl-count">0/5</span></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl2-1"><label>ML Specialization শেষ করেছি (৩টা কোর্স)</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl2-2"><label>Overfitting/underfitting ও cross-validation ব্যাখ্যা করতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl2-3"><label>একটা সম্পূর্ণ ML প্রজেক্ট GitHub-এ আছে</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl2-4"><label>scikit-learn দিয়ে একাধিক মডেল ট্রেইন ও কম্পেয়ার করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl2-5"><label>Evaluation metrics (accuracy, precision, recall, F1) কখন ব্যবহার করব বুঝি</label></div>
+    </div>
+
+    <div class="checklist-card" data-cl="cl3">
+      <div class="cl-head"><h3 style="margin:0;">Checkpoint 3 — আমি কি Research শুরু করার জন্য রেডি?</h3></div>
+      <div class="cl-head"><div class="progress-track"><div class="progress-fill"></div></div><span class="small cl-count">0/8</span></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-1"><label>PyTorch-এ টিউটোরিয়াল কপি না করে নিজে মডেল ট্রেইন করতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-2"><label>একটা specialization track (CV/NLP/TS/GNN) শেষ করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-3"><label>Three-pass method দিয়ে paper পড়তে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-4"><label>১৫+ paper-এর literature review matrix বানিয়েছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-5"><label>Zotero ব্যবহার করতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-6"><label>একটা published paper reproduce করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-7"><label>Data leakage ও dataset bias চিনতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl3-8"><label>Research gap ও "শুধু নতুন কম্বিনেশন"-এর পার্থক্য বুঝি</label></div>
+    </div>
+
+    <div class="checklist-card" data-cl="cl4">
+      <div class="cl-head"><h3 style="margin:0;">Checkpoint 4 — আমি কি প্রথম Paper লেখার জন্য রেডি?</h3></div>
+      <div class="cl-head"><div class="progress-track"><div class="progress-fill"></div></div><span class="small cl-count">0/6</span></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-1"><label>একটা falsifiable research question আছে (শুধু "নতুন মডেল" না)</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-2"><label>একটা real baseline implement ও evaluate করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-3"><label>Ablation study করেছি — কোন অংশ আসলে কাজ করছে জানি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-4"><label>Statistical significance টেস্ট করেছি, শুধু একটা সংখ্যা রিপোর্ট করিনি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-5"><label>Error analysis করেছি — কোথায়/কেন fail করে জানি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl4-6"><label>External validation (ভিন্ন ডেটাসেট/সেটিং) টেস্ট করেছি</label></div>
+    </div>
+
+    <div class="checklist-card" data-cl="cl5">
+      <div class="cl-head"><h3 style="margin:0;">Checkpoint 5 — আমি কি Submit করার জন্য রেডি?</h3></div>
+      <div class="cl-head"><div class="progress-track"><div class="progress-fill"></div></div><span class="small cl-count">0/6</span></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-1"><label>কোড ও ডেটা availability documented এবং reproducible</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-2"><label>Generative AI ব্যবহার করে থাকলে venue policy অনুযায়ী disclose করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-3"><label>প্রতিটা methodological সিদ্ধান্ত script ছাড়াই defend করতে পারি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-4"><label>Venue-এর indexing status Scopus/WoS-এ নিজে গিয়ে verify করেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-5"><label>Author guidelines ও ফরম্যাটিং সঠিকভাবে মেনেছি</label></div>
+      <div class="cl-item"><input type="checkbox" data-id="cl5-6"><label>Authorship order নিয়ে সব co-author-এর সাথে সম্মত হয়েছি</label></div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" data-toc="13 — FAQ">
+    <div class="section-head">
+      <p class="eyebrow">Common Questions</p>
+      <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+    </div>
+
+    <details class="faq"><summary>আমার কোনো coding background নেই। এখান থেকে কি সত্যিই শুরু করতে পারব?</summary><p>হ্যাঁ। এই রোডম্যাপ একদম Programming Fundamentals (Stage 01) থেকে শুরু হয়েছে বিশেষভাবে zero-background শিক্ষার্থীদের জন্য। প্রতিটা স্টেজ আগেরটার উপর নির্ভর করে গড়ে উঠেছে।</p></details>
+
+    <details class="faq"><summary>ML আগে শিখব নাকি সরাসরি Deep Learning-এ যাব?</summary><p>ML আগে। Deep Learning-এর বেশিরভাগ কনসেপ্ট (loss function, gradient descent, overfitting, evaluation) ML fundamentals-এর উপর ভিত্তি করে তৈরি। ML স্কিপ করে সরাসরি DL শুরু করলে অনেক কিছু "ম্যাজিক" মনে হবে।</p></details>
+
+    <details class="faq"><summary>PyTorch না TensorFlow — কোনটা শিখব?</summary><p>রিসার্চ কমিউনিটিতে বর্তমানে PyTorch বেশি ব্যবহৃত, এবং বেশিরভাগ নতুন paper-এর official code PyTorch-এ থাকে। তাই এই রোডম্যাপ PyTorch-কেই priority দিয়েছে।</p></details>
+
+    <details class="faq"><summary>কবে থেকে Research Paper পড়া শুরু করব?</summary><p>Foundation (Stage 01-04), ML (Stage 05-06), DL (Stage 07-08) এবং একটা Specialization Track শেষ করার পর। এর আগে paper-এর ভাষা ও কনসেপ্ট বোঝার মতো ভিত্তি তৈরি হয় না।</p></details>
+
+    <details class="faq"><summary>Journal ভালো নাকি Conference?</summary><p>এটা ফিল্ড-নির্ভর। Computer Science/AI-তে top-tier conference (যেমন NeurIPS, CVPR, ACL) প্রায়ই journal-এর সমান বা বেশি গুরুত্বপূর্ণ, কারণ review cycle দ্রুত এবং ফিল্ড দ্রুত এগোয়। journal সাধারণত গভীরতর, বিস্তৃত কাজের জন্য উপযুক্ত।</p></details>
+
+    <details class="faq"><summary>আমার কোনো ভালো idea আছে যেটা কেউ আগে try করেনি — এটাই কি research gap?</summary><p>সবসময় না। "কেউ ট্রাই করেনি" আর "এটা গুরুত্বপূর্ণ unanswered question" এক জিনিস না। Research Fundamentals সেকশনে Project বনাম Research টেবিলটা দেখো — একটা আসল gap সবসময় একটা প্রশ্নের সাথে যুক্ত থাকে, শুধু একটা মডেল কম্বিনেশনের সাথে না।</p></details>
+
+    <details class="faq"><summary>Paper লেখার আগে কি নিজের ডেটাসেট বানাতে হবে?</summary><p>না, বাধ্যতামূলক না। প্রথম কয়েকটা রিসার্চের জন্য existing public dataset ব্যবহার করাই ভালো — Datasets সেকশনে দেওয়া চেকলিস্ট অনুযায়ী যাচাই করে নিও (license, bias, leakage)।</p></details>
+
+    <details class="faq"><summary>এই পুরো পথ সম্পূর্ণ করতে কত সময় লাগবে?</summary><p>সপ্তাহে ~১০-১৫ ঘণ্টা সময় দিলে আনুমানিক ৮-১২ মাস (Timeline সেকশন দেখো)। প্রোগ্রামিং/ম্যাথ ব্যাকগ্রাউন্ড আগে থেকে থাকলে এটা আরও কম সময়ে সম্ভব।</p></details>
+  </section>
+
+  </main>
+</div>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <h4>AI/ML Research শেখার সম্পূর্ণ পথ</h4>
+      <span class="small" style="color:#9FB3AB;">Beginner → Independent Researcher</span>
+    </div>
+    <p class="disclaimer">
+      <b>Resource Disclaimer:</b> কোর্সের availability, দাম এবং URL সময়ের সাথে পরিবর্তন হতে পারে। ব্যবহারের আগে সবসময় অফিসিয়াল প্রোভাইডারের ওয়েবসাইটে গিয়ে যাচাই করে নাও।<br>
+      Last Updated: জুলাই ২০২৬
+    </p>
+  </div>
+</footer>
+
+<script>
+/* ===================== BUILD TOC (desktop sidebar + mobile drawer) ===================== */
+(function(){
+  var sections = Array.from(document.querySelectorAll('main > section[data-toc]'));
+  var tocNav = document.getElementById('tocNav');
+  var drawerNav = document.getElementById('drawerNav');
+  var ol = document.createElement('ol');
+  var olMobile = document.createElement('ol');
+  sections.forEach(function(sec){
+    var label = sec.getAttribute('data-toc');
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + sec.id;
+    a.dataset.target = sec.id;
+    a.innerHTML = label;
+    li.appendChild(a);
+    ol.appendChild(li);
+
+    var li2 = li.cloneNode(true);
+    olMobile.appendChild(li2);
+  });
+  tocNav.appendChild(ol);
+  drawerNav.appendChild(olMobile);
+
+  // scrollspy
+  var tocLinks = tocNav.querySelectorAll('a');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var id = entry.target.id;
+      var link = tocNav.querySelector('a[data-target="'+id+'"]');
+      var navLink = document.querySelector('#topnav a[href="#'+id+'"]');
+      if(entry.isIntersecting){
+        tocLinks.forEach(function(l){l.classList.remove('active');});
+        if(link) link.classList.add('active');
+        document.querySelectorAll('#topnav a').forEach(function(l){l.classList.remove('active');});
+        if(navLink) navLink.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(function(s){observer.observe(s);});
+})();
+
+/* ===================== MOBILE DRAWER ===================== */
+(function(){
+  var openBtn = document.getElementById('openDrawer');
+  var closeBtn = document.getElementById('closeDrawer');
+  var drawer = document.getElementById('tocDrawer');
+  var overlay = document.getElementById('drawerOverlay');
+  function open(){drawer.classList.add('show'); overlay.classList.add('show');}
+  function close(){drawer.classList.remove('show'); overlay.classList.remove('show');}
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  drawer.addEventListener('click', function(e){ if(e.target.tagName==='A'){close();} });
+})();
+
+/* ===================== BACK TO TOP ===================== */
+(function(){
+  var btn = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){btn.classList.add('show');} else {btn.classList.remove('show');}
+  });
+  btn.addEventListener('click', function(){window.scrollTo({top:0, behavior:'smooth'});});
+})();
+
+/* ===================== SEARCH ===================== */
+(function(){
+  var input = document.getElementById('siteSearch');
+  var resultsBox = document.getElementById('searchResults');
+  var searchable = Array.from(document.querySelectorAll('.searchable'));
+  // build index: {el, text}
+  var index = searchable.map(function(el){
+    var cat = el.getAttribute('data-cat') || '';
+    var text = (el.innerText || '') + ' ' + cat;
+    return {el:el, text:text.toLowerCase()};
+  });
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    document.querySelectorAll('.hl-match').forEach(function(el){el.classList.remove('hl-match');});
+    if(q.length < 2){ resultsBox.classList.remove('show'); resultsBox.innerHTML=''; return; }
+    var matches = index.filter(function(item){ return item.text.indexOf(q) !== -1; }).slice(0,12);
+    if(matches.length === 0){
+      resultsBox.innerHTML = '<a style="color:var(--ink-faint);">কোনো ফলাফল পাওয়া যায়নি</a>';
+    } else {
+      resultsBox.innerHTML = '';
+      matches.forEach(function(item){
+        var sec = item.el.closest('section');
+        var secLabel = sec ? (sec.getAttribute('data-toc') || sec.id) : '';
+        var titleEl = item.el.querySelector('h3,h4');
+        var title = titleEl ? titleEl.innerText : (item.el.innerText.slice(0,60));
+        var a = document.createElement('a');
+        a.href = '#';
+        a.innerHTML = '<span class="res-cat">'+secLabel+'</span><br>'+title;
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          item.el.scrollIntoView({behavior:'smooth', block:'center'});
+          item.el.classList.add('hl-match');
+          resultsBox.classList.remove('show');
+          input.value='';
+          setTimeout(function(){item.el.classList.remove('hl-match');}, 2500);
+        });
+        resultsBox.appendChild(a);
+      });
+    }
+    resultsBox.classList.add('show');
+  });
+  document.addEventListener('click', function(e){
+    if(!resultsBox.contains(e.target) && e.target !== input){ resultsBox.classList.remove('show'); }
+  });
+})();
+
+/* ===================== RESOURCE FILTER ===================== */
+(function(){
+  var chips = document.querySelectorAll('#resFilterBar .filter-chip');
+  var cards = document.querySelectorAll('#resourceGrid .res-card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){c.classList.remove('active');});
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var cats = (card.getAttribute('data-filter-cat')||'').split(' ');
+        if(f === 'all' || cats.indexOf(f) !== -1){ card.style.display=''; } else { card.style.display='none'; }
+      });
+    });
+  });
+})();
+
+/* ===================== CHECKLISTS WITH LOCALSTORAGE ===================== */
+(function(){
+  var STORAGE_KEY = 'aimlRoadmapChecklist';
+  var state = {};
+  try{
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if(saved) state = JSON.parse(saved);
+  } catch(e){ state = {}; }
+
+  var checklistCards = document.querySelectorAll('.checklist-card');
+  checklistCards.forEach(function(card){
+    var checkboxes = card.querySelectorAll('input[type="checkbox"]');
+    var fill = card.querySelector('.progress-fill');
+    var countLabel = card.querySelector('.cl-count');
+
+    function updateProgress(){
+      var total = checkboxes.length;
+      var checked = 0;
+      checkboxes.forEach(function(cb){ if(cb.checked) checked++; });
+      var pct = total ? Math.round((checked/total)*100) : 0;
+      fill.style.width = pct + '%';
+      countLabel.textContent = checked + '/' + total;
+    }
+
+    checkboxes.forEach(function(cb){
+      var id = cb.getAttribute('data-id');
+      if(state[id]) cb.checked = true;
+      cb.addEventListener('change', function(){
+        state[id] = cb.checked;
+        try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+        updateProgress();
+      });
+    });
+    updateProgress();
+  });
+})();
+</script>
+
+<script>
+function toggleMainNav(){
+ const nav=document.getElementById('mainSiteNav');
+ const btn=nav.querySelector('.nav-toggle');
+ nav.classList.toggle('open');
+ btn.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false');
+}
+</script>
+
+</body>
+</html>
