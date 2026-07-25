@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Higher Education & Research Pathway | Md. Rifat Hossen</title>
+<meta name="description" content="A curated roadmap and collection of trusted resources for graduate study, research preparation, scholarships, MSc/PhD applications, academic writing, and research publication." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Higher Education & Research Pathway" />
+<meta property="og:description" content="A curated roadmap and collection of trusted resources for graduate study, research preparation, scholarships, MSc/PhD applications, academic writing, and research publication." />
+<meta property="og:url" content="/higher-education-research-pathway/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      Higher Education & Research Pathway <span class="brand-mark">HERP</span>
+    </a>
+    <button class="topnav-mobile-toggle" id="mobile-nav-toggle" aria-expanded="false" aria-controls="topnav">☰ Menu</button>
+    <nav class="topnav" id="topnav" aria-label="Section navigation">
+      <a href="https://mdrifat-hossen.github.io" class="nav-home">Home</a>
+      <a href="#getting-started">Getting Started</a>
+      <a href="#application-prep">Applications</a>
+      <a href="#funding">Funding</a>
+      <a href="#research">Research</a>
+      <a href="#publishing">Publishing</a>
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false">🌙 Dark mode</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-card">
+        <span class="catalog-tag">Curated Resource Catalog</span>
+        <h1>Higher Education &amp; Research Pathway</h1>
+        <p class="lede">A curated roadmap designed to help students navigate graduate education, research preparation, funding opportunities, academic applications, and the research publication process.</p>
+        <div class="flow" aria-hidden="true">
+          <span class="step">Explore</span><span class="arrow">→</span>
+          <span class="step">Prepare</span><span class="arrow">→</span>
+          <span class="step">Apply</span><span class="arrow">→</span>
+          <span class="step">Fund</span><span class="arrow">→</span>
+          <span class="step">Research</span><span class="arrow">→</span>
+          <span class="step">Publish</span><span class="arrow">→</span>
+          <span class="step">Grow</span>
+        </div>
+        <div class="stat-row" id="stat-row">
+          <div class="stat"><span class="stat-num" data-target="68" id="stat-resources">0</span><span class="stat-label">Resources</span></div>
+          <div class="stat"><span class="stat-num" data-target="5" id="stat-sections">0</span><span class="stat-label">Pathway Sections</span></div>
+          <div class="stat"><span class="stat-num" data-target="8" id="stat-stages">0</span><span class="stat-label">Journey Stages</span></div>
+        </div>
+        <div class="stage-grid" id="stage-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roadmap" aria-labelledby="roadmap-heading">
+    <div class="wrap">
+      <h2 id="roadmap-heading">Your Progress Roadmap</h2>
+      <p class="section-intro">Eight stages, from first exploring the idea of graduate study to building a research career. Work through them in order, or jump to whichever stage you're at. Click a stage's marker to check it off — your progress is saved on this device.</p>
+      <div class="progress-track" role="group" aria-label="Overall progress">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="progress-label" id="progress-label">0 of 8 stages checked off</span>
+      </div>
+      <div class="roadmap-rail" id="roadmap-rail"></div>
+    </div>
+  </section>
+
+  <section class="search-bar" aria-labelledby="search-heading">
+    <div class="wrap">
+      <h2 id="search-heading" class="visually-hidden" style="font-size:1rem;">Search the catalog</h2>
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <span class="mono-icon">⌕</span>
+          <input type="search" id="resource-search" placeholder="Search resources — e.g. Scholarship, SOP, IELTS, Scopus..." aria-label="Search resources" />
+        </div>
+      </div>
+      <div class="filter-row" id="filter-row" role="group" aria-label="Filter by category"></div>
+      <div id="result-count" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div id="sections-root"><!-- Rendered by app.js --></div>
+
+  <section class="disclaimer">
+    <div class="wrap">
+      <strong>Please note:</strong> Admission requirements, scholarships, funding policies, standardized-test requirements, journal indexing, fees, and application deadlines may change. Always verify important information on the official university, funding agency, journal, or publisher website before making a decision.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="attribution">Curated and maintained by <strong>Md. Rifat Hossen</strong>. This is an independent educational resource; it is not endorsed by, and does not speak for, any of the universities, publishers, or organizations linked here.</p>
+    <div class="foot-links">
+      <a href="#top">Back to top</a>
+      <span id="build-note">© <span id="year"></span></span>
+    </div>
+  </div>
+</footer>
+
+  <button id="shuffle-btn" class="floating-btn shuffle-btn" title="Draw a random resource card">🎲 Surprise me</button>
+  <button id="top-btn" class="floating-btn top-btn" title="Back to top" aria-label="Back to top">↑</button>
+<!-- Modal for random resource card --
+<div id="shuffle-modal" class="modal-backdrop" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="shuffle-title">
+    <button class="modal-close" id="shuffle-close" aria-label="Close">✕</button>
+    <span class="eyebrow" id="shuffle-eyebrow">From the catalog</span>
+    <div id="shuffle-content"></div>
+  </div>
+</div>  -->
+<script src="resources.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

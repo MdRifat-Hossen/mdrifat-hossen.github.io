@@ -11,8 +11,10 @@
 
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
+
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
+
   z-index: 20;
 
   &::after {
@@ -27,6 +29,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
+
     padding: 0.5em 1em;
     font-family: $sans-serif-narrow;
 
@@ -44,6 +47,11 @@
   }
 }
 
+
+/* ==========================================================================
+   MAIN NAVIGATION
+   ========================================================================== */
+
 .masthead__menu {
 
   ul {
@@ -53,6 +61,7 @@
     list-style-type: none;
   }
 }
+
 
 .masthead__menu-item {
   background-color: var(--global-bg-color);
@@ -66,16 +75,441 @@
   }
 }
 
-.masthead__menu-item.selected a {
+
+/* ==========================================================================
+   SELECTED NAVIGATION
+   ========================================================================== */
+
+.masthead__menu-item.selected > a {
   color: var(--global-text-color);
   font-weight: 700;
+
   border-bottom: 2px solid var(--global-text-color);
-  pointer-events: none; /* Move this here */
-  cursor: default; /* Move this here too */
+
+  pointer-events: none;
+  cursor: default;
 }
 
-.masthead__menu-item.selected a:hover {
+
+.masthead__menu-item.selected > a:hover {
   color: var(--global-text-color);
   border-bottom: 2px solid var(--global-text-color);
-  /* No need to repeat pointer-events and cursor here */
+}
+
+
+/* ==========================================================================
+   LEVEL 1 -> LEVEL 2 DROPDOWN
+   ========================================================================== */
+
+.greedy-nav .nav-dropdown {
+
+  position: relative;
+  display: inline-block;
+
+  background: var(--global-bg-color);
+
+
+  /* Parent */
+  > .dropdown-toggle {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5;
+
+    color: var(--global-text-color);
+
+    cursor: pointer;
+
+    user-select: none;
+  }
+
+
+  /* Parent Arrow */
+  > .dropdown-toggle .dropdown-arrow {
+
+    margin-left: 2px;
+
+    font-size: 0.60em;
+
+    transition: transform 0.2s ease;
+  }
+
+
+  /* Level 2 Dropdown Box */
+  > ul.dropdown-menu {
+
+    position: absolute !important;
+
+    top: calc(100% + 2px);
+    left: 0;
+
+    display: block !important;
+
+    float: none !important;
+    clear: none !important;
+
+    width: max-content;
+
+    min-width: 210px;
+    max-width: 320px;
+
+    margin: 0 !important;
+    padding: 5px 0 !important;
+
+    list-style: none !important;
+
+    background: var(--global-bg-color);
+
+    border: 1px solid var(--global-border-color);
+    border-radius: 6px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(5px);
+
+    transition:
+      opacity 0.15s ease,
+      visibility 0.15s ease,
+      transform 0.15s ease;
+
+    z-index: 99999;
+  }
+
+
+  /* Show Level 2 */
+  &:hover > ul.dropdown-menu,
+  &:focus-within > ul.dropdown-menu {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  /* Rotate Parent Arrow */
+  &:hover > .dropdown-toggle .dropdown-arrow,
+  &:focus-within > .dropdown-toggle .dropdown-arrow {
+
+    transform: rotate(180deg);
+  }
+}
+
+
+/* ==========================================================================
+   LEVEL 2 CHILD ITEMS
+   ========================================================================== */
+
+.greedy-nav .dropdown-menu > li {
+
+  position: relative;
+
+  display: block !important;
+
+  float: none !important;
+  clear: both !important;
+
+  width: 100%;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  list-style: none !important;
+
+  background: var(--global-bg-color);
+}
+
+
+/* Normal Child Link */
+
+.greedy-nav .dropdown-menu > li > a {
+
+  display: flex !important;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin: 0 !important;
+
+  padding: 8px 14px !important;
+
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  line-height: 1.35;
+
+  text-align: left;
+
+  color: var(--global-text-color);
+
+  background: transparent;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  border: 0 !important;
+
+  cursor: pointer;
+
+  pointer-events: auto !important;
+
+  transition:
+    background 0.15s ease,
+    padding-left 0.15s ease;
+}
+
+
+/* Child Hover */
+
+.greedy-nav .dropdown-menu > li > a:hover {
+
+  background: var(--global-border-color);
+
+  color: var(--global-text-color);
+
+  padding-left: 17px !important;
+}
+
+
+/* ==========================================================================
+   LEVEL 2 -> LEVEL 3 SUBMENU
+   ========================================================================== */
+
+.greedy-nav .dropdown-submenu {
+
+  position: relative;
+}
+
+
+/* Submenu Parent */
+
+.greedy-nav .dropdown-submenu > .submenu-toggle {
+
+  display: flex !important;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 8px 14px !important;
+
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+
+  color: var(--global-text-color);
+
+  cursor: pointer;
+
+  border: 0 !important;
+}
+
+
+/* Right Arrow */
+
+.greedy-nav .submenu-arrow {
+
+  margin-left: auto;
+
+  font-size: 0.65em;
+
+  transition: transform 0.2s ease;
+}
+
+
+/* ==========================================================================
+   LEVEL 3 SUBMENU BOX
+   ========================================================================== */
+
+.greedy-nav .dropdown-submenu > ul.submenu {
+
+  position: absolute !important;
+
+  top: -5px;
+  left: 100%;
+
+  display: block !important;
+
+  float: none !important;
+  clear: none !important;
+
+  width: max-content;
+
+  min-width: 200px;
+  max-width: 320px;
+
+  margin: 0 !important;
+
+  padding: 5px 0 !important;
+
+  list-style: none !important;
+
+  background: var(--global-bg-color);
+
+  border: 1px solid var(--global-border-color);
+
+  border-radius: 6px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(5px);
+
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    transform 0.15s ease;
+
+  z-index: 100000;
+}
+
+
+/* Show Level 3 */
+
+.greedy-nav .dropdown-submenu:hover > ul.submenu,
+.greedy-nav .dropdown-submenu:focus-within > ul.submenu {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateX(0);
+}
+
+
+/* Arrow Animation */
+
+.greedy-nav .dropdown-submenu:hover > .submenu-toggle .submenu-arrow {
+
+  transform: translateX(3px);
+}
+
+
+/* ==========================================================================
+   LEVEL 3 ITEMS
+   ========================================================================== */
+
+.greedy-nav .submenu > li {
+
+  display: block !important;
+
+  float: none !important;
+
+  width: 100%;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  list-style: none !important;
+
+  background: var(--global-bg-color);
+}
+
+
+.greedy-nav .submenu > li > a {
+
+  display: block !important;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 8px 14px !important;
+
+  font-size: 0.76em !important;
+
+  font-weight: 400 !important;
+
+  line-height: 1.35;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  color: var(--global-text-color);
+
+  background: transparent;
+
+  border: 0 !important;
+
+  cursor: pointer;
+
+  pointer-events: auto !important;
+
+  transition:
+    background 0.15s ease,
+    padding-left 0.15s ease;
+}
+
+
+.greedy-nav .submenu > li > a:hover {
+
+  background: var(--global-border-color);
+
+  padding-left: 17px !important;
+}
+
+
+/* ==========================================================================
+   MOBILE / SMALL SCREEN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  .greedy-nav .nav-dropdown > ul.dropdown-menu {
+
+    left: auto;
+    right: 0;
+
+    min-width: 190px;
+  }
+
+
+  /*
+   * On smaller screens open the third level
+   * toward the left so it does not go outside
+   * the viewport.
+   */
+
+  .greedy-nav .dropdown-submenu > ul.submenu {
+
+    left: auto;
+    right: 100%;
+
+    top: -5px;
+
+    min-width: 180px;
+  }
+
+
+  .greedy-nav .dropdown-menu > li > a,
+  .greedy-nav .dropdown-submenu > .submenu-toggle {
+
+    font-size: 0.80em !important;
+  }
+
+
+  .greedy-nav .submenu > li > a {
+
+    font-size: 0.78em !important;
+  }
 }

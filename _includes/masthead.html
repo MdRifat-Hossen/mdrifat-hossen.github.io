@@ -1,36 +1,180 @@
 {% include base_path %}
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
+
       <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
+
+        <button>
+          <span class="navicon"></span>
+        </button>
+
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
+
+          <!-- Website Title -->
+          <li class="masthead__menu-item masthead__menu-item--lg persist
+            {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
             <a href="{{ base_path }}/">{{ site.title }}</a>
           </li>
+
+
+          <!-- =====================================================
+               DYNAMIC MAIN NAVIGATION
+               Supports:
+               Parent -> Child -> Sub-child
+               ===================================================== -->
+
           {% for link in site.data.navigation.main %}
+
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              {% comment %} <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a> {% endcomment %}
-               <a href="{{ domain }}{{ link.url }}">
-  {{ link.title }}
 
-  {% if link.url == '/publications/' %}
-    <span class="new-badge">New*</span>
-  {% endif %}
-</a>
-            </li>
+
+            <!-- =========================
+                 LEVEL 1: PARENT
+                 ========================= -->
+
+            {% if link.children %}
+
+              <li class="masthead__menu-item nav-dropdown">
+
+                <a class="dropdown-toggle" role="button" tabindex="0">
+                  {{ link.title }}
+                  <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+
+
+                <!-- =========================
+                     LEVEL 2: CHILD
+                     ========================= -->
+
+                <ul class="dropdown-menu">
+
+                  {% for child in link.children %}
+
+                    {% if child.url contains 'http' %}
+                      {% assign child_domain = '' %}
+                    {% else %}
+                      {% assign child_domain = base_path %}
+                    {% endif %}
+
+
+                    <!-- Child also has children -->
+                    {% if child.children %}
+
+                      <li class="dropdown-submenu">
+
+                        <a class="submenu-toggle"
+                           role="button"
+                           tabindex="0">
+
+                          <span>{{ child.title }}</span>
+
+                          <i class="fas fa-chevron-right submenu-arrow"></i>
+
+                        </a>
+
+
+                        <!-- =========================
+                             LEVEL 3: SUB-CHILD
+                             ========================= -->
+
+                        <ul class="submenu">
+
+                          {% for subchild in child.children %}
+
+                            {% if subchild.url contains 'http' %}
+                              {% assign subchild_domain = '' %}
+                            {% else %}
+                              {% assign subchild_domain = base_path %}
+                            {% endif %}
+
+                            <li>
+                              <a href="{{ subchild_domain }}{{ subchild.url }}">
+                                {{ subchild.title }}
+                              </a>
+                            </li>
+
+                          {% endfor %}
+
+                        </ul>
+
+                      </li>
+
+
+                    <!-- Normal Child -->
+                    {% else %}
+
+                      <li>
+                        <a href="{{ child_domain }}{{ child.url }}">
+                          {{ child.title }}
+                        </a>
+                      </li>
+
+                    {% endif %}
+
+                  {% endfor %}
+
+                </ul>
+
+              </li>
+
+
+            <!-- =========================
+                 NORMAL NAVIGATION ITEM
+                 ========================= -->
+
+            {% else %}
+
+              <li class="masthead__menu-item
+                {% if page.url contains link.url and link.url != '/' %}
+                  selected
+                {% endif %}">
+
+                <a href="{{ domain }}{{ link.url }}">
+
+                  {{ link.title }}
+
+                  {% if link.url == '/publications/' %}
+                    <span class="new-badge">New*</span>
+                  {% endif %}
+
+                </a>
+
+              </li>
+
+            {% endif %}
+
           {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+
+
+          <!-- Theme Toggle -->
+          <li id="theme-toggle"
+              class="masthead__menu-item persist tail">
+
+            <a role="button"
+               aria-labelledby="theme-icon">
+
+              <i id="theme-icon"
+                 class="fa-solid fa-sun"
+                 aria-hidden="true"
+                 title="toggle theme">
+              </i>
+
+            </a>
+
           </li>
+
         </ul>
+
         <ul class="hidden-links hidden"></ul>
+
       </nav>
+
     </div>
   </div>
 </div>

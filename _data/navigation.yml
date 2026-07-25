@@ -17,16 +17,35 @@ main:
   - title: "Talks"
     url: /talks/
 
-  - title: "Gallery"
-    url: /pages/gallery.html
+  # - title: "Gallery"
+  #   url: /pages/gallery.html
 
-  # - title: "Teaching"
-  #   url: /teaching/
+  # # - title: "Teaching"
+  # #   url: /teaching/
 
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-  - title: "Guide"
-    url: /pages/guid.html
+  # # - title: "Blog Posts"
+  # #   url: /year-archive/
+  # - title: "Guide"
+  #   url: /pages/guid.html
+  - title: "Resources"
+    children:
+      - title: "AI/ML Research Roadmap"
+        url: /pages/guid.html
 
+      - title: "Higher Education Research Roadmap"
+        url: /pages/Higher.html
+
+      - title: "Research Tools"
+        url: /pages/research-tools.html
+
+      - title: "Academic Programs"
+        children:
+          - title: "All Certificates"
+            url: /pages/certificate.html
+          - title: "Personal Gallery"
+            url: /pages/photo.html
+
+  - title: "Useful Resources"
+    url: /pages/resources.html
   - title: "CV"
     url: /files/CV_Rifat.pdf
