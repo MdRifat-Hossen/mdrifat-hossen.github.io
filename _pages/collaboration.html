@@ -1,0 +1,1518 @@
+---
+layout: archive
+title: "Research Collaboration"
+permalink: /collaboration/
+author_profile: true
+---
+
+{% include base_path %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Research Collaboration | {{ site.title }}</title>
+
+
+  <style>
+
+    /* =========================================================
+       COLLABORATION PAGE
+       ========================================================= */
+
+    .collab-page {
+      display: block !important;
+
+      width: 100% !important;
+      max-width: 980px !important;
+
+      margin: 0 auto !important;
+
+      padding: 110px 20px 60px !important;
+
+      box-sizing: border-box !important;
+
+      overflow: visible !important;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .collab-hero {
+      display: block !important;
+
+      width: 100% !important;
+      max-width: 100% !important;
+
+      margin: 0 0 32px 0 !important;
+
+      padding: 0 !important;
+
+      text-align: center;
+
+      box-sizing: border-box !important;
+    }
+
+
+    .collab-hero h1 {
+      margin-bottom: 12px !important;
+    }
+
+
+    .collab-hero p {
+      width: 100% !important;
+
+      max-width: 720px !important;
+
+      margin: 0 auto !important;
+
+      line-height: 1.7;
+
+      opacity: 0.85;
+    }
+
+
+    /* =========================================================
+       CARD
+       ========================================================= */
+
+    .collab-card {
+      display: block !important;
+
+      width: 100% !important;
+      max-width: 100% !important;
+
+      margin: 0 !important;
+
+      padding: 30px !important;
+
+      box-sizing: border-box !important;
+
+      background: var(--global-bg-color);
+
+      border: 1px solid var(--global-border-color);
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+      overflow: hidden !important;
+    }
+
+
+    /* =========================================================
+       FORM
+       ========================================================= */
+
+    .collab-card form,
+    #collaborationForm {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      margin: 0 !important;
+
+      padding: 0 !important;
+
+      box-sizing: border-box !important;
+    }
+
+
+    /* =========================================================
+       BOX SIZING
+       ========================================================= */
+
+    .collab-page *,
+    .collab-page *::before,
+    .collab-page *::after {
+
+      box-sizing: border-box !important;
+    }
+
+
+    /* =========================================================
+       GRID
+       ========================================================= */
+
+    .collab-grid {
+
+      display: grid !important;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+
+      column-gap: 18px !important;
+
+      row-gap: 0 !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      margin: 0 !important;
+
+      padding: 0 !important;
+
+      min-width: 0 !important;
+    }
+
+
+    /* =========================================================
+       FIELD
+       ========================================================= */
+
+    .collab-field {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      min-width: 0 !important;
+
+      margin: 0 0 18px 0 !important;
+
+      padding: 0 !important;
+    }
+
+
+    /* =========================================================
+       FULL WIDTH
+       ========================================================= */
+
+    .collab-field.full {
+
+      grid-column: 1 / -1 !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      min-width: 0 !important;
+    }
+
+
+    /* =========================================================
+       LABEL
+       ========================================================= */
+
+    .collab-field label {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      margin: 0 0 7px 0 !important;
+
+      padding: 0 !important;
+
+      font-weight: 700;
+
+      color: var(--global-text-color);
+    }
+
+
+    .required {
+      color: #c62828;
+    }
+
+
+    /* =========================================================
+       INPUTS
+       ========================================================= */
+
+    .collab-field input:not([type="checkbox"]),
+    .collab-field select,
+    .collab-field textarea {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      min-width: 0 !important;
+
+      margin: 0 !important;
+
+      padding: 11px 12px !important;
+
+      box-sizing: border-box !important;
+
+      border:
+        1px solid var(--global-border-color) !important;
+
+      border-radius: 8px !important;
+
+      background:
+        var(--global-bg-color) !important;
+
+      color:
+        var(--global-text-color) !important;
+
+      font-family: inherit !important;
+
+      font-size: 15px !important;
+
+      line-height: 1.5 !important;
+
+      outline: none !important;
+    }
+
+
+    /* =========================================================
+       INPUT FOCUS
+       ========================================================= */
+
+    .collab-field input:focus,
+    .collab-field select:focus,
+    .collab-field textarea:focus {
+
+      outline: none !important;
+
+      border-color: #1f6feb !important;
+
+      box-shadow:
+        0 0 0 3px rgba(31,111,235,0.10) !important;
+    }
+
+
+    /* =========================================================
+       TEXTAREA
+       ========================================================= */
+
+    .collab-field textarea {
+
+      height: 140px !important;
+
+      min-height: 140px !important;
+
+      max-height: 400px;
+
+      resize: vertical;
+
+      overflow: auto !important;
+    }
+
+
+    /* =========================================================
+       FILE
+       ========================================================= */
+
+    .collab-field input[type="file"] {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      min-width: 0 !important;
+
+      height: auto !important;
+
+      padding: 10px !important;
+
+      box-sizing: border-box !important;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HELP
+       ========================================================= */
+
+    .collab-help {
+
+      display: block !important;
+
+      width: 100% !important;
+
+      margin-top: 6px !important;
+
+      font-size: 0.86em;
+
+      line-height: 1.5;
+
+      opacity: 0.72;
+    }
+
+
+    /* =========================================================
+       CONSENT
+       ========================================================= */
+
+    .collab-check {
+
+      display: flex !important;
+
+      width: 100% !important;
+
+      max-width: 100% !important;
+
+      margin: 8px 0 22px 0 !important;
+
+      padding: 0 !important;
+
+      gap: 9px;
+
+      align-items: flex-start;
+
+      line-height: 1.5;
+    }
+
+
+    .collab-check input[type="checkbox"] {
+
+      width: auto !important;
+
+      min-width: auto !important;
+
+      max-width: none !important;
+
+      flex: 0 0 auto;
+
+      margin-top: 5px;
+    }
+
+
+    .collab-check span {
+
+      display: block;
+
+      flex: 1;
+
+      min-width: 0;
+    }
+
+
+    /* =========================================================
+       SUBMIT BUTTON
+       ========================================================= */
+
+    .collab-submit {
+
+      display: inline-block !important;
+
+      width: auto !important;
+
+      min-width: 230px !important;
+
+      max-width: 100% !important;
+
+      height: auto !important;
+
+      margin: 5px 0 0 0 !important;
+
+      padding: 13px 24px !important;
+
+      border: 0 !important;
+
+      border-radius: 8px !important;
+
+      background: #1f6feb !important;
+
+      color: #ffffff !important;
+
+      font-family: inherit !important;
+
+      font-size: 15px !important;
+
+      font-weight: 700 !important;
+
+      line-height: 1.4 !important;
+
+      text-align: center !important;
+
+      cursor: pointer !important;
+
+      visibility: visible !important;
+
+      opacity: 1 !important;
+
+      pointer-events: auto !important;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+
+    .collab-submit:hover {
+
+      background: #1558b0 !important;
+
+      color: #ffffff !important;
+
+      transform: translateY(-1px);
+    }
+
+
+    .collab-submit:disabled {
+
+      opacity: 0.6 !important;
+
+      cursor: not-allowed !important;
+
+      transform: none;
+    }
+
+
+    /* =========================================================
+       SUCCESS / ERROR POPUP OVERLAY
+       ========================================================= */
+
+    .collab-popup-overlay {
+
+      position: fixed !important;
+
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+
+      width: 100vw !important;
+      height: 100vh !important;
+
+      display: none;
+
+      align-items: center !important;
+      justify-content: center !important;
+
+      padding: 20px !important;
+
+      background:
+        rgba(0, 0, 0, 0.55) !important;
+
+      z-index: 999999 !important;
+
+      box-sizing: border-box !important;
+    }
+
+
+    .collab-popup-overlay.show {
+
+      display: flex !important;
+    }
+
+
+    /* =========================================================
+       POPUP BOX
+       ========================================================= */
+
+    .collab-popup {
+
+      width: 100% !important;
+
+      max-width: 460px !important;
+
+      padding: 32px 28px !important;
+
+      background:
+        var(--global-bg-color) !important;
+
+      color:
+        var(--global-text-color) !important;
+
+      border:
+        1px solid var(--global-border-color) !important;
+
+      border-radius: 16px !important;
+
+      text-align: center !important;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.25) !important;
+
+      animation:
+        collabPopupIn 0.25s ease-out;
+    }
+
+
+    @keyframes collabPopupIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(20px)
+          scale(0.96);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+
+    /* =========================================================
+       SUCCESS ICON
+       ========================================================= */
+
+    .collab-popup-icon {
+
+      width: 64px;
+
+      height: 64px;
+
+      margin: 0 auto 18px auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(46,125,50,0.14);
+
+      color: #2e7d32;
+
+      font-size: 34px;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       ERROR ICON
+       ========================================================= */
+
+    .collab-popup.error .collab-popup-icon {
+
+      background:
+        rgba(198,40,40,0.14);
+
+      color: #c62828;
+    }
+
+
+    /* =========================================================
+       POPUP TITLE
+       ========================================================= */
+
+    .collab-popup h2 {
+
+      margin: 0 0 12px 0 !important;
+
+      font-size: 23px !important;
+
+      line-height: 1.3 !important;
+
+      color:
+        var(--global-text-color) !important;
+    }
+
+
+    /* =========================================================
+       POPUP MESSAGE
+       ========================================================= */
+
+    .collab-popup p {
+
+      margin: 0 0 24px 0 !important;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      opacity: 0.82;
+    }
+
+
+    /* =========================================================
+       POPUP BUTTON
+       ========================================================= */
+
+    .collab-popup-close {
+
+      display: inline-block !important;
+
+      min-width: 110px;
+
+      padding: 10px 22px !important;
+
+      border: none !important;
+
+      border-radius: 8px !important;
+
+      background: #1f6feb !important;
+
+      color: #ffffff !important;
+
+      font-family: inherit !important;
+
+      font-size: 14px !important;
+
+      font-weight: 700 !important;
+
+      cursor: pointer !important;
+    }
+
+
+    .collab-popup-close:hover {
+
+      background: #1558b0 !important;
+    }
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .collab-page {
+
+        padding:
+          95px 12px 40px !important;
+      }
+
+
+      .collab-card {
+
+        padding: 18px !important;
+
+        border-radius: 10px;
+      }
+
+
+      .collab-grid {
+
+        display: block !important;
+
+        width: 100% !important;
+      }
+
+
+      .collab-field,
+      .collab-field.full {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+      }
+
+
+      .collab-submit {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+      }
+
+
+      .collab-popup {
+
+        max-width: 94% !important;
+
+        padding: 28px 20px !important;
+      }
+
+    }
+
+
+    /* =========================================================
+       SMALL MOBILE
+       ========================================================= */
+
+    @media (max-width: 400px) {
+
+      .collab-page {
+
+        padding-left: 8px !important;
+
+        padding-right: 8px !important;
+      }
+
+
+      .collab-card {
+
+        padding: 14px !important;
+      }
+
+
+      .collab-field input:not([type="checkbox"]),
+      .collab-field select,
+      .collab-field textarea {
+
+        font-size: 14px !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<main class="collab-page">
+
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+
+  <section class="collab-hero">
+
+    <h1>
+      Research Collaboration
+    </h1>
+
+    <p>
+      Interested in collaborating on research, publications,
+      AI/ML projects, datasets, or technical development?
+      Please submit the form below.
+    </p>
+
+  </section>
+
+
+  <!-- =========================================================
+       FORM
+       ========================================================= -->
+
+  <section class="collab-card">
+
+    <form id="collaborationForm">
+
+      <div class="collab-grid">
+
+
+        <!-- FULL NAME -->
+
+        <div class="collab-field">
+
+          <label for="name">
+
+            Full Name
+
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Your full name"
+            required>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="collab-field">
+
+          <label for="email">
+
+            Email
+
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            placeholder="your@email.com"
+            required>
+
+        </div>
+
+
+        <!-- UNIVERSITY -->
+
+        <div class="collab-field">
+
+          <label for="institution">
+
+            University / Institution
+
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="institution"
+            type="text"
+            placeholder="University or organization"
+            required>
+
+        </div>
+
+
+        <!-- COUNTRY -->
+
+        <div class="collab-field">
+
+          <label for="country">
+
+            Country
+
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="country"
+            type="text"
+            placeholder="Country"
+            required>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="collab-field">
+
+          <label for="status">
+
+            Academic / Professional Status
+
+            <span class="required">*</span>
+
+          </label>
+
+          <select id="status" required>
+
+            <option value="">
+              Select one
+            </option>
+
+            <option>
+              Undergraduate Student
+            </option>
+
+            <option>
+              Master's Student
+            </option>
+
+            <option>
+              PhD Student
+            </option>
+
+            <option>
+              Research Assistant
+            </option>
+
+            <option>
+              Researcher
+            </option>
+
+            <option>
+              Faculty Member
+            </option>
+
+            <option>
+              Industry Professional
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- COLLABORATION TYPE -->
+
+        <div class="collab-field">
+
+          <label for="collabType">
+
+            Collaboration Type
+
+            <span class="required">*</span>
+
+          </label>
+
+          <select id="collabType" required>
+
+            <option value="">
+              Select one
+            </option>
+
+            <option>
+              Research Project
+            </option>
+
+            <option>
+              Research Paper / Publication
+            </option>
+
+            <option>
+              Dataset / Experiment
+            </option>
+
+            <option>
+              AI/ML Model Development
+            </option>
+
+            <option>
+              Technical Development
+            </option>
+
+            <option>
+              Academic Research
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- RESEARCH AREA -->
+
+        <div class="collab-field full">
+
+          <label for="researchArea">
+
+            Research Area / Topic
+
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="researchArea"
+            type="text"
+            placeholder="e.g., Machine Learning, Computer Vision, XAI, Medical AI"
+            required>
+
+        </div>
+
+
+        <!-- GOOGLE SCHOLAR -->
+
+        <div class="collab-field">
+
+          <label for="scholar">
+            Google Scholar
+          </label>
+
+          <input
+            id="scholar"
+            type="url"
+            placeholder="https://scholar.google.com/...">
+
+        </div>
+
+
+        <!-- ORCID -->
+
+        <div class="collab-field">
+
+          <label for="orcid">
+            ORCID
+          </label>
+
+          <input
+            id="orcid"
+            type="url"
+            placeholder="https://orcid.org/...">
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <div class="collab-field">
+
+          <label for="linkedin">
+            LinkedIn
+          </label>
+
+          <input
+            id="linkedin"
+            type="url"
+            placeholder="https://linkedin.com/in/...">
+
+        </div>
+
+
+        <!-- WEBSITE -->
+
+        <div class="collab-field">
+
+          <label for="website">
+            Personal Website
+          </label>
+
+          <input
+            id="website"
+            type="url"
+            placeholder="https://...">
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="collab-field full">
+
+          <label for="message">
+
+            Collaboration Proposal / Message
+
+            <span class="required">*</span>
+
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Briefly describe your research interests, proposed collaboration, and what you would like to contribute."
+            required></textarea>
+
+        </div>
+
+
+        <!-- CV -->
+
+        <div class="collab-field full">
+
+          <label for="cv">
+
+            CV / Resume
+            <span class="required">*</span>
+
+          </label>
+
+          <input
+            id="cv"
+            type="file"
+            accept=".pdf,.doc,.docx">
+
+          <div class="collab-help">
+
+            PDF, DOC, or DOCX.
+            Maximum file size: 5 MB.
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =====================================================
+           CONSENT
+           ===================================================== -->
+
+      <label class="collab-check">
+
+        <input
+          id="consent"
+          type="checkbox"
+          required>
+
+        <span>
+
+          I confirm that the information provided is accurate
+          and I agree that it may be used to evaluate this
+          collaboration request.
+
+        </span>
+
+      </label>
+
+
+      <!-- =====================================================
+           SUBMIT
+           ===================================================== -->
+
+      <button
+        class="collab-submit"
+        id="submitBtn"
+        type="submit">
+
+        Submit Collaboration Request
+
+      </button>
+
+
+    </form>
+
+  </section>
+
+</main>
+
+
+<!-- =========================================================
+     SUCCESS / ERROR POPUP
+     ========================================================= -->
+
+<div
+  id="collabPopupOverlay"
+  class="collab-popup-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="collabPopupTitle">
+
+  <div
+    id="collabPopup"
+    class="collab-popup">
+
+    <div
+      id="collabPopupIcon"
+      class="collab-popup-icon">
+
+      ✓
+
+    </div>
+
+
+    <h2 id="collabPopupTitle">
+
+      Application Submitted Successfully
+
+    </h2>
+
+
+    <p id="collabPopupMessage">
+
+      Thank you for your interest in research collaboration.
+      Your application has been successfully received.
+      A confirmation email has been sent to your email address.
+
+    </p>
+
+
+    <button
+      type="button"
+      id="collabPopupClose"
+      class="collab-popup-close">
+
+      OK
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbx6H_aZxv6GmMktvG-UhXayuRYElANPUn4qel7X6D5tnlDGuUGMpLGXw4LSNVVgxkDiig/exec";
+
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+
+const form =
+  document.getElementById("collaborationForm");
+
+const button =
+  document.getElementById("submitBtn");
+
+
+/* =========================================================
+   FILE TO BASE64
+   ========================================================= */
+
+function fileToBase64(file) {
+
+  return new Promise((resolve, reject) => {
+
+    if (!file) {
+
+      resolve(null);
+
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+
+      reject(
+        new Error(
+          "CV file is larger than 5 MB."
+        )
+      );
+
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function () {
+
+      resolve({
+
+        name: file.name,
+
+        mimeType:
+          file.type ||
+          "application/octet-stream",
+
+        data:
+          reader.result.split(",")[1]
+
+      });
+
+    };
+
+    reader.onerror = function () {
+
+      reject(
+        new Error(
+          "Could not read the CV file."
+        )
+      );
+
+    };
+
+    reader.readAsDataURL(file);
+
+  });
+
+}
+
+
+/* =========================================================
+   FORM SUBMISSION
+   ========================================================= */
+
+form.addEventListener(
+  "submit",
+  async function (event) {
+
+    event.preventDefault();
+
+
+    /* ---------------------------------------------
+       Disable button
+       --------------------------------------------- */
+
+    button.disabled = true;
+
+    button.textContent = "Submitting...";
+
+
+    try {
+
+
+      /* ---------------------------------------------
+         Get CV
+         --------------------------------------------- */
+
+      const cv =
+        await fileToBase64(
+          document
+            .getElementById("cv")
+            .files[0]
+        );
+
+
+      /* ---------------------------------------------
+         Collect form data
+         --------------------------------------------- */
+
+      const payload = {
+
+        name:
+          document
+            .getElementById("name")
+            .value
+            .trim(),
+
+        email:
+          document
+            .getElementById("email")
+            .value
+            .trim(),
+
+        institution:
+          document
+            .getElementById("institution")
+            .value
+            .trim(),
+
+        country:
+          document
+            .getElementById("country")
+            .value
+            .trim(),
+
+        status:
+          document
+            .getElementById("status")
+            .value,
+
+        collaboration_type:
+          document
+            .getElementById("collabType")
+            .value,
+
+        research_area:
+          document
+            .getElementById("researchArea")
+            .value
+            .trim(),
+
+        google_scholar:
+          document
+            .getElementById("scholar")
+            .value
+            .trim(),
+
+        orcid:
+          document
+            .getElementById("orcid")
+            .value
+            .trim(),
+
+        linkedin:
+          document
+            .getElementById("linkedin")
+            .value
+            .trim(),
+
+        website:
+          document
+            .getElementById("website")
+            .value
+            .trim(),
+
+        message:
+          document
+            .getElementById("message")
+            .value
+            .trim(),
+
+        cv: cv
+
+      };
+
+
+      /* ---------------------------------------------
+         SEND TO GOOGLE APPS SCRIPT
+         --------------------------------------------- */
+
+      await fetch(
+
+        GOOGLE_SCRIPT_URL,
+
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "text/plain;charset=utf-8"
+
+          },
+
+          body:
+            JSON.stringify(payload),
+
+          mode: "no-cors"
+
+        }
+
+      );
+
+
+      /* ---------------------------------------------
+         SUCCESS
+         --------------------------------------------- */
+
+      form.reset();
+
+      button.disabled = false;
+
+      button.textContent =
+        "Submit Collaboration Request";
+
+
+      /* =============================================
+         NATIVE BROWSER POPUP
+         ============================================= */
+
+      window.alert(
+        "✓ Application Submitted Successfully!\n\n" +
+        "Thank you for your interest in research collaboration.\n\n" +
+        "Your application has been successfully received. " +
+        "A confirmation email has been sent to your email address."
+      );
+
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Submission error:",
+        error
+      );
+
+
+      button.disabled = false;
+
+      button.textContent =
+        "Submit Collaboration Request";
+
+
+      window.alert(
+        "✕ Submission Failed\n\n" +
+        (
+          error.message ||
+          "Something went wrong. Please try again."
+        )
+      );
+
+    }
+
+  }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
