@@ -7,1512 +7,2623 @@ author_profile: true
 
 {% include base_path %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8">
+    <title>Research Collaboration | {{ site.title }}</title>
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Research Collaboration | {{ site.title }}</title>
-
-
-  <style>
-
-    /* =========================================================
+    <style>
+      /* =========================================================
        COLLABORATION PAGE
        ========================================================= */
 
-    .collab-page {
-      display: block !important;
-
-      width: 100% !important;
-      max-width: 980px !important;
-
-      margin: 0 auto !important;
-
-      padding: 110px 20px 60px !important;
-
-      box-sizing: border-box !important;
-
-      overflow: visible !important;
-    }
-
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .collab-hero {
-      display: block !important;
-
-      width: 100% !important;
-      max-width: 100% !important;
-
-      margin: 0 0 32px 0 !important;
-
-      padding: 0 !important;
-
-      text-align: center;
-
-      box-sizing: border-box !important;
-    }
-
-
-    .collab-hero h1 {
-      margin-bottom: 12px !important;
-    }
-
-
-    .collab-hero p {
-      width: 100% !important;
-
-      max-width: 720px !important;
-
-      margin: 0 auto !important;
-
-      line-height: 1.7;
-
-      opacity: 0.85;
-    }
-
-
-    /* =========================================================
-       CARD
-       ========================================================= */
-
-    .collab-card {
-      display: block !important;
-
-      width: 100% !important;
-      max-width: 100% !important;
-
-      margin: 0 !important;
-
-      padding: 30px !important;
-
-      box-sizing: border-box !important;
-
-      background: var(--global-bg-color);
-
-      border: 1px solid var(--global-border-color);
-
-      border-radius: 14px;
-
-      box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.06);
-
-      overflow: hidden !important;
-    }
-
-
-    /* =========================================================
-       FORM
-       ========================================================= */
-
-    .collab-card form,
-    #collaborationForm {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      margin: 0 !important;
-
-      padding: 0 !important;
-
-      box-sizing: border-box !important;
-    }
-
-
-    /* =========================================================
-       BOX SIZING
-       ========================================================= */
-
-    .collab-page *,
-    .collab-page *::before,
-    .collab-page *::after {
-
-      box-sizing: border-box !important;
-    }
-
-
-    /* =========================================================
-       GRID
-       ========================================================= */
-
-    .collab-grid {
-
-      display: grid !important;
-
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr) !important;
-
-      column-gap: 18px !important;
-
-      row-gap: 0 !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      margin: 0 !important;
-
-      padding: 0 !important;
-
-      min-width: 0 !important;
-    }
-
-
-    /* =========================================================
-       FIELD
-       ========================================================= */
-
-    .collab-field {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      min-width: 0 !important;
-
-      margin: 0 0 18px 0 !important;
-
-      padding: 0 !important;
-    }
-
-
-    /* =========================================================
-       FULL WIDTH
-       ========================================================= */
-
-    .collab-field.full {
-
-      grid-column: 1 / -1 !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      min-width: 0 !important;
-    }
-
-
-    /* =========================================================
-       LABEL
-       ========================================================= */
-
-    .collab-field label {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      margin: 0 0 7px 0 !important;
-
-      padding: 0 !important;
-
-      font-weight: 700;
-
-      color: var(--global-text-color);
-    }
-
-
-    .required {
-      color: #c62828;
-    }
-
-
-    /* =========================================================
-       INPUTS
-       ========================================================= */
-
-    .collab-field input:not([type="checkbox"]),
-    .collab-field select,
-    .collab-field textarea {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      min-width: 0 !important;
-
-      margin: 0 !important;
-
-      padding: 11px 12px !important;
-
-      box-sizing: border-box !important;
-
-      border:
-        1px solid var(--global-border-color) !important;
-
-      border-radius: 8px !important;
-
-      background:
-        var(--global-bg-color) !important;
-
-      color:
-        var(--global-text-color) !important;
-
-      font-family: inherit !important;
-
-      font-size: 15px !important;
-
-      line-height: 1.5 !important;
-
-      outline: none !important;
-    }
-
-
-    /* =========================================================
-       INPUT FOCUS
-       ========================================================= */
-
-    .collab-field input:focus,
-    .collab-field select:focus,
-    .collab-field textarea:focus {
-
-      outline: none !important;
-
-      border-color: #1f6feb !important;
-
-      box-shadow:
-        0 0 0 3px rgba(31,111,235,0.10) !important;
-    }
-
-
-    /* =========================================================
-       TEXTAREA
-       ========================================================= */
-
-    .collab-field textarea {
-
-      height: 140px !important;
-
-      min-height: 140px !important;
-
-      max-height: 400px;
-
-      resize: vertical;
-
-      overflow: auto !important;
-    }
-
-
-    /* =========================================================
-       FILE
-       ========================================================= */
-
-    .collab-field input[type="file"] {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      min-width: 0 !important;
-
-      height: auto !important;
-
-      padding: 10px !important;
-
-      box-sizing: border-box !important;
-
-      cursor: pointer;
-    }
-
-
-    /* =========================================================
-       HELP
-       ========================================================= */
-
-    .collab-help {
-
-      display: block !important;
-
-      width: 100% !important;
-
-      margin-top: 6px !important;
-
-      font-size: 0.86em;
-
-      line-height: 1.5;
-
-      opacity: 0.72;
-    }
-
-
-    /* =========================================================
-       CONSENT
-       ========================================================= */
-
-    .collab-check {
-
-      display: flex !important;
-
-      width: 100% !important;
-
-      max-width: 100% !important;
-
-      margin: 8px 0 22px 0 !important;
-
-      padding: 0 !important;
-
-      gap: 9px;
-
-      align-items: flex-start;
-
-      line-height: 1.5;
-    }
-
-
-    .collab-check input[type="checkbox"] {
-
-      width: auto !important;
-
-      min-width: auto !important;
-
-      max-width: none !important;
-
-      flex: 0 0 auto;
-
-      margin-top: 5px;
-    }
-
-
-    .collab-check span {
-
-      display: block;
-
-      flex: 1;
-
-      min-width: 0;
-    }
-
-
-    /* =========================================================
-       SUBMIT BUTTON
-       ========================================================= */
-
-    .collab-submit {
-
-      display: inline-block !important;
-
-      width: auto !important;
-
-      min-width: 230px !important;
-
-      max-width: 100% !important;
-
-      height: auto !important;
-
-      margin: 5px 0 0 0 !important;
-
-      padding: 13px 24px !important;
-
-      border: 0 !important;
-
-      border-radius: 8px !important;
-
-      background: #1f6feb !important;
-
-      color: #ffffff !important;
-
-      font-family: inherit !important;
-
-      font-size: 15px !important;
-
-      font-weight: 700 !important;
-
-      line-height: 1.4 !important;
-
-      text-align: center !important;
-
-      cursor: pointer !important;
-
-      visibility: visible !important;
-
-      opacity: 1 !important;
-
-      pointer-events: auto !important;
-
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-    }
-
-
-    .collab-submit:hover {
-
-      background: #1558b0 !important;
-
-      color: #ffffff !important;
-
-      transform: translateY(-1px);
-    }
-
-
-    .collab-submit:disabled {
-
-      opacity: 0.6 !important;
-
-      cursor: not-allowed !important;
-
-      transform: none;
-    }
-
-
-    /* =========================================================
-       SUCCESS / ERROR POPUP OVERLAY
-       ========================================================= */
-
-    .collab-popup-overlay {
-
-      position: fixed !important;
-
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-
-      width: 100vw !important;
-      height: 100vh !important;
-
-      display: none;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      padding: 20px !important;
-
-      background:
-        rgba(0, 0, 0, 0.55) !important;
-
-      z-index: 999999 !important;
-
-      box-sizing: border-box !important;
-    }
-
-
-    .collab-popup-overlay.show {
-
-      display: flex !important;
-    }
-
-
-    /* =========================================================
-       POPUP BOX
-       ========================================================= */
-
-    .collab-popup {
-
-      width: 100% !important;
-
-      max-width: 460px !important;
-
-      padding: 32px 28px !important;
-
-      background:
-        var(--global-bg-color) !important;
-
-      color:
-        var(--global-text-color) !important;
-
-      border:
-        1px solid var(--global-border-color) !important;
-
-      border-radius: 16px !important;
-
-      text-align: center !important;
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,0.25) !important;
-
-      animation:
-        collabPopupIn 0.25s ease-out;
-    }
-
-
-    @keyframes collabPopupIn {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(20px)
-          scale(0.96);
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
-      }
-    }
-
-
-    /* =========================================================
-       SUCCESS ICON
-       ========================================================= */
-
-    .collab-popup-icon {
-
-      width: 64px;
-
-      height: 64px;
-
-      margin: 0 auto 18px auto;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      border-radius: 50%;
-
-      background:
-        rgba(46,125,50,0.14);
-
-      color: #2e7d32;
-
-      font-size: 34px;
-
-      font-weight: 700;
-    }
-
-
-    /* =========================================================
-       ERROR ICON
-       ========================================================= */
-
-    .collab-popup.error .collab-popup-icon {
-
-      background:
-        rgba(198,40,40,0.14);
-
-      color: #c62828;
-    }
-
-
-    /* =========================================================
-       POPUP TITLE
-       ========================================================= */
-
-    .collab-popup h2 {
-
-      margin: 0 0 12px 0 !important;
-
-      font-size: 23px !important;
-
-      line-height: 1.3 !important;
-
-      color:
-        var(--global-text-color) !important;
-    }
-
-
-    /* =========================================================
-       POPUP MESSAGE
-       ========================================================= */
-
-    .collab-popup p {
-
-      margin: 0 0 24px 0 !important;
-
-      font-size: 15px;
-
-      line-height: 1.7;
-
-      opacity: 0.82;
-    }
-
-
-    /* =========================================================
-       POPUP BUTTON
-       ========================================================= */
-
-    .collab-popup-close {
-
-      display: inline-block !important;
-
-      min-width: 110px;
-
-      padding: 10px 22px !important;
-
-      border: none !important;
-
-      border-radius: 8px !important;
-
-      background: #1f6feb !important;
-
-      color: #ffffff !important;
-
-      font-family: inherit !important;
-
-      font-size: 14px !important;
-
-      font-weight: 700 !important;
-
-      cursor: pointer !important;
-    }
-
-
-    .collab-popup-close:hover {
-
-      background: #1558b0 !important;
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 700px) {
-
       .collab-page {
-
-        padding:
-          95px 12px 40px !important;
-      }
-
-
-      .collab-card {
-
-        padding: 18px !important;
-
-        border-radius: 10px;
-      }
-
-
-      .collab-grid {
-
         display: block !important;
 
         width: 100% !important;
+        max-width: 980px !important;
+
+        margin: 0 auto !important;
+
+        padding: 110px 20px 60px !important;
+
+        box-sizing: border-box !important;
+
+        overflow: visible !important;
       }
 
+      /* =========================================================
+       HERO
+       ========================================================= */
 
-      .collab-field,
-      .collab-field.full {
+      .collab-hero {
+        display: block !important;
 
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 0 32px 0 !important;
+
+        padding: 0 !important;
+
+        text-align: center;
+
+        box-sizing: border-box !important;
+      }
+
+      .collab-hero h1 {
+        margin-bottom: 12px !important;
+      }
+
+      .collab-hero p {
+        width: 100% !important;
+
+        max-width: 720px !important;
+
+        margin: 0 auto !important;
+
+        line-height: 1.7;
+
+        opacity: 0.85;
+      }
+
+      /* =========================================================
+       CARD
+       ========================================================= */
+
+      .collab-card {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 30px !important;
+
+        box-sizing: border-box !important;
+
+        background: var(--global-bg-color);
+
+        border: 1px solid var(--global-border-color);
+
+        border-radius: 14px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+        overflow: visible !important;
+      }
+
+      /* =========================================================
+       FORM
+       ========================================================= */
+
+      .collab-card form,
+      #collaborationForm {
         display: block !important;
 
         width: 100% !important;
 
         max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
       }
 
+      /* =========================================================
+       BOX SIZING
+       ========================================================= */
 
-      .collab-submit {
+      .collab-page *,
+      .collab-page *::before,
+      .collab-page *::after {
+        box-sizing: border-box !important;
+      }
 
+      /* =========================================================
+       GRID
+       ========================================================= */
+
+      .collab-grid {
+        display: grid !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1 !important;
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(0, 1fr) !important;
+
+        column-gap: 18px !important;
+
+        row-gap: 0 !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        min-width: 0 !important;
+        overflow: visible !important;
+      }
+
+      /* =========================================================
+       FIELD
+       ========================================================= */
+
+      .collab-field {
         display: block !important;
 
         width: 100% !important;
 
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 0 18px 0 !important;
+
+        padding: 0 !important;
+      }
+
+      /* =========================================================
+       FULL WIDTH
+       ========================================================= */
+
+      .collab-field.full {
+        grid-column: 1 / -1 !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
         min-width: 0 !important;
       }
 
-
-      .collab-popup {
-
-        max-width: 94% !important;
-
-        padding: 28px 20px !important;
-      }
-
-    }
-
-
-    /* =========================================================
-       SMALL MOBILE
+      /* =========================================================
+       LABEL
        ========================================================= */
 
-    @media (max-width: 400px) {
+      .collab-field label {
+        display: block !important;
 
-      .collab-page {
+        width: 100% !important;
 
-        padding-left: 8px !important;
+        max-width: 100% !important;
 
-        padding-right: 8px !important;
+        margin: 0 0 7px 0 !important;
+
+        padding: 0 !important;
+
+        font-weight: 700;
+
+        color: var(--global-text-color);
       }
 
-
-      .collab-card {
-
-        padding: 14px !important;
+      .required {
+        color: #c62828;
       }
 
+      /* =========================================================
+       INPUTS
+       ========================================================= */
 
       .collab-field input:not([type="checkbox"]),
       .collab-field select,
       .collab-field textarea {
+        display: block !important;
 
-        font-size: 14px !important;
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 11px 12px !important;
+
+        box-sizing: border-box !important;
+
+        border: 1px solid var(--global-border-color) !important;
+
+        border-radius: 8px !important;
+
+        background: var(--global-bg-color) !important;
+
+        color: var(--global-text-color) !important;
+
+        font-family: inherit !important;
+
+        font-size: 15px !important;
+
+        line-height: 1.5 !important;
+
+        outline: none !important;
       }
 
-    }
+      /* =========================================================
+       INPUT FOCUS
+       ========================================================= */
 
-  </style>
+      .collab-field input:focus,
+      .collab-field select:focus,
+      .collab-field textarea:focus {
+        outline: none !important;
 
-</head>
+        border-color: #1f6feb !important;
 
+        box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1) !important;
+      }
 
-<body>
+      /* =========================================================
+       TEXTAREA
+       ========================================================= */
 
-<main class="collab-page">
+      .collab-field textarea {
+        height: 140px !important;
 
+        min-height: 140px !important;
 
-  <!-- =========================================================
+        max-height: 400px;
+
+        resize: vertical;
+
+        overflow: auto !important;
+      }
+
+      /* =========================================================
+       FILE
+       ========================================================= */
+
+      .collab-field input[type="file"] {
+        display: block !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        padding: 10px !important;
+
+        box-sizing: border-box !important;
+
+        cursor: pointer;
+      }
+
+      /* =========================================================
+       HELP
+       ========================================================= */
+
+      .collab-help {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin-top: 6px !important;
+
+        font-size: 0.86em;
+
+        line-height: 1.5;
+
+        opacity: 0.72;
+      }
+
+      /* =========================================================
+       CONSENT
+       ========================================================= */
+
+      .collab-check {
+        display: flex !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 8px 0 22px 0 !important;
+
+        padding: 0 !important;
+
+        gap: 9px;
+
+        align-items: flex-start;
+
+        line-height: 1.5;
+      }
+
+      .collab-check input[type="checkbox"] {
+        width: auto !important;
+
+        min-width: auto !important;
+
+        max-width: none !important;
+
+        flex: 0 0 auto;
+
+        margin-top: 5px;
+      }
+
+      .collab-check span {
+        display: block;
+
+        flex: 1;
+
+        min-width: 0;
+      }
+
+      /* =========================================================
+       SUBMIT BUTTON
+       ========================================================= */
+
+      .collab-submit {
+        display: inline-block !important;
+
+        width: auto !important;
+
+        min-width: 230px !important;
+
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        margin: 5px 0 0 0 !important;
+
+        padding: 13px 24px !important;
+
+        border: 0 !important;
+
+        border-radius: 8px !important;
+
+        background: #1f6feb !important;
+
+        color: #ffffff !important;
+
+        font-family: inherit !important;
+
+        font-size: 15px !important;
+
+        font-weight: 700 !important;
+
+        line-height: 1.4 !important;
+
+        text-align: center !important;
+
+        cursor: pointer !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        pointer-events: auto !important;
+
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .collab-submit:hover {
+        background: #1558b0 !important;
+
+        color: #ffffff !important;
+
+        transform: translateY(-1px);
+      }
+
+      .collab-submit:disabled {
+        opacity: 0.6 !important;
+
+        cursor: not-allowed !important;
+
+        transform: none;
+      }
+
+      /* =========================================================
+       SUCCESS / ERROR POPUP — POLISHED MODAL
+       ========================================================= */
+
+      .collab-popup-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+
+        display: none;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 20px !important;
+        box-sizing: border-box !important;
+
+        background: rgba(15, 23, 42, 0.62) !important;
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+
+        z-index: 2147483646 !important;
+
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.22s ease,
+          visibility 0.22s ease;
+      }
+
+      .collab-popup-overlay.show {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      .collab-popup {
+        position: relative !important;
+
+        width: min(100%, 500px) !important;
+        max-width: 500px !important;
+        max-height: min(680px, calc(100vh - 40px)) !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        padding: 34px 32px 30px !important;
+        box-sizing: border-box !important;
+
+        background: var(--global-bg-color) !important;
+        color: var(--global-text-color) !important;
+
+        border: 1px solid var(--global-border-color) !important;
+        border-radius: 22px !important;
+
+        text-align: center !important;
+
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.3),
+          0 8px 25px rgba(0, 0, 0, 0.12) !important;
+
+        z-index: 2147483647 !important;
+
+        transform: translateY(16px) scale(0.96);
+        opacity: 0;
+
+        transition:
+          transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.22s ease;
+      }
+
+      .collab-popup-overlay.show .collab-popup {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      .collab-popup::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        border-radius: 22px 22px 0 0;
+        background: linear-gradient(90deg, #1f6feb, #4f8ff7);
+      }
+
+      .collab-popup.error::before {
+        background: linear-gradient(90deg, #c62828, #ef5350);
+      }
+
+      .collab-popup-icon {
+        width: 72px !important;
+        height: 72px !important;
+        margin: 6px auto 20px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 50% !important;
+
+        background: rgba(46, 125, 50, 0.12) !important;
+        color: #2e7d32 !important;
+
+        border: 7px solid rgba(46, 125, 50, 0.07);
+
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+
+        box-sizing: border-box !important;
+      }
+
+      .collab-popup.error .collab-popup-icon {
+        background: rgba(198, 40, 40, 0.12) !important;
+        color: #c62828 !important;
+        border-color: rgba(198, 40, 40, 0.07) !important;
+      }
+
+      .collab-popup h2 {
+        margin: 0 0 12px !important;
+
+        font-size: clamp(21px, 4vw, 26px) !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.015em;
+
+        color: var(--global-text-color) !important;
+      }
+
+      .collab-popup p {
+        margin: 0 auto 25px !important;
+
+        max-width: 410px;
+
+        font-size: 14px !important;
+        line-height: 1.75 !important;
+
+        color: var(--global-text-color) !important;
+        opacity: 0.78;
+      }
+
+      .collab-popup-close {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+
+        min-width: 120px !important;
+        min-height: 46px !important;
+
+        padding: 10px 24px !important;
+
+        border: 0 !important;
+        border-radius: 10px !important;
+
+        background: #1f6feb !important;
+        color: #fff !important;
+
+        font-family: inherit !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+
+        cursor: pointer !important;
+
+        box-shadow: 0 7px 18px rgba(31, 111, 235, 0.2);
+
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .collab-popup-close:hover {
+        background: #1558b0 !important;
+        color: #fff !important;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(31, 111, 235, 0.25);
+      }
+
+      .collab-popup-close:active {
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .collab-popup-overlay,
+        .collab-popup {
+          transition: none !important;
+        }
+      }
+
+      /* =========================================================
+       MOBILE
+       ========================================================= */
+
+      @media (max-width: 700px) {
+        .collab-card:hover {
+          transform: none !important;
+        }
+
+        .collab-page {
+          padding: 95px 12px 40px !important;
+        }
+
+        .collab-card {
+          padding: 18px !important;
+
+          border-radius: 10px;
+        }
+
+        .collab-grid {
+          display: block !important;
+
+          width: 100% !important;
+        }
+
+        .collab-field,
+        .collab-field.full {
+          display: block !important;
+
+          width: 100% !important;
+
+          max-width: 100% !important;
+        }
+
+        .collab-submit {
+          display: block !important;
+
+          width: 100% !important;
+
+          min-width: 0 !important;
+        }
+
+        .collab-popup {
+          width: min(100%, 430px) !important;
+          max-width: calc(100vw - 24px) !important;
+          max-height: calc(100vh - 28px) !important;
+          padding: 30px 20px 24px !important;
+          border-radius: 18px !important;
+        }
+
+        .collab-popup-icon {
+          width: 64px !important;
+          height: 64px !important;
+          margin-bottom: 16px !important;
+          font-size: 30px !important;
+        }
+
+        .collab-popup p {
+          font-size: 13px !important;
+          line-height: 1.7 !important;
+          margin-bottom: 21px !important;
+        }
+
+        .collab-popup-close {
+          width: 100% !important;
+          min-height: 48px !important;
+        }
+      }
+
+      /* =========================================================
+       COUNTRY -> UNIVERSITY SEARCH
+       ========================================================= */
+
+      #country {
+        cursor: pointer !important;
+      }
+
+      #institution:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.65 !important;
+      }
+
+      #institution:not(:disabled) {
+        cursor: text !important;
+        opacity: 1 !important;
+      }
+
+      /* =========================================================
+       UNIVERSITY DROPDOWN - ALWAYS ABOVE FOLLOWING FIELDS
+       ========================================================= */
+
+      .collab-card,
+      .collab-card form,
+      #collaborationForm,
+      .collab-grid,
+      .collab-field {
+        overflow: visible !important;
+      }
+
+      .collab-field:has(#institution) {
+        position: relative !important;
+        z-index: 9999999 !important;
+      }
+
+      .university-search-wrapper {
+        position: relative !important;
+        z-index: 10000000 !important;
+      }
+
+      .university-suggestions {
+        position: absolute !important;
+        z-index: 2147483647 !important;
+        isolation: isolate !important;
+      }
+
+      /* =========================================================
+       UNIVERSITY DROPDOWN - FIXED VIEWPORT LAYER
+       ========================================================= */
+
+      .university-suggestions {
+        position: fixed !important;
+        margin: 0 !important;
+        transform: none !important;
+
+        display: none;
+
+        width: 480px;
+        max-width: calc(100vw - 30px);
+
+        max-height: 300px !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        box-sizing: border-box !important;
+
+        background: #ffffff !important;
+        color: #222222 !important;
+
+        border: 1px solid #d9dee7 !important;
+        border-radius: 10px !important;
+
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22) !important;
+
+        z-index: 2147483647 !important;
+
+        isolation: isolate !important;
+      }
+
+      .dark-mode .university-suggestions,
+      [data-theme="dark"] .university-suggestions {
+        background: #252525 !important;
+        color: #f2f2f2 !important;
+        border-color: #555 !important;
+      }
+
+      .university-suggestion {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 14px !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.12) !important;
+        background: var(--global-bg-color) !important;
+        color: var(--global-text-color) !important;
+        text-align: left !important;
+        cursor: pointer !important;
+      }
+
+      .university-suggestion:hover,
+      .university-suggestion:focus {
+        background: rgba(31, 111, 235, 0.1) !important;
+        outline: none !important;
+      }
+
+      .university-suggestion-name {
+        display: block !important;
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+      }
+
+      .university-suggestion-country {
+        display: block !important;
+        margin-top: 3px !important;
+        font-size: 12px !important;
+        opacity: 0.68 !important;
+      }
+
+      .university-loading,
+      .university-no-result {
+        padding: 12px 14px !important;
+        line-height: 1.5 !important;
+      }
+
+      /* =========================================================
+       SMALL MOBILE
+       ========================================================= */
+
+      @media (max-width: 400px) {
+        .collab-page {
+          padding-left: 8px !important;
+
+          padding-right: 8px !important;
+        }
+
+        .collab-card {
+          padding: 14px !important;
+        }
+
+        .collab-field input:not([type="checkbox"]),
+        .collab-field select,
+        .collab-field textarea {
+          font-size: 14px !important;
+        }
+      }
+
+      /* =========================================================
+   DYNAMIC FORM UI
+   ========================================================= */
+
+      .collab-card {
+        transition: box-shadow 0.25s ease;
+      }
+
+      .collab-card:hover {
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      .collab-progress-wrap {
+        margin: 0 0 24px;
+      }
+
+      .collab-progress-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .collab-progress-track {
+        height: 7px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 99px;
+        background: rgba(128, 128, 128, 0.18);
+      }
+
+      .collab-progress-bar {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: #1f6feb;
+        transition: width 0.35s ease;
+      }
+
+      .collab-field {
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .collab-field:focus-within {
+        transform: translateY(-1px);
+      }
+
+      .collab-field input,
+      .collab-field select,
+      .collab-field textarea {
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .collab-field.valid input,
+      .collab-field.valid select,
+      .collab-field.valid textarea {
+        border-color: #2e7d32 !important;
+      }
+
+      .collab-field.invalid input,
+      .collab-field.invalid select,
+      .collab-field.invalid textarea {
+        border-color: #c62828 !important;
+      }
+
+      .collab-char-counter {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5px;
+        font-size: 12px;
+        opacity: 0.65;
+      }
+
+      .collab-file-name {
+        margin-top: 7px;
+        font-size: 13px;
+        opacity: 0.75;
+      }
+
+      .collab-submit {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .collab-submit::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 70%;
+        height: 100%;
+        transform: skewX(-20deg);
+        background: rgba(255, 255, 255, 0.18);
+        transition: left 0.55s ease;
+      }
+
+      .collab-submit:hover::after {
+        left: 140%;
+      }
+
+      .collab-submit.loading {
+        pointer-events: none;
+      }
+
+      .collab-submit.loading::before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
+        vertical-align: -2px;
+        border: 2px solid rgba(255, 255, 255, 0.45);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: collabSpin 0.7s linear infinite;
+      }
+
+      @keyframes collabSpin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .collab-success-check {
+        animation: collabPop 0.35s ease-out;
+      }
+
+      @keyframes collabPop {
+        0% {
+          transform: scale(0.6);
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .collab-required-note {
+        margin-top: 14px;
+        font-size: 12px;
+        opacity: 0.65;
+      }
+
+      @media (max-width: 700px) {
+        .collab-progress-top {
+          font-size: 12px;
+        }
+      }
+
+      /* =========================================================
+   POLISHED RESPONSIVE UI
+   ========================================================= */
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .collab-page {
+        width: 100%;
+        max-width: 1120px !important;
+        margin: 0 auto !important;
+        padding: 115px 24px 70px !important;
+        box-sizing: border-box;
+      }
+
+      .collab-hero {
+        position: relative;
+        padding: 18px 10px 34px;
+      }
+
+      .collab-hero::before {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        left: 50%;
+        top: -45px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: rgba(31, 111, 235, 0.07);
+        filter: blur(2px);
+        z-index: -1;
+      }
+
+      .collab-hero-icon {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .collab-hero-icon svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .collab-hero h1 {
+        font-size: clamp(30px, 5vw, 46px) !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.025em;
+        margin: 0 0 14px !important;
+      }
+
+      .collab-hero p {
+        font-size: clamp(14px, 1.7vw, 17px) !important;
+        max-width: 760px !important;
+        line-height: 1.75 !important;
+      }
+
+      .collab-card {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: clamp(20px, 4vw, 38px) !important;
+        box-sizing: border-box;
+        border-radius: 20px !important;
+        background: linear-gradient(
+          145deg,
+          var(--global-bg-color),
+          var(--global-bg-color)
+        ) !important;
+        box-shadow:
+          0 18px 55px rgba(0, 0, 0, 0.08),
+          0 2px 10px rgba(0, 0, 0, 0.04) !important;
+      }
+
+      .collab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 22px 20px !important;
+      }
+
+      .collab-field {
+        min-width: 0;
+        margin-bottom: 2px !important;
+      }
+
+      .collab-field.full {
+        grid-column: 1 / -1;
+      }
+
+      .collab-field label {
+        font-size: 14px !important;
+        line-height: 1.4;
+        margin-bottom: 8px !important;
+      }
+
+      .collab-field input,
+      .collab-field select,
+      .collab-field textarea {
+        min-height: 46px;
+        border-radius: 11px !important;
+        padding: 11px 13px !important;
+        font-size: 14px !important;
+        box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.02);
+      }
+
+      .collab-field textarea {
+        min-height: 155px !important;
+        line-height: 1.65 !important;
+      }
+
+      .collab-field input::placeholder,
+      .collab-field textarea::placeholder {
+        opacity: 0.58;
+      }
+
+      .collab-field input:focus,
+      .collab-field select:focus,
+      .collab-field textarea:focus {
+        box-shadow:
+          0 0 0 3px rgba(31, 111, 235, 0.11),
+          0 5px 18px rgba(31, 111, 235, 0.05) !important;
+      }
+
+      .collab-help {
+        line-height: 1.55;
+        font-size: 12px !important;
+      }
+
+      .collab-progress-wrap {
+        padding: 14px 16px 16px;
+        margin-bottom: 28px !important;
+        border: 1px solid var(--global-border-color);
+        border-radius: 13px;
+        background: rgba(128, 128, 128, 0.035);
+      }
+
+      .collab-progress-top {
+        font-size: 12px !important;
+        margin-bottom: 9px !important;
+      }
+
+      .collab-progress-track {
+        height: 6px !important;
+        background: rgba(128, 128, 128, 0.16) !important;
+      }
+
+      .collab-progress-bar {
+        background: linear-gradient(90deg, #1f6feb, #4f8ff7) !important;
+      }
+
+      .collab-check {
+        margin: 24px 0 18px !important;
+        padding: 13px 14px;
+        border: 1px solid var(--global-border-color);
+        border-radius: 11px;
+        background: rgba(128, 128, 128, 0.025);
+        font-size: 13px;
+      }
+
+      .collab-check span {
+        line-height: 1.6;
+      }
+
+      .collab-submit {
+        min-height: 48px !important;
+        padding: 12px 27px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 7px 18px rgba(31, 111, 235, 0.18) !important;
+      }
+
+      .collab-submit:hover {
+        box-shadow: 0 10px 23px rgba(31, 111, 235, 0.23) !important;
+      }
+
+      .collab-required-note {
+        margin: 8px 0 0 !important;
+      }
+
+      .collab-file-name {
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: rgba(128, 128, 128, 0.06);
+      }
+
+      .collab-char-counter {
+        padding-right: 2px;
+      }
+
+      .university-suggestions {
+        width: min(100%, 560px) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22) !important;
+      }
+
+      .university-suggestion {
+        padding: 13px 15px !important;
+      }
+
+      .university-suggestion-name {
+        font-size: 14px;
+      }
+
+      .university-suggestion-country {
+        margin-top: 4px !important;
+      }
+
+      .collab-popup {
+        width: min(460px, calc(100vw - 32px)) !important;
+        border-radius: 20px !important;
+        padding: 34px 28px 28px !important;
+      }
+
+      .collab-popup-close {
+        min-height: 44px !important;
+        border-radius: 10px !important;
+      }
+
+      /* Tablet */
+      @media (max-width: 850px) {
+        .collab-page {
+          padding: 105px 18px 55px !important;
+        }
+
+        .collab-card {
+          border-radius: 17px !important;
+        }
+
+        .collab-grid {
+          gap: 18px 16px !important;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 700px) {
+        .collab-page {
+          padding: 92px 12px 42px !important;
+        }
+
+        .collab-hero {
+          padding: 12px 4px 25px;
+        }
+
+        .collab-hero-icon {
+          width: 62px;
+          height: 62px;
+          margin-bottom: 14px;
+        }
+
+        .collab-hero h1 {
+          font-size: 30px !important;
+        }
+
+        .collab-hero p {
+          font-size: 14px !important;
+          line-height: 1.65 !important;
+        }
+
+        .collab-card {
+          padding: 18px !important;
+          border-radius: 15px !important;
+        }
+
+        .collab-grid {
+          display: grid !important;
+          grid-template-columns: 1fr !important;
+          gap: 17px !important;
+        }
+
+        .collab-field.full {
+          grid-column: auto !important;
+        }
+
+        .collab-field input,
+        .collab-field select,
+        .collab-field textarea {
+          font-size: 16px !important;
+          min-height: 48px !important;
+        }
+
+        .collab-field textarea {
+          min-height: 145px !important;
+        }
+
+        .collab-progress-wrap {
+          margin-bottom: 22px !important;
+        }
+
+        .collab-check {
+          align-items: flex-start;
+          padding: 12px;
+          font-size: 12px;
+        }
+
+        .collab-submit {
+          width: 100% !important;
+          min-width: 0 !important;
+          min-height: 50px !important;
+        }
+
+        .collab-required-note {
+          text-align: center;
+        }
+
+        .university-suggestions {
+          width: calc(100vw - 24px) !important;
+          max-height: 260px !important;
+        }
+
+        .university-suggestion {
+          padding: 12px 13px !important;
+        }
+
+        .collab-popup {
+          padding: 28px 20px 22px !important;
+        }
+      }
+
+      /* Very small phones */
+      @media (max-width: 420px) {
+        .collab-page {
+          padding-left: 8px !important;
+          padding-right: 8px !important;
+        }
+
+        .collab-card {
+          padding: 15px !important;
+        }
+
+        .collab-hero h1 {
+          font-size: 27px !important;
+        }
+
+        .collab-progress-wrap {
+          padding: 12px !important;
+        }
+      }
+
+      /* Smooth validation feedback */
+      .collab-field.valid {
+        animation: collabFieldValid 0.22s ease-out;
+      }
+
+      @keyframes collabFieldValid {
+        0% {
+          transform: translateY(1px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================================================
+   POPUP TYPOGRAPHY ISOLATION
+   ========================================================= */
+
+      .collab-popup,
+      .collab-popup * {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif !important;
+      }
+
+      .collab-popup h2 {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif !important;
+
+        font-weight: 750 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .collab-popup p {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif !important;
+
+        font-weight: 400 !important;
+      }
+
+      .collab-popup-close {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif !important;
+
+        font-weight: 700 !important;
+      }
+
+      /* Slightly cleaner overlay */
+      .collab-popup-overlay {
+        background: rgba(15, 23, 42, 0.48) !important;
+      }
+
+      /* Cleaner modal proportions */
+      .collab-popup {
+        width: min(500px, calc(100vw - 32px)) !important;
+        padding: 36px 34px 30px !important;
+      }
+
+      /* Success icon */
+      .collab-popup-icon {
+        flex-shrink: 0;
+        font-family: Arial, sans-serif !important;
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .collab-popup {
+          width: calc(100vw - 28px) !important;
+          padding: 30px 20px 24px !important;
+          border-radius: 18px !important;
+        }
+
+        .collab-popup h2 {
+          font-size: 22px !important;
+          line-height: 1.3 !important;
+        }
+
+        .collab-popup p {
+          font-size: 14px !important;
+          line-height: 1.65 !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="collab-page">
+      <!-- =========================================================
        HERO
        ========================================================= -->
 
-  <section class="collab-hero">
+      <section class="collab-hero">
+        <div class="collab-hero-icon" aria-hidden="true">
+          <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="38" cy="14" r="9" fill="#1f6feb" opacity="0.92" />
+            <circle cx="14" cy="52" r="9" fill="#4f8ff7" opacity="0.92" />
+            <circle cx="62" cy="52" r="9" fill="#4f8ff7" opacity="0.92" />
+            <line
+              x1="38"
+              y1="14"
+              x2="14"
+              y2="52"
+              stroke="#1f6feb"
+              stroke-width="2.5"
+              opacity="0.5"
+            />
+            <line
+              x1="38"
+              y1="14"
+              x2="62"
+              y2="52"
+              stroke="#1f6feb"
+              stroke-width="2.5"
+              opacity="0.5"
+            />
+            <line
+              x1="14"
+              y1="52"
+              x2="62"
+              y2="52"
+              stroke="#1f6feb"
+              stroke-width="2.5"
+              opacity="0.5"
+            />
+          </svg>
+        </div>
 
-    <h1>
-      Research Collaboration
-    </h1>
+        <h1>Research Collaboration</h1>
 
-    <p>
-      Interested in collaborating on research, publications,
-      AI/ML projects, datasets, or technical development?
-      Please submit the form below.
-    </p>
+        <p>
+          Interested in collaborating on research, publications, AI/ML projects,
+          datasets, or technical development? Please submit the form below.
+        </p>
+      </section>
 
-  </section>
-
-
-  <!-- =========================================================
+      <!-- =========================================================
        FORM
        ========================================================= -->
 
-  <section class="collab-card">
-
-    <form id="collaborationForm">
-
-      <div class="collab-grid">
-
-
-        <!-- FULL NAME -->
-
-        <div class="collab-field">
-
-          <label for="name">
-
-            Full Name
-
-            <span class="required">*</span>
-
-          </label>
-
-          <input
-            id="name"
-            type="text"
-            placeholder="Your full name"
-            required>
-
+      <section class="collab-card">
+        <div class="collab-progress-wrap" aria-live="polite">
+          <div class="collab-progress-top">
+            <span id="collabProgressText">Complete your profile</span>
+            <span id="collabProgressPercent">0%</span>
+          </div>
+          <div class="collab-progress-track">
+            <div id="collabProgressBar" class="collab-progress-bar"></div>
+          </div>
         </div>
 
+        <form id="collaborationForm">
+          <div class="collab-grid">
+            <!-- FULL NAME -->
 
-        <!-- EMAIL -->
+            <div class="collab-field">
+              <label for="name">
+                Full Name
 
-        <div class="collab-field">
+                <span class="required">*</span>
+              </label>
 
-          <label for="email">
+              <input
+                id="name"
+                type="text"
+                placeholder="Your full name"
+                required
+              />
+            </div>
 
-            Email
+            <!-- EMAIL -->
 
-            <span class="required">*</span>
+            <div class="collab-field">
+              <label for="email">
+                Email
 
-          </label>
+                <span class="required">*</span>
+              </label>
 
-          <input
-            id="email"
-            type="email"
-            placeholder="your@email.com"
-            required>
+              <input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
 
-        </div>
+            <!-- UNIVERSITY -->
 
+            <div class="collab-field">
+              <label for="institution">
+                University / Institution
+                <span class="required">*</span>
+              </label>
 
-        <!-- UNIVERSITY -->
+              <div class="university-search-wrapper">
+                <input
+                  id="institution"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Select a country first..."
+                  disabled
+                  required
+                />
 
-        <div class="collab-field">
+                <div
+                  id="universitySuggestions"
+                  class="university-suggestions"
+                ></div>
+              </div>
 
-          <label for="institution">
+              <div class="collab-help">
+                Select your country first, then search for your university. If
+                your institution is not found, you can enter it manually.
+              </div>
+            </div>
 
-            University / Institution
+            <!-- COUNTRY -->
 
-            <span class="required">*</span>
+            <div class="collab-field">
+              <label for="country">
+                Country
 
-          </label>
+                <span class="required">*</span>
+              </label>
 
-          <input
-            id="institution"
-            type="text"
-            placeholder="University or organization"
-            required>
+              <select id="country" required>
+                <option value="">Select your country</option>
+              </select>
+            </div>
 
-        </div>
+            <!-- STATUS -->
 
+            <div class="collab-field">
+              <label for="status">
+                Academic / Professional Status
 
-        <!-- COUNTRY -->
+                <span class="required">*</span>
+              </label>
 
-        <div class="collab-field">
+              <select id="status" required>
+                <option value="">Select one</option>
 
-          <label for="country">
+                <option>Undergraduate Student</option>
 
-            Country
+                <option>Master's Student</option>
 
-            <span class="required">*</span>
+                <option>PhD Student</option>
 
-          </label>
+                <option>Research Assistant</option>
 
-          <input
-            id="country"
-            type="text"
-            placeholder="Country"
-            required>
+                <option>Researcher</option>
 
-        </div>
+                <option>Faculty Member</option>
 
+                <option>Industry Professional</option>
 
-        <!-- STATUS -->
+                <option>Other</option>
+              </select>
+            </div>
 
-        <div class="collab-field">
+            <!-- COLLABORATION TYPE -->
 
-          <label for="status">
+            <div class="collab-field">
+              <label for="collabType">
+                Collaboration Type
 
-            Academic / Professional Status
+                <span class="required">*</span>
+              </label>
 
-            <span class="required">*</span>
+              <select id="collabType" required>
+                <option value="">Select one</option>
 
-          </label>
+                <option>Research Project</option>
 
-          <select id="status" required>
+                <option>Research Paper / Publication</option>
 
-            <option value="">
-              Select one
-            </option>
+                <option>Dataset / Experiment</option>
 
-            <option>
-              Undergraduate Student
-            </option>
+                <option>AI/ML Model Development</option>
 
-            <option>
-              Master's Student
-            </option>
+                <option>Technical Development</option>
 
-            <option>
-              PhD Student
-            </option>
+                <option>Academic Research</option>
 
-            <option>
-              Research Assistant
-            </option>
+                <option>Other</option>
+              </select>
+            </div>
 
-            <option>
-              Researcher
-            </option>
+            <!-- RESEARCH AREA -->
 
-            <option>
-              Faculty Member
-            </option>
+            <div class="collab-field full">
+              <label for="researchArea">
+                Research Area / Topic
 
-            <option>
-              Industry Professional
-            </option>
+                <span class="required">*</span>
+              </label>
 
-            <option>
-              Other
-            </option>
+              <input
+                id="researchArea"
+                type="text"
+                placeholder="e.g., Machine Learning, Computer Vision, XAI, Medical AI"
+                required
+              />
+            </div>
 
-          </select>
+            <!-- GOOGLE SCHOLAR -->
 
-        </div>
+            <div class="collab-field">
+              <label for="scholar"> Google Scholar </label>
 
+              <input
+                id="scholar"
+                type="url"
+                placeholder="https://scholar.google.com/..."
+              />
+            </div>
 
-        <!-- COLLABORATION TYPE -->
+            <!-- ORCID -->
 
-        <div class="collab-field">
+            <div class="collab-field">
+              <label for="orcid"> ORCID </label>
 
-          <label for="collabType">
+              <input
+                id="orcid"
+                type="url"
+                placeholder="https://orcid.org/..."
+              />
+            </div>
 
-            Collaboration Type
+            <!-- LINKEDIN -->
 
-            <span class="required">*</span>
+            <div class="collab-field">
+              <label for="linkedin"> LinkedIn </label>
 
-          </label>
+              <input
+                id="linkedin"
+                type="url"
+                placeholder="https://linkedin.com/in/..."
+              />
+            </div>
 
-          <select id="collabType" required>
+            <!-- WEBSITE -->
 
-            <option value="">
-              Select one
-            </option>
+            <div class="collab-field">
+              <label for="website"> Personal Website </label>
 
-            <option>
-              Research Project
-            </option>
+              <input id="website" type="url" placeholder="https://..." />
+            </div>
 
-            <option>
-              Research Paper / Publication
-            </option>
+            <!-- MESSAGE -->
 
-            <option>
-              Dataset / Experiment
-            </option>
+            <div class="collab-field full">
+              <label for="message">
+                Collaboration Proposal / Message
 
-            <option>
-              AI/ML Model Development
-            </option>
+                <span class="required">*</span>
+              </label>
 
-            <option>
-              Technical Development
-            </option>
+              <textarea
+                id="message"
+                placeholder="Briefly describe your research interests, proposed collaboration, and what you would like to contribute."
+                required
+              ></textarea>
+            </div>
 
-            <option>
-              Academic Research
-            </option>
+            <!-- CV -->
 
-            <option>
-              Other
-            </option>
+            <div class="collab-field full">
+              <label for="cv">
+                CV / Resume
+                <span class="required">*</span>
+              </label>
 
-          </select>
+              <input id="cv" type="file" accept=".pdf,.doc,.docx" />
 
-        </div>
-
-
-        <!-- RESEARCH AREA -->
-
-        <div class="collab-field full">
-
-          <label for="researchArea">
-
-            Research Area / Topic
-
-            <span class="required">*</span>
-
-          </label>
-
-          <input
-            id="researchArea"
-            type="text"
-            placeholder="e.g., Machine Learning, Computer Vision, XAI, Medical AI"
-            required>
-
-        </div>
-
-
-        <!-- GOOGLE SCHOLAR -->
-
-        <div class="collab-field">
-
-          <label for="scholar">
-            Google Scholar
-          </label>
-
-          <input
-            id="scholar"
-            type="url"
-            placeholder="https://scholar.google.com/...">
-
-        </div>
-
-
-        <!-- ORCID -->
-
-        <div class="collab-field">
-
-          <label for="orcid">
-            ORCID
-          </label>
-
-          <input
-            id="orcid"
-            type="url"
-            placeholder="https://orcid.org/...">
-
-        </div>
-
-
-        <!-- LINKEDIN -->
-
-        <div class="collab-field">
-
-          <label for="linkedin">
-            LinkedIn
-          </label>
-
-          <input
-            id="linkedin"
-            type="url"
-            placeholder="https://linkedin.com/in/...">
-
-        </div>
-
-
-        <!-- WEBSITE -->
-
-        <div class="collab-field">
-
-          <label for="website">
-            Personal Website
-          </label>
-
-          <input
-            id="website"
-            type="url"
-            placeholder="https://...">
-
-        </div>
-
-
-        <!-- MESSAGE -->
-
-        <div class="collab-field full">
-
-          <label for="message">
-
-            Collaboration Proposal / Message
-
-            <span class="required">*</span>
-
-          </label>
-
-          <textarea
-            id="message"
-            placeholder="Briefly describe your research interests, proposed collaboration, and what you would like to contribute."
-            required></textarea>
-
-        </div>
-
-
-        <!-- CV -->
-
-        <div class="collab-field full">
-
-          <label for="cv">
-
-            CV / Resume
-            <span class="required">*</span>
-
-          </label>
-
-          <input
-            id="cv"
-            type="file"
-            accept=".pdf,.doc,.docx">
-
-          <div class="collab-help">
-
-            PDF, DOC, or DOCX.
-            Maximum file size: 5 MB.
-
+              <div class="collab-help">
+                PDF, DOC, or DOCX. Maximum file size: 5 MB.
+              </div>
+            </div>
           </div>
 
-        </div>
-
-
-      </div>
-
-
-      <!-- =====================================================
+          <!-- =====================================================
            CONSENT
            ===================================================== -->
 
-      <label class="collab-check">
+          <div class="collab-required-note">
+            Fields marked with * are required.
+          </div>
 
-        <input
-          id="consent"
-          type="checkbox"
-          required>
+          <label class="collab-check">
+            <input id="consent" type="checkbox" required />
 
-        <span>
+            <span>
+              I confirm that the information provided is accurate and I agree
+              that it may be used to evaluate this collaboration request.
+            </span>
+          </label>
 
-          I confirm that the information provided is accurate
-          and I agree that it may be used to evaluate this
-          collaboration request.
-
-        </span>
-
-      </label>
-
-
-      <!-- =====================================================
+          <!-- =====================================================
            SUBMIT
            ===================================================== -->
 
-      <button
-        class="collab-submit"
-        id="submitBtn"
-        type="submit">
+          <button class="collab-submit" id="submitBtn" type="submit">
+            Submit Collaboration Request
+          </button>
+        </form>
+      </section>
+    </main>
 
-        Submit Collaboration Request
-
-      </button>
-
-
-    </form>
-
-  </section>
-
-</main>
-
-
-<!-- =========================================================
+    <!-- =========================================================
      SUCCESS / ERROR POPUP
      ========================================================= -->
 
-<div
-  id="collabPopupOverlay"
-  class="collab-popup-overlay"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="collabPopupTitle">
-
-  <div
-    id="collabPopup"
-    class="collab-popup">
-
     <div
-      id="collabPopupIcon"
-      class="collab-popup-icon">
+      id="collabPopupOverlay"
+      class="collab-popup-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="collabPopupTitle"
+    >
+      <div id="collabPopup" class="collab-popup">
+        <div id="collabPopupIcon" class="collab-popup-icon">✓</div>
 
-      ✓
+        <h2 id="collabPopupTitle">Application Submitted Successfully</h2>
 
+        <p id="collabPopupMessage">
+          Thank you for your interest in research collaboration. Your
+          application has been successfully received. A confirmation email has
+          been sent to your email address.
+        </p>
+
+        <button type="button" id="collabPopupClose" class="collab-popup-close">
+          OK
+        </button>
+      </div>
     </div>
 
-
-    <h2 id="collabPopupTitle">
-
-      Application Submitted Successfully
-
-    </h2>
-
-
-    <p id="collabPopupMessage">
-
-      Thank you for your interest in research collaboration.
-      Your application has been successfully received.
-      A confirmation email has been sent to your email address.
-
-    </p>
-
-
-    <button
-      type="button"
-      id="collabPopupClose"
-      class="collab-popup-close">
-
-      OK
-
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
+    <!-- =========================================================
      JAVASCRIPT
      ========================================================= -->
 
-<script>
+    <script>
+      /* =========================================================
+   CONFIGURATION
+   ========================================================= */
 
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbx6H_aZxv6GmMktvG-UhXayuRYElANPUn4qel7X6D5tnlDGuUGMpLGXw4LSNVVgxkDiig/exec";
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbx6H_aZxv6GmMktvG-UhXayuRYElANPUn4qel7X6D5tnlDGuUGMpLGXw4LSNVVgxkDiig/exec";
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+      const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
-const form =
-  document.getElementById("collaborationForm");
+      /* =========================================================
+   ELEMENTS
+   ========================================================= */
 
-const button =
-  document.getElementById("submitBtn");
+      const form = document.getElementById("collaborationForm");
 
+      const button = document.getElementById("submitBtn");
 
-/* =========================================================
+      const popupOverlay = document.getElementById("collabPopupOverlay");
+
+      const popup = document.getElementById("collabPopup");
+
+      const popupIcon = document.getElementById("collabPopupIcon");
+
+      const popupTitle = document.getElementById("collabPopupTitle");
+
+      const popupMessage = document.getElementById("collabPopupMessage");
+
+      const popupClose = document.getElementById("collabPopupClose");
+
+      /* =========================================================
+   GLOBAL UNIVERSITY SEARCH - OPENALEX
+   ========================================================= */
+
+      const countrySelect = document.getElementById("country");
+
+      const universityInput = document.getElementById("institution");
+
+      const universitySuggestions = document.getElementById(
+        "universitySuggestions",
+      );
+
+      let universitySearchTimer = null;
+      let universityController = null;
+
+      /* =========================================================
+   COUNTRY LIST
+   ========================================================= */
+
+      const countryCodes = {
+        Afghanistan: "AF",
+        Albania: "AL",
+        Algeria: "DZ",
+        Andorra: "AD",
+        Angola: "AO",
+        "Antigua and Barbuda": "AG",
+        Argentina: "AR",
+        Armenia: "AM",
+        Australia: "AU",
+        Austria: "AT",
+        Azerbaijan: "AZ",
+        Bahamas: "BS",
+        Bahrain: "BH",
+        Bangladesh: "BD",
+        Barbados: "BB",
+        Belarus: "BY",
+        Belgium: "BE",
+        Belize: "BZ",
+        Benin: "BJ",
+        Bhutan: "BT",
+        Bolivia: "BO",
+        "Bosnia and Herzegovina": "BA",
+        Botswana: "BW",
+        Brazil: "BR",
+        Brunei: "BN",
+        Bulgaria: "BG",
+        "Burkina Faso": "BF",
+        Burundi: "BI",
+        Cambodia: "KH",
+        Cameroon: "CM",
+        Canada: "CA",
+        "Cape Verde": "CV",
+        "Central African Republic": "CF",
+        Chad: "TD",
+        Chile: "CL",
+        China: "CN",
+        Colombia: "CO",
+        Comoros: "KM",
+        Congo: "CG",
+        "Costa Rica": "CR",
+        Croatia: "HR",
+        Cuba: "CU",
+        Cyprus: "CY",
+        "Czech Republic": "CZ",
+        Denmark: "DK",
+        Djibouti: "DJ",
+        Dominica: "DM",
+        "Dominican Republic": "DO",
+        Ecuador: "EC",
+        Egypt: "EG",
+        "El Salvador": "SV",
+        "Equatorial Guinea": "GQ",
+        Eritrea: "ER",
+        Estonia: "EE",
+        Eswatini: "SZ",
+        Ethiopia: "ET",
+        Fiji: "FJ",
+        Finland: "FI",
+        France: "FR",
+        Gabon: "GA",
+        Gambia: "GM",
+        Georgia: "GE",
+        Germany: "DE",
+        Ghana: "GH",
+        Greece: "GR",
+        Grenada: "GD",
+        Guatemala: "GT",
+        Guinea: "GN",
+        Guyana: "GY",
+        Haiti: "HT",
+        Honduras: "HN",
+        Hungary: "HU",
+        Iceland: "IS",
+        India: "IN",
+        Indonesia: "ID",
+        Iran: "IR",
+        Iraq: "IQ",
+        Ireland: "IE",
+        Israel: "IL",
+        Italy: "IT",
+        Jamaica: "JM",
+        Japan: "JP",
+        Jordan: "JO",
+        Kazakhstan: "KZ",
+        Kenya: "KE",
+        Kuwait: "KW",
+        Kyrgyzstan: "KG",
+        Laos: "LA",
+        Latvia: "LV",
+        Lebanon: "LB",
+        Lesotho: "LS",
+        Liberia: "LR",
+        Libya: "LY",
+        Liechtenstein: "LI",
+        Lithuania: "LT",
+        Luxembourg: "LU",
+        Madagascar: "MG",
+        Malawi: "MW",
+        Malaysia: "MY",
+        Maldives: "MV",
+        Mali: "ML",
+        Malta: "MT",
+        Mauritania: "MR",
+        Mauritius: "MU",
+        Mexico: "MX",
+        Moldova: "MD",
+        Monaco: "MC",
+        Mongolia: "MN",
+        Montenegro: "ME",
+        Morocco: "MA",
+        Mozambique: "MZ",
+        Myanmar: "MM",
+        Namibia: "NA",
+        Nepal: "NP",
+        Netherlands: "NL",
+        "New Zealand": "NZ",
+        Nicaragua: "NI",
+        Niger: "NE",
+        Nigeria: "NG",
+        "North Korea": "KP",
+        "North Macedonia": "MK",
+        Norway: "NO",
+        Oman: "OM",
+        Pakistan: "PK",
+        Palau: "PW",
+        Palestine: "PS",
+        Panama: "PA",
+        "Papua New Guinea": "PG",
+        Paraguay: "PY",
+        Peru: "PE",
+        Philippines: "PH",
+        Poland: "PL",
+        Portugal: "PT",
+        Qatar: "QA",
+        Romania: "RO",
+        Russia: "RU",
+        Rwanda: "RW",
+        "Saint Kitts and Nevis": "KN",
+        "Saint Lucia": "LC",
+        "Saint Vincent and the Grenadines": "VC",
+        Samoa: "WS",
+        "San Marino": "SM",
+        "Saudi Arabia": "SA",
+        Senegal: "SN",
+        Serbia: "RS",
+        Seychelles: "SC",
+        "Sierra Leone": "SL",
+        Singapore: "SG",
+        Slovakia: "SK",
+        Slovenia: "SI",
+        "Solomon Islands": "SB",
+        Somalia: "SO",
+        "South Africa": "ZA",
+        "South Korea": "KR",
+        "South Sudan": "SS",
+        Spain: "ES",
+        "Sri Lanka": "LK",
+        Sudan: "SD",
+        Suriname: "SR",
+        Sweden: "SE",
+        Switzerland: "CH",
+        Syria: "SY",
+        Taiwan: "TW",
+        Tajikistan: "TJ",
+        Tanzania: "TZ",
+        Thailand: "TH",
+        "Timor-Leste": "TL",
+        Togo: "TG",
+        Tonga: "TO",
+        "Trinidad and Tobago": "TT",
+        Tunisia: "TN",
+        Turkey: "TR",
+        Turkmenistan: "TM",
+        Tuvalu: "TV",
+        Uganda: "UG",
+        Ukraine: "UA",
+        "United Arab Emirates": "AE",
+        "United Kingdom": "GB",
+        "United States": "US",
+        Uruguay: "UY",
+        Uzbekistan: "UZ",
+        Vanuatu: "VU",
+        "Vatican City": "VA",
+        Venezuela: "VE",
+        Vietnam: "VN",
+        Yemen: "YE",
+        Zambia: "ZM",
+        Zimbabwe: "ZW",
+      };
+
+      Object.keys(countryCodes)
+        .sort((a, b) => a.localeCompare(b))
+        .forEach(function (country) {
+          const option = document.createElement("option");
+
+          option.value = country;
+          option.textContent = country;
+
+          countrySelect.appendChild(option);
+        });
+
+      function escapeUniversityText(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function showUniversityMessage(message, className) {
+        universitySuggestions.innerHTML = `<div class="${className}">${escapeUniversityText(message)}</div>`;
+
+        showUniversityDropdown();
+      }
+
+      /* =========================================================
+   COUNTRY CHANGE
+   ========================================================= */
+
+      countrySelect.addEventListener("change", function () {
+        const country = this.value;
+
+        clearTimeout(universitySearchTimer);
+
+        if (universityController) {
+          universityController.abort();
+          universityController = null;
+        }
+
+        universityInput.value = "";
+        hideUniversitySuggestions();
+
+        if (!country) {
+          universityInput.disabled = true;
+          universityInput.placeholder = "Select a country first...";
+
+          return;
+        }
+
+        universityInput.disabled = false;
+        universityInput.placeholder = "Search university in " + country + "...";
+      });
+
+      /* =========================================================
+   UNIVERSITY DROPDOWN PORTAL
+   ========================================================= */
+
+      const universitySuggestionsOriginalParent =
+        universitySuggestions.parentNode;
+
+      const universitySuggestionsOriginalNextSibling =
+        universitySuggestions.nextSibling;
+
+      /*
+       * Move the dropdown directly to <body>.
+       * This prevents any form/grid/card CSS from changing its
+       * position or clipping it.
+       */
+      document.body.appendChild(universitySuggestions);
+
+      /* =========================================================
+   POSITION UNIVERSITY DROPDOWN ABOVE ALL FORM CONTENT
+   ========================================================= */
+
+      function positionUniversitySuggestions() {
+        const rect = universityInput.getBoundingClientRect();
+
+        const gap = 6;
+
+        let left = rect.left;
+        let top = rect.bottom + gap;
+
+        /*
+         * Match the dropdown exactly to the university input.
+         * Only reduce it when the viewport is too narrow.
+         */
+        let width = Math.min(rect.width, window.innerWidth - 30);
+
+        const viewportPadding = 15;
+
+        if (width > window.innerWidth - viewportPadding * 2) {
+          width = window.innerWidth - viewportPadding * 2;
+        }
+
+        if (left + width > window.innerWidth - viewportPadding) {
+          left = window.innerWidth - viewportPadding - width;
+        }
+
+        /*
+         * If there is not enough room below the input,
+         * open the list above it instead.
+         */
+        const dropdownHeight = Math.min(
+          300,
+          Math.max(120, universitySuggestions.scrollHeight),
+        );
+
+        if (top + dropdownHeight > window.innerHeight - viewportPadding) {
+          const above = rect.top - gap - dropdownHeight;
+
+          if (above >= viewportPadding) {
+            top = above;
+          }
+        }
+
+        universitySuggestions.style.left =
+          Math.max(viewportPadding, left) + "px";
+
+        universitySuggestions.style.top = Math.max(viewportPadding, top) + "px";
+
+        universitySuggestions.style.width = width + "px";
+      }
+
+      function showUniversityDropdown() {
+        universitySuggestions.style.display = "block";
+
+        /*
+         * Force the browser to calculate the dropdown
+         * before positioning it.
+         */
+        positionUniversitySuggestions();
+      }
+
+      function hideUniversitySuggestions() {
+        universitySuggestions.style.display = "none";
+
+        universitySuggestions.innerHTML = "";
+      }
+
+      window.addEventListener("resize", function () {
+        if (universitySuggestions.style.display === "block") {
+          positionUniversitySuggestions();
+        }
+      });
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (universitySuggestions.style.display === "block") {
+            positionUniversitySuggestions();
+          }
+        },
+        true,
+      );
+
+      /* =========================================================
+   UNIVERSITY SEARCH
+   ========================================================= */
+
+      universityInput.addEventListener("input", function () {
+        const query = this.value.trim();
+        const country = countrySelect.value;
+
+        clearTimeout(universitySearchTimer);
+
+        if (universityController) {
+          universityController.abort();
+          universityController = null;
+        }
+
+        hideUniversitySuggestions();
+
+        if (!country || query.length < 2) {
+          return;
+        }
+
+        universitySearchTimer = setTimeout(async function () {
+          try {
+            universityController = new AbortController();
+
+            showUniversityMessage(
+              "Searching universities in " + country + "...",
+              "university-loading",
+            );
+
+            const url =
+              "https://api.openalex.org/institutions?" +
+              "search=" +
+              encodeURIComponent(query) +
+              "&filter=type:education,country_code:" +
+              countryCodes[country] +
+              "&per-page=15";
+
+            const response = await fetch(url, {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+              },
+              signal: universityController.signal,
+            });
+
+            if (!response.ok) {
+              throw new Error("University search is unavailable right now.");
+            }
+
+            const data = await response.json();
+
+            const results = Array.isArray(data.results) ? data.results : [];
+
+            universitySuggestions.innerHTML = "";
+
+            if (!results.length) {
+              showUniversityMessage(
+                "No matching university found in " +
+                  country +
+                  ". You can enter your institution manually.",
+                "university-no-result",
+              );
+
+              return;
+            }
+
+            results.forEach(function (university) {
+              const item = document.createElement("button");
+
+              item.type = "button";
+              item.className = "university-suggestion";
+
+              const name = document.createElement("span");
+
+              name.className = "university-suggestion-name";
+
+              name.textContent = university.display_name || "";
+
+              const countryText = document.createElement("span");
+
+              countryText.className = "university-suggestion-country";
+
+              countryText.textContent = country;
+
+              item.appendChild(name);
+              item.appendChild(countryText);
+
+              item.addEventListener("click", function () {
+                universityInput.value = university.display_name || "";
+
+                hideUniversitySuggestions();
+              });
+
+              universitySuggestions.appendChild(item);
+            });
+
+            showUniversityDropdown();
+          } catch (error) {
+            if (error.name === "AbortError") {
+              return;
+            }
+
+            console.error("University search error:", error);
+
+            showUniversityMessage(
+              "University search is temporarily unavailable. You can enter your institution manually.",
+              "university-no-result",
+            );
+          }
+        }, 350);
+      });
+
+      /* Close suggestions */
+      document.addEventListener("click", function (event) {
+        if (
+          !event.target.closest(".university-search-wrapper") &&
+          !event.target.closest("#universitySuggestions")
+        ) {
+          hideUniversitySuggestions();
+        }
+      });
+
+      function showCollabPopup(success, title, message) {
+        popup.classList.toggle("error", !success);
+
+        popupIcon.textContent = success ? "✓" : "×";
+
+        popupIcon.classList.toggle("collab-success-check", success);
+
+        popupTitle.textContent = title;
+
+        popupMessage.textContent = message;
+
+        popupOverlay.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+        /*
+         * Move keyboard focus to the modal action button so the
+         * confirmation/error dialog is immediately usable.
+         */
+        window.setTimeout(function () {
+          popupClose.focus();
+        }, 80);
+      }
+
+      function closeCollabPopup() {
+        popupOverlay.classList.remove("show");
+
+        document.body.style.overflow = "";
+      }
+
+      popupClose.addEventListener("click", closeCollabPopup);
+
+      popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+          closeCollabPopup();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && popupOverlay.classList.contains("show")) {
+          closeCollabPopup();
+        }
+      });
+
+      /* =========================================================
    FILE TO BASE64
    ========================================================= */
 
-function fileToBase64(file) {
+      function fileToBase64(file) {
+        return new Promise(function (resolve, reject) {
+          if (!file) {
+            resolve(null);
+            return;
+          }
 
-  return new Promise((resolve, reject) => {
+          if (file.size > MAX_FILE_SIZE) {
+            reject(new Error("CV file is larger than 5 MB."));
 
-    if (!file) {
+            return;
+          }
 
-      resolve(null);
+          const reader = new FileReader();
 
-      return;
-    }
+          reader.onload = function () {
+            resolve({
+              name: file.name,
+              mimeType: file.type || "application/octet-stream",
+              data: reader.result.split(",")[1],
+            });
+          };
 
-    if (file.size > MAX_FILE_SIZE) {
+          reader.onerror = function () {
+            reject(new Error("Could not read the CV file."));
+          };
 
-      reject(
-        new Error(
-          "CV file is larger than 5 MB."
-        )
+          reader.readAsDataURL(file);
+        });
+      }
+
+      /* =========================================================
+   DYNAMIC FORM EXPERIENCE
+   ========================================================= */
+
+      const progressBar = document.getElementById("collabProgressBar");
+
+      const progressPercent = document.getElementById("collabProgressPercent");
+
+      const progressText = document.getElementById("collabProgressText");
+
+      const allFormControls = Array.from(
+        form.querySelectorAll("input, select, textarea"),
       );
 
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function () {
-
-      resolve({
-
-        name: file.name,
-
-        mimeType:
-          file.type ||
-          "application/octet-stream",
-
-        data:
-          reader.result.split(",")[1]
-
+      const requiredControls = allFormControls.filter(function (control) {
+        return control.required;
       });
 
-    };
+      function updateProgress() {
+        let completed = 0;
 
-    reader.onerror = function () {
+        requiredControls.forEach(function (control) {
+          if (control.type === "checkbox") {
+            if (control.checked) {
+              completed++;
+            }
 
-      reject(
-        new Error(
-          "Could not read the CV file."
-        )
-      );
+            return;
+          }
 
-    };
+          if (control.value && control.value.trim() !== "") {
+            completed++;
+          }
+        });
 
-    reader.readAsDataURL(file);
+        const percent = Math.round(
+          (completed / Math.max(requiredControls.length, 1)) * 100,
+        );
 
-  });
+        progressBar.style.width = percent + "%";
 
-}
+        progressPercent.textContent = percent + "%";
 
+        if (percent === 0) {
+          progressText.textContent = "Complete your profile";
+        } else if (percent < 40) {
+          progressText.textContent = "Good start — keep going";
+        } else if (percent < 75) {
+          progressText.textContent = "You're making good progress";
+        } else if (percent < 100) {
+          progressText.textContent = "Almost there";
+        } else {
+          progressText.textContent = "Ready to submit ✓";
+        }
+      }
 
-/* =========================================================
+      function updateFieldState(control) {
+        const field = control.closest(".collab-field");
+
+        if (!field) {
+          return;
+        }
+
+        if (!control.value && !control.required) {
+          field.classList.remove("valid", "invalid");
+
+          return;
+        }
+
+        if (control.required && control.value.trim() === "") {
+          field.classList.remove("valid");
+
+          return;
+        }
+
+        if (control.required && !control.checkValidity()) {
+          field.classList.add("invalid");
+
+          field.classList.remove("valid");
+        } else if (control.value.trim() !== "") {
+          field.classList.add("valid");
+
+          field.classList.remove("invalid");
+        }
+      }
+
+      allFormControls.forEach(function (control) {
+        control.addEventListener("input", function () {
+          updateProgress();
+          updateFieldState(control);
+        });
+
+        control.addEventListener("change", function () {
+          updateProgress();
+          updateFieldState(control);
+        });
+      });
+
+      /* Character counter for proposal/message */
+      const messageField = document.getElementById("message");
+
+      if (messageField) {
+        const counter = document.createElement("div");
+
+        counter.className = "collab-char-counter";
+
+        messageField.parentNode.appendChild(counter);
+
+        function updateMessageCounter() {
+          const length = messageField.value.length;
+
+          counter.textContent = length + " characters";
+        }
+
+        messageField.addEventListener("input", updateMessageCounter);
+
+        updateMessageCounter();
+      }
+
+      /* Dynamic CV file information */
+      const cvInput = document.getElementById("cv");
+
+      if (cvInput) {
+        const fileName = document.createElement("div");
+
+        fileName.className = "collab-file-name";
+
+        cvInput.parentNode.appendChild(fileName);
+
+        cvInput.addEventListener("change", function () {
+          const file = cvInput.files[0];
+
+          if (!file) {
+            fileName.textContent = "";
+
+            return;
+          }
+
+          const sizeMB = file.size / (1024 * 1024);
+
+          fileName.textContent =
+            "Selected: " + file.name + " (" + sizeMB.toFixed(2) + " MB)";
+
+          if (file.size > MAX_FILE_SIZE) {
+            fileName.textContent += " — File is too large.";
+          }
+
+          updateProgress();
+        });
+      }
+
+      /* Initial state */
+      updateProgress();
+
+      /* =========================================================
    FORM SUBMISSION
    ========================================================= */
 
-form.addEventListener(
-  "submit",
-  async function (event) {
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
 
-    event.preventDefault();
-
-
-    /* ---------------------------------------------
-       Disable button
-       --------------------------------------------- */
-
-    button.disabled = true;
-
-    button.textContent = "Submitting...";
-
-
-    try {
-
-
-      /* ---------------------------------------------
-         Get CV
-         --------------------------------------------- */
-
-      const cv =
-        await fileToBase64(
-          document
-            .getElementById("cv")
-            .files[0]
-        );
-
-
-      /* ---------------------------------------------
-         Collect form data
-         --------------------------------------------- */
-
-      const payload = {
-
-        name:
-          document
-            .getElementById("name")
-            .value
-            .trim(),
-
-        email:
-          document
-            .getElementById("email")
-            .value
-            .trim(),
-
-        institution:
-          document
-            .getElementById("institution")
-            .value
-            .trim(),
-
-        country:
-          document
-            .getElementById("country")
-            .value
-            .trim(),
-
-        status:
-          document
-            .getElementById("status")
-            .value,
-
-        collaboration_type:
-          document
-            .getElementById("collabType")
-            .value,
-
-        research_area:
-          document
-            .getElementById("researchArea")
-            .value
-            .trim(),
-
-        google_scholar:
-          document
-            .getElementById("scholar")
-            .value
-            .trim(),
-
-        orcid:
-          document
-            .getElementById("orcid")
-            .value
-            .trim(),
-
-        linkedin:
-          document
-            .getElementById("linkedin")
-            .value
-            .trim(),
-
-        website:
-          document
-            .getElementById("website")
-            .value
-            .trim(),
-
-        message:
-          document
-            .getElementById("message")
-            .value
-            .trim(),
-
-        cv: cv
-
-      };
-
-
-      /* ---------------------------------------------
-         SEND TO GOOGLE APPS SCRIPT
-         --------------------------------------------- */
-
-      await fetch(
-
-        GOOGLE_SCRIPT_URL,
-
-        {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type":
-              "text/plain;charset=utf-8"
-
-          },
-
-          body:
-            JSON.stringify(payload),
-
-          mode: "no-cors"
-
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
         }
 
-      );
+        button.disabled = true;
+        button.textContent = "Submitting...";
 
+        try {
+          const cv = await fileToBase64(document.getElementById("cv").files[0]);
 
-      /* ---------------------------------------------
-         SUCCESS
-         --------------------------------------------- */
+          const payload = {
+            name: document.getElementById("name").value.trim(),
 
-      form.reset();
+            email: document.getElementById("email").value.trim(),
 
-      button.disabled = false;
+            institution: document.getElementById("institution").value.trim(),
 
-      button.textContent =
-        "Submit Collaboration Request";
+            country: document.getElementById("country").value.trim(),
 
+            status: document.getElementById("status").value,
 
-      /* =============================================
-         NATIVE BROWSER POPUP
-         ============================================= */
+            collaboration_type: document.getElementById("collabType").value,
 
-      window.alert(
-        "✓ Application Submitted Successfully!\n\n" +
-        "Thank you for your interest in research collaboration.\n\n" +
-        "Your application has been successfully received. " +
-        "A confirmation email has been sent to your email address."
-      );
+            research_area: document.getElementById("researchArea").value.trim(),
 
+            google_scholar: document.getElementById("scholar").value.trim(),
 
-    }
+            orcid: document.getElementById("orcid").value.trim(),
 
-    catch (error) {
+            linkedin: document.getElementById("linkedin").value.trim(),
 
-      console.error(
-        "Submission error:",
-        error
-      );
+            website: document.getElementById("website").value.trim(),
 
+            message: document.getElementById("message").value.trim(),
 
-      button.disabled = false;
+            cv: cv,
+          };
 
-      button.textContent =
-        "Submit Collaboration Request";
+          /*
+           * Keep the existing Google Apps Script
+           * backend exactly as it is.
+           */
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify(payload),
+            mode: "no-cors",
+          });
 
+          /*
+           * Backend is already confirmed working.
+           * Show custom popup instead of browser alert.
+           */
+          form.reset();
 
-      window.alert(
-        "✕ Submission Failed\n\n" +
-        (
-          error.message ||
-          "Something went wrong. Please try again."
-        )
-      );
+          universityInput.disabled = true;
+          universityInput.placeholder = "Select a country first...";
+          hideUniversitySuggestions();
 
-    }
+          showCollabPopup(
+            true,
+            "Application Submitted Successfully",
+            "Thank you for your interest in research collaboration. Your application has been successfully received. A confirmation email has been sent to your email address.",
+          );
+        } catch (error) {
+          console.error("Submission error:", error);
 
-  }
+          showCollabPopup(
+            false,
+            "Submission Failed",
+            error.message || "Something went wrong. Please try again.",
+          );
+        } finally {
+          button.disabled = false;
 
-);
+          button.classList.remove("loading");
 
-</script>
-
-
-</body>
-
+          button.textContent = "Submit Collaboration Request";
+        }
+      });
+    </script>
+  </body>
 </html>
