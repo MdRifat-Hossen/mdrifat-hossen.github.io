@@ -97,7 +97,7 @@ publication_category:
   Datasets:
     title: "Datasets"
   colaburations:
-    title: "Research Collaborations"
+    title: "Thesis & Collaborations"
 # Site Settings
 teaser: # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs: false # true, false (default)

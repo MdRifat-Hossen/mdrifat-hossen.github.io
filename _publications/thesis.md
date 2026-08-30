@@ -1,7 +1,7 @@
 ---
 title: "Research Assistance in Bangla Speech Emotion Recognition using Emoformer"
 collection: publications
-category: colaburations
+category: Thesis & Collaborations
 permalink: /publication/thesis
 excerpt: "Contributed to an M.Sc thesis on Bangla Speech Emotion Recognition using an attention-driven Emoformer architecture."
 date: 2026-01-01
