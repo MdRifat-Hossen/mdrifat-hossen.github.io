@@ -245,6 +245,9 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+  Useful_Resources:
+    output: true
+    permalink: /pages/:collection/:name/
 # These settings control how pages and collections are included in the site
 defaults:
   # _posts

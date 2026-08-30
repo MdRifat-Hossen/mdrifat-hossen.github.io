@@ -46,7 +46,7 @@ main:
             url: /pages/photo.html
 
   - title: "Useful Resources"
-    url: /pages/resources.html
+    url: /pages/Useful_Resources/machine-learning-specialization/
 
   - title: "Research Collaboration"
     url: /collaboration/

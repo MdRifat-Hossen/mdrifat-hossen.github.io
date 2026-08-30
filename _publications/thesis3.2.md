@@ -1,7 +1,7 @@
 ---
 title: "CNN-LCA: A Lightweight Attention-Based Network with Confidence-Guided Grad-CAM for Explainable Brain Tumor Classification"
 collection: publications
-category: Thesis & Collaborations
+category: colaburations
 permalink: /publication/cnn-lca-thesis
 excerpt: "An undergraduate capstone research project proposing a lightweight attention-based CNN with confidence-guided Grad-CAM for explainable brain tumor classification."
 date: 2026-01-01
