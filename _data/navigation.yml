@@ -50,6 +50,8 @@ main:
 
   - title: "Research Collaboration"
     url: /collaboration/
+  - title: "Book a Meeting"
+    url: /meeting/
 
   - title: "CV"
     url: /files/CV_Rifat.pdf

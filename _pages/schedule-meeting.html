@@ -1,0 +1,62 @@
+---
+layout: archive
+title: "Book a Meeting"
+permalink: /meeting/
+author_profile: true
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule a Meeting | Md. Rifat Hossen</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f6f8fb;color:#1f2937}
+.meeting-page{max-width:1100px;margin:auto;padding:55px 20px 70px}
+.header{text-align:center;margin-bottom:35px}
+.header h1{margin:0 0 12px;font-size:38px;line-height:1.2}
+.header p{margin:auto;max-width:680px;color:#667085;font-size:17px;line-height:1.7}
+.booking-card{background:#fff;border:1px solid #e6eaf0;border-radius:18px;box-shadow:0 10px 35px rgba(16,24,40,.07);overflow:hidden}
+.card-top{padding:24px 30px 18px;border-bottom:1px solid #edf0f4}
+.card-top h2{margin:0 0 6px;font-size:21px}
+.card-top p{margin:0;color:#667085;font-size:14px}
+.calendly-inline-widget{min-width:320px;height:760px}
+.footer-note{text-align:center;margin-top:20px;color:#98a2b3;font-size:13px}
+@media(max-width:600px){
+.meeting-page{padding:35px 10px 45px}
+.header h1{font-size:30px}
+.header p{font-size:15px}
+.booking-card{border-radius:12px}
+.card-top{padding:20px 18px 15px}
+.calendly-inline-widget{height:720px}
+}
+</style>
+</head>
+<body>
+<main class="meeting-page">
+<header class="header">
+<h1>Schedule a Meeting</h1>
+<p>Please choose a date and time that is convenient for you. Available meeting slots are shown below.</p>
+</header>
+
+<section class="booking-card">
+<div class="card-top">
+<h2>Book a 30 or 60-Minute Meeting</h2>
+<p>Select an available date and time to schedule our meeting.</p>
+</div>
+
+<div class="calendly-inline-widget"
+data-url="https://calendly.com/rifat-pust-ice14/30min"
+style="min-width:320px;height:760px;"></div>
+</section>
+
+<!-- <div class="footer-note">Meeting scheduling powered by Calendly</div> -->
+</main>
+
+<script type="text/javascript"
+src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
